@@ -106,3 +106,42 @@ C:\Users\eshen\Desktop\Github\brgyinformation_laman\Barangay Record Management\o
 C:\Users\eshen\Desktop\Github\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.exe
 C:\Users\eshen\Desktop\Github\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.xml
 C:\Users\eshen\Desktop\Github\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.pdb
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.exe.config
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.exe
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.pdb
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.xml
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\EnvDTE.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\EnvDTE80.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\VSLangProj.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\stdole.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.MSXML.dll
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.vbproj.AssemblyReference.cache
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.exe.config
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.Resources.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmAdd_Resident.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmAddBlotter.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmBlotterList.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmCertification.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmOptions.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmDashboard.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmDatabaseSetting.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmLogin.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmResidentProfile.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmResidentsList.resources
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.vbproj.GenerateResource.cache
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.vbproj.CoreCompileInputs.cache
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.vbproj.CopyComplete
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.exe
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.xml
+C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.pdb
