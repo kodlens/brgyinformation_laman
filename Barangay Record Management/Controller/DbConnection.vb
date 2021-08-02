@@ -1,20 +1,18 @@
 ﻿Imports MySql.Data.MySqlClient
 Module DbConnection
-    Public conn As New MySqlConnection
-    Public sql As String
-    Public cmd As MySqlCommand
-    Public dr As MySqlDataReader
+    Public generalConnectionWarning As String
     Public Sub CreateDbConnection()
-
+        Dim conn As New MySqlConnection
 
         Try
-            conn.ConnectionString = "Server= '" & My.Settings.ServerAddress & "';Port='" & My.Settings.ServerPort & "';Database='" & My.Settings.DatabaseName & "';Uid='" & My.Settings.UserID & "';Pwd='" & My.Settings.UserPassword & "'"
+            conn.ConnectionString = "Server ='" & My.Settings.ServerAddress & "'; Username ='" & My.Settings.UserID & "';Password ='" & My.Settings.UserPassword & "'; Port ='" & My.Settings.ServerPort & "'; Database ='" & My.Settings.DatabaseName & "'"
+            conn.Open()
 
         Catch ex As Exception
-            MsgBox("Failed to establish database connection!", MsgBoxStyle.Critical)
+            'MsgBox("Failed to establish database connection!", MsgBoxStyle.Critical)
+            generalConnectionWarning = "WALAY internet"
 
         End Try
-
     End Sub
 
 End Module

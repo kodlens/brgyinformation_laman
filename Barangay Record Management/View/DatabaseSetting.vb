@@ -15,8 +15,8 @@ Public Class frmDatabaseSetting
         Dim isClick As Boolean = True
 
         Try
-                conn.ConnectionString = "Server='" & txtServer.Text & "';Port='" & txtPort.Text & "';Database='" & txtDBName.Text & "';Uid='" & _txtUsername.Text & "';Pwd='" & txtPassword.Text & "'"
-                conn.Open()
+            conn.ConnectionString = "Server ='" & txtServer.Text & "'; Username ='" & _txtUsername.Text & "';Password ='" & txtPassword.Text & "'; Port ='" & txtPort.Text & "'; Database ='" & txtDBName.Text & "'"
+            conn.Open()
 
             If conn.State = ConnectionState.Open Then
                 labStatus.Text = "Successfully Connected"
@@ -61,12 +61,12 @@ Public Class frmDatabaseSetting
         IsTextboxDisabled(False)
         btnSave.Visible = False
         Me.Focus()
+
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
         With My.Settings
-
             .ServerAddress = txtServer.Text
             .ServerPort = txtPort.Text
             .DatabaseName = txtDBName.Text

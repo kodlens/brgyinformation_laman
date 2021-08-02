@@ -105,9 +105,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clearances.Designer.vb">
+      <DependentUpon>Clearances.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clearances.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\ControlNumberGenerator.vb" />
     <Compile Include="Controller\DbConnection.vb" />
     <Compile Include="Controller\FormOpeningController.vb" />
-    <Compile Include="Controller\ReportNumberController.vb" />
     <Compile Include="Data Process\DataInsert.vb" />
     <Compile Include="View\Add_Resident.Designer.vb">
       <DependentUpon>Add_Resident.vb</DependentUpon>
@@ -187,6 +193,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Clearances.resx">
+      <DependentUpon>Clearances.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

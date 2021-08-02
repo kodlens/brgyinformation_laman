@@ -47,10 +47,7 @@ Partial Class frmDashboard
         Me.btnTreasurer = New System.Windows.Forms.Button()
         Me.panelSecretary = New System.Windows.Forms.Panel()
         Me.btnSecReports = New System.Windows.Forms.Button()
-        Me.btnSession = New System.Windows.Forms.Button()
-        Me.btnOrdinance = New System.Windows.Forms.Button()
         Me.btnSummon = New System.Windows.Forms.Button()
-        Me.btnBlotter = New System.Windows.Forms.Button()
         Me.btnClearance = New System.Windows.Forms.Button()
         Me.btnIssuance = New System.Windows.Forms.Button()
         Me.btnResident = New System.Windows.Forms.Button()
@@ -65,6 +62,7 @@ Partial Class frmDashboard
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.formPanel = New System.Windows.Forms.Panel()
+        Me.btnSession = New System.Windows.Forms.Button()
         Me.sideMenuPanel.SuspendLayout()
         Me.panelKagawad.SuspendLayout()
         Me.panelBHW.SuspendLayout()
@@ -475,9 +473,7 @@ Partial Class frmDashboard
         '
         Me.panelSecretary.Controls.Add(Me.btnSecReports)
         Me.panelSecretary.Controls.Add(Me.btnSession)
-        Me.panelSecretary.Controls.Add(Me.btnOrdinance)
         Me.panelSecretary.Controls.Add(Me.btnSummon)
-        Me.panelSecretary.Controls.Add(Me.btnBlotter)
         Me.panelSecretary.Controls.Add(Me.btnClearance)
         Me.panelSecretary.Controls.Add(Me.btnIssuance)
         Me.panelSecretary.Controls.Add(Me.btnResident)
@@ -497,7 +493,7 @@ Partial Class frmDashboard
         Me.btnSecReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.btnSecReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSecReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSecReports.Location = New System.Drawing.Point(0, 280)
+        Me.btnSecReports.Location = New System.Drawing.Point(0, 200)
         Me.btnSecReports.Name = "btnSecReports"
         Me.btnSecReports.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnSecReports.Size = New System.Drawing.Size(183, 40)
@@ -505,44 +501,6 @@ Partial Class frmDashboard
         Me.btnSecReports.Text = "Reports"
         Me.btnSecReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSecReports.UseVisualStyleBackColor = False
-        '
-        'btnSession
-        '
-        Me.btnSession.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnSession.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSession.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSession.FlatAppearance.BorderSize = 0
-        Me.btnSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSession.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSession.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSession.Location = New System.Drawing.Point(0, 240)
-        Me.btnSession.Name = "btnSession"
-        Me.btnSession.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnSession.Size = New System.Drawing.Size(183, 40)
-        Me.btnSession.TabIndex = 9
-        Me.btnSession.Text = "Session"
-        Me.btnSession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSession.UseVisualStyleBackColor = False
-        '
-        'btnOrdinance
-        '
-        Me.btnOrdinance.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnOrdinance.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnOrdinance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnOrdinance.FlatAppearance.BorderSize = 0
-        Me.btnOrdinance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnOrdinance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnOrdinance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOrdinance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOrdinance.Location = New System.Drawing.Point(0, 200)
-        Me.btnOrdinance.Name = "btnOrdinance"
-        Me.btnOrdinance.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnOrdinance.Size = New System.Drawing.Size(183, 40)
-        Me.btnOrdinance.TabIndex = 8
-        Me.btnOrdinance.Text = "Ordinance"
-        Me.btnOrdinance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOrdinance.UseVisualStyleBackColor = False
         '
         'btnSummon
         '
@@ -554,7 +512,7 @@ Partial Class frmDashboard
         Me.btnSummon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.btnSummon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSummon.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSummon.Location = New System.Drawing.Point(0, 160)
+        Me.btnSummon.Location = New System.Drawing.Point(0, 120)
         Me.btnSummon.Name = "btnSummon"
         Me.btnSummon.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnSummon.Size = New System.Drawing.Size(183, 40)
@@ -562,25 +520,6 @@ Partial Class frmDashboard
         Me.btnSummon.Text = "Summon"
         Me.btnSummon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSummon.UseVisualStyleBackColor = False
-        '
-        'btnBlotter
-        '
-        Me.btnBlotter.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnBlotter.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBlotter.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBlotter.FlatAppearance.BorderSize = 0
-        Me.btnBlotter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBlotter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnBlotter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBlotter.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBlotter.Location = New System.Drawing.Point(0, 120)
-        Me.btnBlotter.Name = "btnBlotter"
-        Me.btnBlotter.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnBlotter.Size = New System.Drawing.Size(183, 40)
-        Me.btnBlotter.TabIndex = 6
-        Me.btnBlotter.Text = "Blotter"
-        Me.btnBlotter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBlotter.UseVisualStyleBackColor = False
         '
         'btnClearance
         '
@@ -597,7 +536,7 @@ Partial Class frmDashboard
         Me.btnClearance.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnClearance.Size = New System.Drawing.Size(183, 40)
         Me.btnClearance.TabIndex = 4
-        Me.btnClearance.Text = "Clearance"
+        Me.btnClearance.Text = "Certification"
         Me.btnClearance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnClearance.UseVisualStyleBackColor = False
         '
@@ -616,7 +555,7 @@ Partial Class frmDashboard
         Me.btnIssuance.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnIssuance.Size = New System.Drawing.Size(183, 40)
         Me.btnIssuance.TabIndex = 3
-        Me.btnIssuance.Text = "Issuance"
+        Me.btnIssuance.Text = "Clearance"
         Me.btnIssuance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnIssuance.UseVisualStyleBackColor = False
         '
@@ -690,11 +629,11 @@ Partial Class frmDashboard
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label3.Location = New System.Drawing.Point(33, 174)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(116, 20)
+        Me.Label3.Size = New System.Drawing.Size(103, 20)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Administrator"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -750,9 +689,9 @@ Partial Class frmDashboard
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label4.Location = New System.Drawing.Point(31, 26)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(333, 20)
+        Me.Label4.Size = New System.Drawing.Size(102, 20)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Barangay Record Mangement System [v1.0.1]"
+        Me.Label4.Text = "DocuCentral "
         '
         'Timer1
         '
@@ -763,6 +702,25 @@ Partial Class frmDashboard
         Me.formPanel.Name = "formPanel"
         Me.formPanel.Size = New System.Drawing.Size(1147, 668)
         Me.formPanel.TabIndex = 3
+        '
+        'btnSession
+        '
+        Me.btnSession.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnSession.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSession.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSession.FlatAppearance.BorderSize = 0
+        Me.btnSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSession.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSession.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSession.Location = New System.Drawing.Point(0, 160)
+        Me.btnSession.Name = "btnSession"
+        Me.btnSession.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnSession.Size = New System.Drawing.Size(183, 40)
+        Me.btnSession.TabIndex = 9
+        Me.btnSession.Text = "Kasabutan"
+        Me.btnSession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSession.UseVisualStyleBackColor = False
         '
         'frmDashboard
         '
@@ -822,14 +780,12 @@ Partial Class frmDashboard
     Friend WithEvents btnTreasurer As Button
     Friend WithEvents panelSecretary As Panel
     Friend WithEvents btnSecReports As Button
-    Friend WithEvents btnSession As Button
-    Friend WithEvents btnOrdinance As Button
     Friend WithEvents btnSummon As Button
-    Friend WithEvents btnBlotter As Button
     Friend WithEvents btnClearance As Button
     Friend WithEvents btnIssuance As Button
     Friend WithEvents btnResident As Button
     Friend WithEvents btnOptions As Button
     Friend WithEvents btnKagawadReports As Button
     Friend WithEvents formPanel As Panel
+    Friend WithEvents btnSession As Button
 End Class

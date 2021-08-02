@@ -1,13 +1,29 @@
-﻿Public Class frmDashboard
+﻿Imports MySql.Data.MySqlClient
+Public Class frmDashboard
 
     Private Sub frmAdministrator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+
         Timer1.Start()
         labDate.Text = Date.Now.ToString("MMMM d, yyyy")
         HidePanels()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
         labTime.Text = Date.Now.ToString("hh:mm:ss tt")
+
+
+        CreateDbConnection()
+            If ConnectionState.Open Then
+            Label4.Text = "ONLINE"
+        Else
+            Label4.Text = generalConnectionWarning
+        End If
+
+
     End Sub
 
     Private Sub PanelVisibility()
@@ -56,7 +72,7 @@
     End Sub
 
     Private Sub btnCertification_Click(sender As Object, e As EventArgs) Handles btnIssuance.Click
-        insertNewForm(New frmCertification)
+        insertNewForm(New Clearances)
 
         HidePanels()
     End Sub
@@ -73,8 +89,8 @@
         HidePanels()
     End Sub
 
-    Private Sub btnBlotter_Click(sender As Object, e As EventArgs) Handles btnBlotter.Click
-        insertNewForm(New frmBlotterlist)
+    Private Sub btnBlotter_Click(sender As Object, e As EventArgs)
+        insertNewForm(New frmBlotterList)
 
         HidePanels()
     End Sub
@@ -85,7 +101,7 @@
         HidePanels()
     End Sub
 
-    Private Sub btnOrdinance_Click(sender As Object, e As EventArgs) Handles btnOrdinance.Click
+    Private Sub btnOrdinance_Click(sender As Object, e As EventArgs)
         ''code here
 
         HidePanels()
