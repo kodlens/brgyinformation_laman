@@ -3,25 +3,13 @@ Public Class frmDashboard
 
     Private Sub frmAdministrator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-
-
         Timer1.Start()
         labDate.Text = Date.Now.ToString("MMMM d, yyyy")
         HidePanels()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-
         labTime.Text = Date.Now.ToString("hh:mm:ss tt")
-
-
-        CreateDbConnection()
-            If ConnectionState.Open Then
-            Label4.Text = "ONLINE"
-        Else
-            Label4.Text = generalConnectionWarning
-        End If
 
 
     End Sub
@@ -222,4 +210,5 @@ Public Class frmDashboard
         insertNewForm(New frmOptions)
         HidePanels()
     End Sub
+
 End Class

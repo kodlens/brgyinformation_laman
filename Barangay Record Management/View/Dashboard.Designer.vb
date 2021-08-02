@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmDashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
@@ -47,6 +47,7 @@ Partial Class frmDashboard
         Me.btnTreasurer = New System.Windows.Forms.Button()
         Me.panelSecretary = New System.Windows.Forms.Panel()
         Me.btnSecReports = New System.Windows.Forms.Button()
+        Me.btnSession = New System.Windows.Forms.Button()
         Me.btnSummon = New System.Windows.Forms.Button()
         Me.btnClearance = New System.Windows.Forms.Button()
         Me.btnIssuance = New System.Windows.Forms.Button()
@@ -62,7 +63,6 @@ Partial Class frmDashboard
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.formPanel = New System.Windows.Forms.Panel()
-        Me.btnSession = New System.Windows.Forms.Button()
         Me.sideMenuPanel.SuspendLayout()
         Me.panelKagawad.SuspendLayout()
         Me.panelBHW.SuspendLayout()
@@ -502,6 +502,25 @@ Partial Class frmDashboard
         Me.btnSecReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSecReports.UseVisualStyleBackColor = False
         '
+        'btnSession
+        '
+        Me.btnSession.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnSession.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSession.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSession.FlatAppearance.BorderSize = 0
+        Me.btnSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSession.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSession.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSession.Location = New System.Drawing.Point(0, 160)
+        Me.btnSession.Name = "btnSession"
+        Me.btnSession.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnSession.Size = New System.Drawing.Size(183, 40)
+        Me.btnSession.TabIndex = 9
+        Me.btnSession.Text = "Kasabutan"
+        Me.btnSession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSession.UseVisualStyleBackColor = False
+        '
         'btnSummon
         '
         Me.btnSummon.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -702,25 +721,6 @@ Partial Class frmDashboard
         Me.formPanel.Name = "formPanel"
         Me.formPanel.Size = New System.Drawing.Size(1147, 668)
         Me.formPanel.TabIndex = 3
-        '
-        'btnSession
-        '
-        Me.btnSession.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnSession.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSession.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSession.FlatAppearance.BorderSize = 0
-        Me.btnSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSession.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSession.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSession.Location = New System.Drawing.Point(0, 160)
-        Me.btnSession.Name = "btnSession"
-        Me.btnSession.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnSession.Size = New System.Drawing.Size(183, 40)
-        Me.btnSession.TabIndex = 9
-        Me.btnSession.Text = "Kasabutan"
-        Me.btnSession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSession.UseVisualStyleBackColor = False
         '
         'frmDashboard
         '

@@ -105,10 +105,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clearances.Designer.vb">
+    <Compile Include="View\Clearances.Designer.vb">
       <DependentUpon>Clearances.vb</DependentUpon>
     </Compile>
-    <Compile Include="Clearances.vb">
+    <Compile Include="View\Clearances.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controller\ControlNumberGenerator.vb" />
@@ -193,7 +193,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Clearances.resx">
+    <EmbeddedResource Include="View\Clearances.resx">
       <DependentUpon>Clearances.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

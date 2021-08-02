@@ -21,4 +21,7 @@
 
     End Sub
 
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        CreateDbConnection()
+    End Sub
 End Class

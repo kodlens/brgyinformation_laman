@@ -1,17 +1,18 @@
 ﻿Public Class frmResidentProfile
-    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs)
-
+    Private Sub btnNext1_Click(sender As Object, e As EventArgs) Handles btnNext1.Click
+        TabControl1.SelectedTab = tabAdditionalInfo
     End Sub
 
-    Private Sub closeButton_Click(sender As Object, e As EventArgs) Handles closeButton.Click
+    Private Sub btnBack1_Click(sender As Object, e As EventArgs) Handles btnBack1.Click
+        TabControl1.SelectedTab = tabProfile
+    End Sub
+
+    Private Sub tbnNext2_Click(sender As Object, e As EventArgs) Handles tbnNext2.Click
+        TabControl1.SelectedTab = tabFamilyMembers
+    End Sub
+
+    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
         Me.Close()
-    End Sub
-
-    Private Sub Label20_Click(sender As Object, e As EventArgs) Handles Label20.Click
-
-    End Sub
-
-    Private Sub ComboBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbRegisteredVoter.SelectedIndexChanged
 
     End Sub
 End Class
