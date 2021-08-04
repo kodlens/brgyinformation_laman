@@ -633,10 +633,10 @@ Partial Class frmDashboard
         '
         'btnLogout
         '
-        Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnLogout.BackColor = System.Drawing.Color.Tomato
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSalmon
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogout.Location = New System.Drawing.Point(36, 206)
         Me.btnLogout.Name = "btnLogout"
@@ -669,46 +669,48 @@ Partial Class frmDashboard
         '
         'labTime
         '
+        Me.labTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labTime.AutoSize = True
-        Me.labTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labTime.ForeColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.labTime.Location = New System.Drawing.Point(972, 21)
+        Me.labTime.Font = New System.Drawing.Font("Microsoft YaHei UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labTime.ForeColor = System.Drawing.SystemColors.Window
+        Me.labTime.Location = New System.Drawing.Point(972, 14)
         Me.labTime.Name = "labTime"
-        Me.labTime.Size = New System.Drawing.Size(167, 31)
+        Me.labTime.Size = New System.Drawing.Size(155, 31)
         Me.labTime.TabIndex = 2
         Me.labTime.Text = "10:59:27 PM"
         '
         'labDate
         '
+        Me.labDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labDate.AutoSize = True
-        Me.labDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.labDate.Location = New System.Drawing.Point(714, 21)
+        Me.labDate.Font = New System.Drawing.Font("Microsoft YaHei UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDate.ForeColor = System.Drawing.SystemColors.Window
+        Me.labDate.Location = New System.Drawing.Point(714, 14)
         Me.labDate.Name = "labDate"
-        Me.labDate.Size = New System.Drawing.Size(236, 31)
+        Me.labDate.Size = New System.Drawing.Size(222, 31)
         Me.labDate.TabIndex = 1
         Me.labDate.Text = "December 2, 2020"
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.Panel2.BackColor = System.Drawing.Color.Tomato
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.labDate)
         Me.Panel2.Controls.Add(Me.labTime)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(200, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1166, 77)
+        Me.Panel2.Size = New System.Drawing.Size(1166, 60)
         Me.Panel2.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(31, 26)
+        Me.Label4.Location = New System.Drawing.Point(24, 14)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(102, 20)
+        Me.Label4.Size = New System.Drawing.Size(171, 31)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "DocuCentral "
         '
@@ -717,9 +719,9 @@ Partial Class frmDashboard
         '
         'formPanel
         '
-        Me.formPanel.Location = New System.Drawing.Point(208, 88)
+        Me.formPanel.Location = New System.Drawing.Point(208, 66)
         Me.formPanel.Name = "formPanel"
-        Me.formPanel.Size = New System.Drawing.Size(1147, 668)
+        Me.formPanel.Size = New System.Drawing.Size(1146, 690)
         Me.formPanel.TabIndex = 3
         '
         'frmDashboard

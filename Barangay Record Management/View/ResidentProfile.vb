@@ -15,4 +15,38 @@
         Me.Close()
 
     End Sub
+
+    Private Sub dtHBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtHBirthdate.ValueChanged
+        Dim birthYear As Integer
+        Dim currentAge As Integer
+        Dim currentYear As Integer = Now.Year
+        birthYear = dtHBirthdate.Value.Year
+
+        currentAge = currentYear - birthYear
+
+        If dtHBirthdate.Value.Month > Date.Now.Month Then
+            txtHAge.Text = CStr(currentAge - 1)
+        Else
+            txtHAge.Text = CStr(currentAge)
+        End If
+
+    End Sub
+
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        If TabControl1.SelectedTab.Name = "tabProfile" Then
+            txtHSerialNumber.Focus()
+            rbHead.Checked = True
+        ElseIf TabControl1.SelectedTab.Name = "tabAdditionalInfo" Then
+            txtContactNumber.Focus()
+
+
+
+        End If
+    End Sub
+
+    Private Sub frmResidentProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtHSerialNumber.Focus()
+        rbHead.Checked = True
+    End Sub
+
 End Class
