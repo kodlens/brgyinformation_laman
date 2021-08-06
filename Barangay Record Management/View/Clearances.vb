@@ -4,24 +4,16 @@
 
     End Sub
 
-    Private Sub cbClearanceType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbClearanceType.SelectedIndexChanged
-
-        If cbClearanceType.SelectedIndex = 0 Then
-            panelResident.Show()
-            txtSearchResident.Focus()
-            btnPreview.Enabled = False
-            labHeader.Text = "Barangay Clearance"
-            txtControlNumber.Text = ResidentClearanceControlNumber()
-        End If
-
-    End Sub
-
     Private Sub Clearances_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        panelResident.Hide()
+
+        txtSearchResident.Focus()
+        btnPreview.Enabled = False
+        frmDashboard.GeneralHeading.Text = "Barangay Clearance"
+        txtControlNumber.Text = ResidentClearanceControlNumber()
 
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs)
         CreateDbConnection()
     End Sub
 End Class

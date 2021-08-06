@@ -17,29 +17,19 @@
     End Sub
 
     Private Sub dtHBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtHBirthdate.ValueChanged
-        Dim birthYear As Integer
-        Dim currentAge As Integer
-        Dim currentYear As Integer = Now.Year
-        birthYear = dtHBirthdate.Value.Year
-
-        currentAge = currentYear - birthYear
-
-        If dtHBirthdate.Value.Month > Date.Now.Month Then
-            txtHAge.Text = CStr(currentAge - 1)
-        Else
-            txtHAge.Text = CStr(currentAge)
-        End If
+        ageCalculator(dtHBirthdate, txtHAge)
 
     End Sub
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+
         If TabControl1.SelectedTab.Name = "tabProfile" Then
             txtHSerialNumber.Focus()
             rbHead.Checked = True
         ElseIf TabControl1.SelectedTab.Name = "tabAdditionalInfo" Then
             txtContactNumber.Focus()
-
-
+        ElseIf TabControl1.SelectedTab.Name = "tabFamilyMembers" Then
+            txtFFirstName.Focus()
 
         End If
     End Sub
@@ -47,6 +37,26 @@
     Private Sub frmResidentProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtHSerialNumber.Focus()
         rbHead.Checked = True
+        frmDashboard.GeneralHeading.Text = "Resident Profile"
+    End Sub
+    Private Sub ageCalculator(ByVal dtPicker As DateTimePicker, ByVal ageBox As TextBox)
+
+        Dim birthYear As Integer
+        Dim currentAge As Integer
+        Dim currentYear As Integer = Now.Year
+        birthYear = dtPicker.Value.Year
+
+        currentAge = currentYear - birthYear
+
+        If dtPicker.Value.Month > Date.Now.Month Then
+            ageBox.Text = CStr(currentAge - 1)
+        Else
+            ageBox.Text = CStr(currentAge)
+        End If
+
     End Sub
 
+    Private Sub dtFBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtFBirthdate.ValueChanged
+        ageCalculator(dtFBirthdate, txtFAge)
+    End Sub
 End Class

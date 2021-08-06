@@ -145,6 +145,7 @@ C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management
 C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.exe
 C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.xml
 C:\Users\Kemmy\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.pdb
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.exe.config
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.exe
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.pdb
@@ -166,7 +167,6 @@ C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Manageme
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\EnvDTE.dll
@@ -183,8 +183,22 @@ C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Manageme
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.MSXML.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
-C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.vbprojAssemblyReference.cache
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\de\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\es\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\fr\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\it\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\pt-BR\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\ru\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\tr\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\de\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\fr\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\it\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\pt-BR\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\ru\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\tr\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.exe.config
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.Clearances.resources
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.Resources.resources
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmAdd_Resident.resources
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.frmAddBlotter.resources
@@ -201,4 +215,4 @@ C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Manageme
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.exe
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.xml
 C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.pdb
-C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay_Record_Management.Clearances.resources
+C:\Users\Oranges\Documents\GitHub\brgyinformation_laman\Barangay Record Management\obj\Debug\Barangay Record Management.vbprojAssemblyReference.cache

@@ -26,51 +26,56 @@ Partial Class frmDashboard
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
         Me.sideMenuPanel = New System.Windows.Forms.Panel()
         Me.btnOptions = New System.Windows.Forms.Button()
-        Me.panelKagawad = New System.Windows.Forms.Panel()
-        Me.btnKagawadReports = New System.Windows.Forms.Button()
-        Me.btnWomens = New System.Windows.Forms.Button()
-        Me.btnSenior = New System.Windows.Forms.Button()
-        Me.btnLivelihood = New System.Windows.Forms.Button()
-        Me.btnOSY = New System.Windows.Forms.Button()
-        Me.btnBrgyOfficial = New System.Windows.Forms.Button()
         Me.panelBHW = New System.Windows.Forms.Panel()
         Me.btnBHWReports = New System.Windows.Forms.Button()
-        Me.btnDiseases = New System.Windows.Forms.Button()
-        Me.btnHealthcare = New System.Windows.Forms.Button()
+        Me.btnImmunize = New System.Windows.Forms.Button()
+        Me.btnPreNatal = New System.Windows.Forms.Button()
         Me.btnCencus = New System.Windows.Forms.Button()
         Me.btnInventory = New System.Windows.Forms.Button()
         Me.btnBHW = New System.Windows.Forms.Button()
         Me.panelTreasurer = New System.Windows.Forms.Panel()
-        Me.btnTreasReports = New System.Windows.Forms.Button()
+        Me.btnDisbursement = New System.Windows.Forms.Button()
         Me.btnCashflow = New System.Windows.Forms.Button()
         Me.btnTreasCedula = New System.Windows.Forms.Button()
         Me.btnTreasurer = New System.Windows.Forms.Button()
         Me.panelSecretary = New System.Windows.Forms.Panel()
-        Me.btnSecReports = New System.Windows.Forms.Button()
-        Me.btnSession = New System.Windows.Forms.Button()
-        Me.btnSummon = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.panelSubCertification = New System.Windows.Forms.Panel()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnCertification = New System.Windows.Forms.Button()
+        Me.panelSubClearance = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnResidentClearance = New System.Windows.Forms.Button()
         Me.btnClearance = New System.Windows.Forms.Button()
-        Me.btnIssuance = New System.Windows.Forms.Button()
         Me.btnResident = New System.Windows.Forms.Button()
         Me.btnSecretary = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnLogout = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.labTime = New System.Windows.Forms.Label()
         Me.labDate = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GeneralHeading = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.formPanel = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.btnTreasReport = New System.Windows.Forms.Button()
         Me.sideMenuPanel.SuspendLayout()
-        Me.panelKagawad.SuspendLayout()
         Me.panelBHW.SuspendLayout()
         Me.panelTreasurer.SuspendLayout()
         Me.panelSecretary.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelSubCertification.SuspendLayout()
+        Me.panelSubClearance.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'sideMenuPanel
@@ -78,8 +83,6 @@ Partial Class frmDashboard
         Me.sideMenuPanel.AutoScroll = True
         Me.sideMenuPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.sideMenuPanel.Controls.Add(Me.btnOptions)
-        Me.sideMenuPanel.Controls.Add(Me.panelKagawad)
-        Me.sideMenuPanel.Controls.Add(Me.btnBrgyOfficial)
         Me.sideMenuPanel.Controls.Add(Me.panelBHW)
         Me.sideMenuPanel.Controls.Add(Me.btnBHW)
         Me.sideMenuPanel.Controls.Add(Me.panelTreasurer)
@@ -90,7 +93,7 @@ Partial Class frmDashboard
         Me.sideMenuPanel.Dock = System.Windows.Forms.DockStyle.Left
         Me.sideMenuPanel.Location = New System.Drawing.Point(0, 0)
         Me.sideMenuPanel.Name = "sideMenuPanel"
-        Me.sideMenuPanel.Size = New System.Drawing.Size(200, 768)
+        Me.sideMenuPanel.Size = New System.Drawing.Size(200, 769)
         Me.sideMenuPanel.TabIndex = 0
         '
         'btnOptions
@@ -106,7 +109,7 @@ Partial Class frmDashboard
         Me.btnOptions.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnOptions.Image = CType(resources.GetObject("btnOptions.Image"), System.Drawing.Image)
         Me.btnOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOptions.Location = New System.Drawing.Point(0, 1324)
+        Me.btnOptions.Location = New System.Drawing.Point(0, 1351)
         Me.btnOptions.Name = "btnOptions"
         Me.btnOptions.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnOptions.Size = New System.Drawing.Size(183, 50)
@@ -116,146 +119,15 @@ Partial Class frmDashboard
         Me.btnOptions.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnOptions.UseVisualStyleBackColor = False
         '
-        'panelKagawad
-        '
-        Me.panelKagawad.Controls.Add(Me.btnKagawadReports)
-        Me.panelKagawad.Controls.Add(Me.btnWomens)
-        Me.panelKagawad.Controls.Add(Me.btnSenior)
-        Me.panelKagawad.Controls.Add(Me.btnLivelihood)
-        Me.panelKagawad.Controls.Add(Me.btnOSY)
-        Me.panelKagawad.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelKagawad.Location = New System.Drawing.Point(0, 1122)
-        Me.panelKagawad.Name = "panelKagawad"
-        Me.panelKagawad.Size = New System.Drawing.Size(183, 202)
-        Me.panelKagawad.TabIndex = 2
-        '
-        'btnKagawadReports
-        '
-        Me.btnKagawadReports.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnKagawadReports.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnKagawadReports.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnKagawadReports.FlatAppearance.BorderSize = 0
-        Me.btnKagawadReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnKagawadReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnKagawadReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnKagawadReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKagawadReports.Location = New System.Drawing.Point(0, 160)
-        Me.btnKagawadReports.Name = "btnKagawadReports"
-        Me.btnKagawadReports.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnKagawadReports.Size = New System.Drawing.Size(183, 40)
-        Me.btnKagawadReports.TabIndex = 4
-        Me.btnKagawadReports.Text = "Reports"
-        Me.btnKagawadReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnKagawadReports.UseVisualStyleBackColor = False
-        '
-        'btnWomens
-        '
-        Me.btnWomens.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnWomens.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnWomens.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnWomens.FlatAppearance.BorderSize = 0
-        Me.btnWomens.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnWomens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnWomens.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnWomens.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnWomens.Location = New System.Drawing.Point(0, 120)
-        Me.btnWomens.Name = "btnWomens"
-        Me.btnWomens.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnWomens.Size = New System.Drawing.Size(183, 40)
-        Me.btnWomens.TabIndex = 3
-        Me.btnWomens.Text = "Womens Association"
-        Me.btnWomens.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnWomens.UseVisualStyleBackColor = False
-        '
-        'btnSenior
-        '
-        Me.btnSenior.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnSenior.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSenior.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSenior.FlatAppearance.BorderSize = 0
-        Me.btnSenior.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSenior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnSenior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSenior.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSenior.Location = New System.Drawing.Point(0, 80)
-        Me.btnSenior.Name = "btnSenior"
-        Me.btnSenior.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnSenior.Size = New System.Drawing.Size(183, 40)
-        Me.btnSenior.TabIndex = 2
-        Me.btnSenior.Text = "Senior Citizen"
-        Me.btnSenior.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSenior.UseVisualStyleBackColor = False
-        '
-        'btnLivelihood
-        '
-        Me.btnLivelihood.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnLivelihood.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLivelihood.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnLivelihood.FlatAppearance.BorderSize = 0
-        Me.btnLivelihood.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnLivelihood.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnLivelihood.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLivelihood.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLivelihood.Location = New System.Drawing.Point(0, 40)
-        Me.btnLivelihood.Name = "btnLivelihood"
-        Me.btnLivelihood.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnLivelihood.Size = New System.Drawing.Size(183, 40)
-        Me.btnLivelihood.TabIndex = 1
-        Me.btnLivelihood.Text = "Livelihood"
-        Me.btnLivelihood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLivelihood.UseVisualStyleBackColor = False
-        '
-        'btnOSY
-        '
-        Me.btnOSY.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnOSY.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnOSY.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnOSY.FlatAppearance.BorderSize = 0
-        Me.btnOSY.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnOSY.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnOSY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOSY.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOSY.Location = New System.Drawing.Point(0, 0)
-        Me.btnOSY.Name = "btnOSY"
-        Me.btnOSY.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnOSY.Size = New System.Drawing.Size(183, 40)
-        Me.btnOSY.TabIndex = 0
-        Me.btnOSY.Text = "Out Of School Youth"
-        Me.btnOSY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOSY.UseVisualStyleBackColor = False
-        '
-        'btnBrgyOfficial
-        '
-        Me.btnBrgyOfficial.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.btnBrgyOfficial.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBrgyOfficial.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBrgyOfficial.FlatAppearance.BorderSize = 0
-        Me.btnBrgyOfficial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBrgyOfficial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnBrgyOfficial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBrgyOfficial.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBrgyOfficial.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBrgyOfficial.Image = CType(resources.GetObject("btnBrgyOfficial.Image"), System.Drawing.Image)
-        Me.btnBrgyOfficial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBrgyOfficial.Location = New System.Drawing.Point(0, 1072)
-        Me.btnBrgyOfficial.Name = "btnBrgyOfficial"
-        Me.btnBrgyOfficial.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnBrgyOfficial.Size = New System.Drawing.Size(183, 50)
-        Me.btnBrgyOfficial.TabIndex = 8
-        Me.btnBrgyOfficial.Text = "   Brgy Official"
-        Me.btnBrgyOfficial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBrgyOfficial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBrgyOfficial.UseVisualStyleBackColor = False
-        '
         'panelBHW
         '
         Me.panelBHW.Controls.Add(Me.btnBHWReports)
-        Me.panelBHW.Controls.Add(Me.btnDiseases)
-        Me.panelBHW.Controls.Add(Me.btnHealthcare)
+        Me.panelBHW.Controls.Add(Me.btnImmunize)
+        Me.panelBHW.Controls.Add(Me.btnPreNatal)
         Me.panelBHW.Controls.Add(Me.btnCencus)
         Me.panelBHW.Controls.Add(Me.btnInventory)
         Me.panelBHW.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelBHW.Location = New System.Drawing.Point(0, 870)
+        Me.panelBHW.Location = New System.Drawing.Point(0, 1149)
         Me.panelBHW.Name = "panelBHW"
         Me.panelBHW.Size = New System.Drawing.Size(183, 202)
         Me.panelBHW.TabIndex = 6
@@ -279,43 +151,43 @@ Partial Class frmDashboard
         Me.btnBHWReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBHWReports.UseVisualStyleBackColor = False
         '
-        'btnDiseases
+        'btnImmunize
         '
-        Me.btnDiseases.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnDiseases.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDiseases.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDiseases.FlatAppearance.BorderSize = 0
-        Me.btnDiseases.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDiseases.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnDiseases.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDiseases.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDiseases.Location = New System.Drawing.Point(0, 120)
-        Me.btnDiseases.Name = "btnDiseases"
-        Me.btnDiseases.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnDiseases.Size = New System.Drawing.Size(183, 40)
-        Me.btnDiseases.TabIndex = 3
-        Me.btnDiseases.Text = "Diseases"
-        Me.btnDiseases.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDiseases.UseVisualStyleBackColor = False
+        Me.btnImmunize.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnImmunize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnImmunize.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnImmunize.FlatAppearance.BorderSize = 0
+        Me.btnImmunize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnImmunize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnImmunize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImmunize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImmunize.Location = New System.Drawing.Point(0, 120)
+        Me.btnImmunize.Name = "btnImmunize"
+        Me.btnImmunize.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnImmunize.Size = New System.Drawing.Size(183, 40)
+        Me.btnImmunize.TabIndex = 3
+        Me.btnImmunize.Text = "Immunization"
+        Me.btnImmunize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImmunize.UseVisualStyleBackColor = False
         '
-        'btnHealthcare
+        'btnPreNatal
         '
-        Me.btnHealthcare.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnHealthcare.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnHealthcare.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnHealthcare.FlatAppearance.BorderSize = 0
-        Me.btnHealthcare.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnHealthcare.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnHealthcare.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHealthcare.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHealthcare.Location = New System.Drawing.Point(0, 80)
-        Me.btnHealthcare.Name = "btnHealthcare"
-        Me.btnHealthcare.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnHealthcare.Size = New System.Drawing.Size(183, 40)
-        Me.btnHealthcare.TabIndex = 2
-        Me.btnHealthcare.Text = "Healthcare"
-        Me.btnHealthcare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHealthcare.UseVisualStyleBackColor = False
+        Me.btnPreNatal.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnPreNatal.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPreNatal.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnPreNatal.FlatAppearance.BorderSize = 0
+        Me.btnPreNatal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnPreNatal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnPreNatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPreNatal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPreNatal.Location = New System.Drawing.Point(0, 80)
+        Me.btnPreNatal.Name = "btnPreNatal"
+        Me.btnPreNatal.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnPreNatal.Size = New System.Drawing.Size(183, 40)
+        Me.btnPreNatal.TabIndex = 2
+        Me.btnPreNatal.Text = "Pre Natal"
+        Me.btnPreNatal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPreNatal.UseVisualStyleBackColor = False
         '
         'btnCencus
         '
@@ -368,7 +240,7 @@ Partial Class frmDashboard
         Me.btnBHW.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnBHW.Image = CType(resources.GetObject("btnBHW.Image"), System.Drawing.Image)
         Me.btnBHW.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBHW.Location = New System.Drawing.Point(0, 820)
+        Me.btnBHW.Location = New System.Drawing.Point(0, 1099)
         Me.btnBHW.Name = "btnBHW"
         Me.btnBHW.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnBHW.Size = New System.Drawing.Size(183, 50)
@@ -380,33 +252,34 @@ Partial Class frmDashboard
         '
         'panelTreasurer
         '
-        Me.panelTreasurer.Controls.Add(Me.btnTreasReports)
+        Me.panelTreasurer.Controls.Add(Me.btnTreasReport)
+        Me.panelTreasurer.Controls.Add(Me.btnDisbursement)
         Me.panelTreasurer.Controls.Add(Me.btnCashflow)
         Me.panelTreasurer.Controls.Add(Me.btnTreasCedula)
         Me.panelTreasurer.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTreasurer.Location = New System.Drawing.Point(0, 698)
+        Me.panelTreasurer.Location = New System.Drawing.Point(0, 936)
         Me.panelTreasurer.Name = "panelTreasurer"
-        Me.panelTreasurer.Size = New System.Drawing.Size(183, 122)
+        Me.panelTreasurer.Size = New System.Drawing.Size(183, 163)
         Me.panelTreasurer.TabIndex = 4
         '
-        'btnTreasReports
+        'btnDisbursement
         '
-        Me.btnTreasReports.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnTreasReports.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTreasReports.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnTreasReports.FlatAppearance.BorderSize = 0
-        Me.btnTreasReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnTreasReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnTreasReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTreasReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTreasReports.Location = New System.Drawing.Point(0, 80)
-        Me.btnTreasReports.Name = "btnTreasReports"
-        Me.btnTreasReports.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnTreasReports.Size = New System.Drawing.Size(183, 40)
-        Me.btnTreasReports.TabIndex = 2
-        Me.btnTreasReports.Text = "Reports"
-        Me.btnTreasReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTreasReports.UseVisualStyleBackColor = False
+        Me.btnDisbursement.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnDisbursement.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDisbursement.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDisbursement.FlatAppearance.BorderSize = 0
+        Me.btnDisbursement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDisbursement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnDisbursement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDisbursement.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisbursement.Location = New System.Drawing.Point(0, 80)
+        Me.btnDisbursement.Name = "btnDisbursement"
+        Me.btnDisbursement.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnDisbursement.Size = New System.Drawing.Size(183, 40)
+        Me.btnDisbursement.TabIndex = 2
+        Me.btnDisbursement.Text = "Disbursement"
+        Me.btnDisbursement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDisbursement.UseVisualStyleBackColor = False
         '
         'btnCashflow
         '
@@ -459,7 +332,7 @@ Partial Class frmDashboard
         Me.btnTreasurer.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnTreasurer.Image = CType(resources.GetObject("btnTreasurer.Image"), System.Drawing.Image)
         Me.btnTreasurer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTreasurer.Location = New System.Drawing.Point(0, 648)
+        Me.btnTreasurer.Location = New System.Drawing.Point(0, 886)
         Me.btnTreasurer.Name = "btnTreasurer"
         Me.btnTreasurer.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnTreasurer.Size = New System.Drawing.Size(183, 50)
@@ -471,74 +344,287 @@ Partial Class frmDashboard
         '
         'panelSecretary
         '
-        Me.panelSecretary.Controls.Add(Me.btnSecReports)
-        Me.panelSecretary.Controls.Add(Me.btnSession)
-        Me.panelSecretary.Controls.Add(Me.btnSummon)
+        Me.panelSecretary.AutoScroll = True
+        Me.panelSecretary.AutoSize = True
+        Me.panelSecretary.Controls.Add(Me.Button11)
+        Me.panelSecretary.Controls.Add(Me.Button10)
+        Me.panelSecretary.Controls.Add(Me.Button9)
+        Me.panelSecretary.Controls.Add(Me.panelSubCertification)
+        Me.panelSecretary.Controls.Add(Me.btnCertification)
+        Me.panelSecretary.Controls.Add(Me.panelSubClearance)
         Me.panelSecretary.Controls.Add(Me.btnClearance)
-        Me.panelSecretary.Controls.Add(Me.btnIssuance)
         Me.panelSecretary.Controls.Add(Me.btnResident)
         Me.panelSecretary.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelSecretary.Location = New System.Drawing.Point(0, 326)
         Me.panelSecretary.Name = "panelSecretary"
-        Me.panelSecretary.Size = New System.Drawing.Size(183, 322)
+        Me.panelSecretary.Size = New System.Drawing.Size(183, 560)
         Me.panelSecretary.TabIndex = 2
         '
-        'btnSecReports
+        'Button11
         '
-        Me.btnSecReports.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnSecReports.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSecReports.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSecReports.FlatAppearance.BorderSize = 0
-        Me.btnSecReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSecReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnSecReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSecReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSecReports.Location = New System.Drawing.Point(0, 200)
-        Me.btnSecReports.Name = "btnSecReports"
-        Me.btnSecReports.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnSecReports.Size = New System.Drawing.Size(183, 40)
-        Me.btnSecReports.TabIndex = 10
-        Me.btnSecReports.Text = "Reports"
-        Me.btnSecReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSecReports.UseVisualStyleBackColor = False
+        Me.Button11.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Button11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button11.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button11.FlatAppearance.BorderSize = 0
+        Me.Button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button11.Location = New System.Drawing.Point(0, 520)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button11.Size = New System.Drawing.Size(183, 40)
+        Me.Button11.TabIndex = 16
+        Me.Button11.Text = "Reports"
+        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button11.UseVisualStyleBackColor = False
         '
-        'btnSession
+        'Button10
         '
-        Me.btnSession.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnSession.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSession.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSession.FlatAppearance.BorderSize = 0
-        Me.btnSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSession.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSession.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSession.Location = New System.Drawing.Point(0, 160)
-        Me.btnSession.Name = "btnSession"
-        Me.btnSession.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnSession.Size = New System.Drawing.Size(183, 40)
-        Me.btnSession.TabIndex = 9
-        Me.btnSession.Text = "Kasabutan"
-        Me.btnSession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSession.UseVisualStyleBackColor = False
+        Me.Button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Button10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button10.FlatAppearance.BorderSize = 0
+        Me.Button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.Location = New System.Drawing.Point(0, 480)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button10.Size = New System.Drawing.Size(183, 40)
+        Me.Button10.TabIndex = 15
+        Me.Button10.Text = "Kasabotan"
+        Me.Button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button10.UseVisualStyleBackColor = False
         '
-        'btnSummon
+        'Button9
         '
-        Me.btnSummon.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnSummon.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSummon.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSummon.FlatAppearance.BorderSize = 0
-        Me.btnSummon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSummon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnSummon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSummon.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSummon.Location = New System.Drawing.Point(0, 120)
-        Me.btnSummon.Name = "btnSummon"
-        Me.btnSummon.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnSummon.Size = New System.Drawing.Size(183, 40)
-        Me.btnSummon.TabIndex = 7
-        Me.btnSummon.Text = "Summon"
-        Me.btnSummon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSummon.UseVisualStyleBackColor = False
+        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Location = New System.Drawing.Point(0, 440)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button9.Size = New System.Drawing.Size(183, 40)
+        Me.Button9.TabIndex = 14
+        Me.Button9.Text = "Summon"
+        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'panelSubCertification
+        '
+        Me.panelSubCertification.AutoSize = True
+        Me.panelSubCertification.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.panelSubCertification.BackColor = System.Drawing.Color.DarkSeaGreen
+        Me.panelSubCertification.Controls.Add(Me.Button8)
+        Me.panelSubCertification.Controls.Add(Me.Button7)
+        Me.panelSubCertification.Controls.Add(Me.Button6)
+        Me.panelSubCertification.Controls.Add(Me.Button5)
+        Me.panelSubCertification.Controls.Add(Me.Button4)
+        Me.panelSubCertification.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelSubCertification.Location = New System.Drawing.Point(0, 240)
+        Me.panelSubCertification.Name = "panelSubCertification"
+        Me.panelSubCertification.Size = New System.Drawing.Size(183, 200)
+        Me.panelSubCertification.TabIndex = 13
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button8.FlatAppearance.BorderSize = 0
+        Me.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.Button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button8.Location = New System.Drawing.Point(0, 160)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Padding = New System.Windows.Forms.Padding(45, 0, 0, 0)
+        Me.Button8.Size = New System.Drawing.Size(183, 40)
+        Me.Button8.TabIndex = 18
+        Me.Button8.Text = "General Cert"
+        Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button7.FlatAppearance.BorderSize = 0
+        Me.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.Button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button7.Location = New System.Drawing.Point(0, 120)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Padding = New System.Windows.Forms.Padding(45, 0, 0, 0)
+        Me.Button7.Size = New System.Drawing.Size(183, 40)
+        Me.Button7.TabIndex = 17
+        Me.Button7.Text = "PUI/PUM"
+        Me.Button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button6.Location = New System.Drawing.Point(0, 80)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Padding = New System.Windows.Forms.Padding(45, 0, 0, 0)
+        Me.Button6.Size = New System.Drawing.Size(183, 40)
+        Me.Button6.TabIndex = 16
+        Me.Button6.Text = "Incident Cert."
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button5.Location = New System.Drawing.Point(0, 40)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Padding = New System.Windows.Forms.Padding(45, 0, 0, 0)
+        Me.Button5.Size = New System.Drawing.Size(183, 40)
+        Me.Button5.TabIndex = 15
+        Me.Button5.Text = "Indigency"
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button4.Location = New System.Drawing.Point(0, 0)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Padding = New System.Windows.Forms.Padding(45, 0, 0, 0)
+        Me.Button4.Size = New System.Drawing.Size(183, 40)
+        Me.Button4.TabIndex = 14
+        Me.Button4.Text = "Residency"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'btnCertification
+        '
+        Me.btnCertification.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnCertification.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCertification.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCertification.FlatAppearance.BorderSize = 0
+        Me.btnCertification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCertification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnCertification.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCertification.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCertification.Location = New System.Drawing.Point(0, 200)
+        Me.btnCertification.Name = "btnCertification"
+        Me.btnCertification.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnCertification.Size = New System.Drawing.Size(183, 40)
+        Me.btnCertification.TabIndex = 12
+        Me.btnCertification.Text = "Certification"
+        Me.btnCertification.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCertification.UseVisualStyleBackColor = False
+        '
+        'panelSubClearance
+        '
+        Me.panelSubClearance.AutoSize = True
+        Me.panelSubClearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.panelSubClearance.BackColor = System.Drawing.Color.DarkSeaGreen
+        Me.panelSubClearance.Controls.Add(Me.Button3)
+        Me.panelSubClearance.Controls.Add(Me.Button2)
+        Me.panelSubClearance.Controls.Add(Me.btnResidentClearance)
+        Me.panelSubClearance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelSubClearance.Location = New System.Drawing.Point(0, 80)
+        Me.panelSubClearance.Name = "panelSubClearance"
+        Me.panelSubClearance.Size = New System.Drawing.Size(183, 120)
+        Me.panelSubClearance.TabIndex = 11
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button3.Location = New System.Drawing.Point(0, 80)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Padding = New System.Windows.Forms.Padding(45, 0, 0, 0)
+        Me.Button3.Size = New System.Drawing.Size(183, 40)
+        Me.Button3.TabIndex = 14
+        Me.Button3.Text = "Business"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button2.Location = New System.Drawing.Point(0, 40)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Padding = New System.Windows.Forms.Padding(45, 0, 0, 0)
+        Me.Button2.Size = New System.Drawing.Size(183, 40)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Construction"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'btnResidentClearance
+        '
+        Me.btnResidentClearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnResidentClearance.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnResidentClearance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnResidentClearance.FlatAppearance.BorderSize = 0
+        Me.btnResidentClearance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.btnResidentClearance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.btnResidentClearance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnResidentClearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnResidentClearance.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnResidentClearance.Location = New System.Drawing.Point(0, 0)
+        Me.btnResidentClearance.Name = "btnResidentClearance"
+        Me.btnResidentClearance.Padding = New System.Windows.Forms.Padding(45, 0, 0, 0)
+        Me.btnResidentClearance.Size = New System.Drawing.Size(183, 40)
+        Me.btnResidentClearance.TabIndex = 12
+        Me.btnResidentClearance.Text = "Resident Clearance"
+        Me.btnResidentClearance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnResidentClearance.UseVisualStyleBackColor = False
         '
         'btnClearance
         '
@@ -550,33 +636,14 @@ Partial Class frmDashboard
         Me.btnClearance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.btnClearance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearance.Location = New System.Drawing.Point(0, 80)
+        Me.btnClearance.Location = New System.Drawing.Point(0, 40)
         Me.btnClearance.Name = "btnClearance"
         Me.btnClearance.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.btnClearance.Size = New System.Drawing.Size(183, 40)
-        Me.btnClearance.TabIndex = 4
-        Me.btnClearance.Text = "Certification"
+        Me.btnClearance.TabIndex = 3
+        Me.btnClearance.Text = "Clearance"
         Me.btnClearance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnClearance.UseVisualStyleBackColor = False
-        '
-        'btnIssuance
-        '
-        Me.btnIssuance.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnIssuance.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnIssuance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnIssuance.FlatAppearance.BorderSize = 0
-        Me.btnIssuance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnIssuance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.btnIssuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIssuance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIssuance.Location = New System.Drawing.Point(0, 40)
-        Me.btnIssuance.Name = "btnIssuance"
-        Me.btnIssuance.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.btnIssuance.Size = New System.Drawing.Size(183, 40)
-        Me.btnIssuance.TabIndex = 3
-        Me.btnIssuance.Text = "Clearance"
-        Me.btnIssuance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnIssuance.UseVisualStyleBackColor = False
         '
         'btnResident
         '
@@ -620,6 +687,74 @@ Partial Class frmDashboard
         Me.btnSecretary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSecretary.UseVisualStyleBackColor = False
         '
+        'labTime
+        '
+        Me.labTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.labTime.AutoSize = True
+        Me.labTime.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labTime.ForeColor = System.Drawing.SystemColors.Window
+        Me.labTime.Location = New System.Drawing.Point(1015, 7)
+        Me.labTime.Name = "labTime"
+        Me.labTime.Size = New System.Drawing.Size(125, 25)
+        Me.labTime.TabIndex = 2
+        Me.labTime.Text = "10:59:27 PM"
+        '
+        'labDate
+        '
+        Me.labDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.labDate.AutoSize = True
+        Me.labDate.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDate.ForeColor = System.Drawing.SystemColors.Window
+        Me.labDate.Location = New System.Drawing.Point(808, 7)
+        Me.labDate.Name = "labDate"
+        Me.labDate.Size = New System.Drawing.Size(178, 25)
+        Me.labDate.TabIndex = 1
+        Me.labDate.Text = "December 2, 2020"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Tomato
+        Me.Panel2.Controls.Add(Me.GeneralHeading)
+        Me.Panel2.Controls.Add(Me.labDate)
+        Me.Panel2.Controls.Add(Me.labTime)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(200, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1166, 41)
+        Me.Panel2.TabIndex = 1
+        '
+        'GeneralHeading
+        '
+        Me.GeneralHeading.AutoSize = True
+        Me.GeneralHeading.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GeneralHeading.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GeneralHeading.Location = New System.Drawing.Point(24, 7)
+        Me.GeneralHeading.Name = "GeneralHeading"
+        Me.GeneralHeading.Size = New System.Drawing.Size(136, 26)
+        Me.GeneralHeading.TabIndex = 4
+        Me.GeneralHeading.Text = "DocuCentral "
+        '
+        'Timer1
+        '
+        '
+        'formPanel
+        '
+        Me.formPanel.BackColor = System.Drawing.SystemColors.Control
+        Me.formPanel.Location = New System.Drawing.Point(200, 39)
+        Me.formPanel.Name = "formPanel"
+        Me.formPanel.Size = New System.Drawing.Size(1166, 730)
+        Me.formPanel.TabIndex = 3
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Location = New System.Drawing.Point(28, 31)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(126, 126)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.btnLogout)
@@ -630,6 +765,18 @@ Partial Class frmDashboard
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(183, 276)
         Me.Panel1.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label3.Location = New System.Drawing.Point(33, 174)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(103, 20)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Administrator"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnLogout
         '
@@ -645,91 +792,31 @@ Partial Class frmDashboard
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.UseVisualStyleBackColor = False
         '
-        'Label3
+        'btnTreasReport
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(33, 174)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(103, 20)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Administrator"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Location = New System.Drawing.Point(28, 31)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(126, 126)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'labTime
-        '
-        Me.labTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labTime.AutoSize = True
-        Me.labTime.Font = New System.Drawing.Font("Microsoft YaHei UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labTime.ForeColor = System.Drawing.SystemColors.Window
-        Me.labTime.Location = New System.Drawing.Point(972, 14)
-        Me.labTime.Name = "labTime"
-        Me.labTime.Size = New System.Drawing.Size(155, 31)
-        Me.labTime.TabIndex = 2
-        Me.labTime.Text = "10:59:27 PM"
-        '
-        'labDate
-        '
-        Me.labDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labDate.AutoSize = True
-        Me.labDate.Font = New System.Drawing.Font("Microsoft YaHei UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labDate.ForeColor = System.Drawing.SystemColors.Window
-        Me.labDate.Location = New System.Drawing.Point(714, 14)
-        Me.labDate.Name = "labDate"
-        Me.labDate.Size = New System.Drawing.Size(222, 31)
-        Me.labDate.TabIndex = 1
-        Me.labDate.Text = "December 2, 2020"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.Tomato
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.labDate)
-        Me.Panel2.Controls.Add(Me.labTime)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(200, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1166, 60)
-        Me.Panel2.TabIndex = 1
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(24, 14)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(171, 31)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "DocuCentral "
-        '
-        'Timer1
-        '
-        '
-        'formPanel
-        '
-        Me.formPanel.Location = New System.Drawing.Point(208, 66)
-        Me.formPanel.Name = "formPanel"
-        Me.formPanel.Size = New System.Drawing.Size(1146, 690)
-        Me.formPanel.TabIndex = 3
+        Me.btnTreasReport.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnTreasReport.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTreasReport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTreasReport.FlatAppearance.BorderSize = 0
+        Me.btnTreasReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnTreasReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.btnTreasReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTreasReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTreasReport.Location = New System.Drawing.Point(0, 120)
+        Me.btnTreasReport.Name = "btnTreasReport"
+        Me.btnTreasReport.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnTreasReport.Size = New System.Drawing.Size(183, 40)
+        Me.btnTreasReport.TabIndex = 3
+        Me.btnTreasReport.Text = "Reports"
+        Me.btnTreasReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTreasReport.UseVisualStyleBackColor = False
         '
         'frmDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1366, 768)
+        Me.ClientSize = New System.Drawing.Size(1366, 769)
         Me.Controls.Add(Me.formPanel)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.sideMenuPanel)
@@ -738,56 +825,63 @@ Partial Class frmDashboard
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "              "
         Me.sideMenuPanel.ResumeLayout(False)
-        Me.panelKagawad.ResumeLayout(False)
+        Me.sideMenuPanel.PerformLayout()
         Me.panelBHW.ResumeLayout(False)
         Me.panelTreasurer.ResumeLayout(False)
         Me.panelSecretary.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelSecretary.PerformLayout()
+        Me.panelSubCertification.ResumeLayout(False)
+        Me.panelSubClearance.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents sideMenuPanel As Panel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnLogout As Button
-    Friend WithEvents Label3 As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents labTime As Label
     Friend WithEvents labDate As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label4 As Label
+    Friend WithEvents GeneralHeading As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnSecretary As Button
-    Friend WithEvents panelKagawad As Panel
-    Friend WithEvents btnWomens As Button
-    Friend WithEvents btnSenior As Button
-    Friend WithEvents btnLivelihood As Button
-    Friend WithEvents btnOSY As Button
-    Friend WithEvents btnBrgyOfficial As Button
     Friend WithEvents panelBHW As Panel
     Friend WithEvents btnBHWReports As Button
-    Friend WithEvents btnDiseases As Button
-    Friend WithEvents btnHealthcare As Button
+    Friend WithEvents btnImmunize As Button
+    Friend WithEvents btnPreNatal As Button
     Friend WithEvents btnCencus As Button
     Friend WithEvents btnInventory As Button
     Friend WithEvents btnBHW As Button
     Friend WithEvents panelTreasurer As Panel
-    Friend WithEvents btnTreasReports As Button
+    Friend WithEvents btnDisbursement As Button
     Friend WithEvents btnCashflow As Button
     Friend WithEvents btnTreasCedula As Button
     Friend WithEvents btnTreasurer As Button
     Friend WithEvents panelSecretary As Panel
-    Friend WithEvents btnSecReports As Button
-    Friend WithEvents btnSummon As Button
     Friend WithEvents btnClearance As Button
-    Friend WithEvents btnIssuance As Button
     Friend WithEvents btnResident As Button
     Friend WithEvents btnOptions As Button
-    Friend WithEvents btnKagawadReports As Button
     Friend WithEvents formPanel As Panel
-    Friend WithEvents btnSession As Button
+    Friend WithEvents btnCertification As Button
+    Friend WithEvents panelSubClearance As Panel
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btnResidentClearance As Button
+    Friend WithEvents Button11 As Button
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents panelSubCertification As Panel
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnLogout As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnTreasReport As Button
 End Class
