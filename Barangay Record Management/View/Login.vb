@@ -12,9 +12,15 @@
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        If New Login().isAuth(Me.txtUsername.Text.Trim(), Me.txtPassword.Text.Trim()) Then
+            Me.Hide()
+            frmDashboard.Show()
+        Else
+            ErrBox("Username and password error!")
+        End If
 
-        Me.Hide()
-        frmDashboard.Show()
+
+
 
     End Sub
 

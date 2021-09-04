@@ -794,7 +794,7 @@ Partial Class frmDashboard
         Me.GeneralHeading.AutoSize = True
         Me.GeneralHeading.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GeneralHeading.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GeneralHeading.Location = New System.Drawing.Point(24, 7)
+        Me.GeneralHeading.Location = New System.Drawing.Point(6, 7)
         Me.GeneralHeading.Name = "GeneralHeading"
         Me.GeneralHeading.Size = New System.Drawing.Size(136, 26)
         Me.GeneralHeading.TabIndex = 4
@@ -806,9 +806,10 @@ Partial Class frmDashboard
         'formPanel
         '
         Me.formPanel.BackColor = System.Drawing.SystemColors.Control
-        Me.formPanel.Location = New System.Drawing.Point(200, 39)
+        Me.formPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.formPanel.Location = New System.Drawing.Point(200, 41)
         Me.formPanel.Name = "formPanel"
-        Me.formPanel.Size = New System.Drawing.Size(1166, 730)
+        Me.formPanel.Size = New System.Drawing.Size(1166, 728)
         Me.formPanel.TabIndex = 3
         '
         'frmDashboard
@@ -820,7 +821,7 @@ Partial Class frmDashboard
         Me.Controls.Add(Me.formPanel)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.sideMenuPanel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "              "
