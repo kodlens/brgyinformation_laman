@@ -6,22 +6,29 @@
 
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
         If (e.KeyCode = Keys.Enter) Then
-            AcceptButton = btnLogin
-
+            btnLogin_Click(sender, e)
         End If
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+
+        If Me.txtUsername.Text.Trim() = "" Then
+            WarnBox("Please input username.")
+            Return
+        End If
+        If Me.txtPassword.Text.Trim() = "" Then
+            WarnBox("Please input username.")
+            Return
+        End If
+
         If New Login().isAuth(Me.txtUsername.Text.Trim(), Me.txtPassword.Text.Trim()) Then
+            Me.txtUsername.Text = ""
+            Me.txtPassword.Text = ""
             Me.Hide()
             frmDashboard.Show()
         Else
             ErrBox("Username and password error!")
         End If
-
-
-
-
     End Sub
 
     Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown

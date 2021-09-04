@@ -105,6 +105,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Address.vb" />
     <Compile Include="Controller\Box.vb" />
     <Compile Include="Controller\Login.vb" />
     <Compile Include="View\Clearances.Designer.vb">

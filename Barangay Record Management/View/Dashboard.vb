@@ -166,4 +166,8 @@ Public Class frmDashboard
         HidePanels()
         HideSecondaryPanel()
     End Sub
+
+    Private Sub frmDashboard_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        frmLogin.Show()
+    End Sub
 End Class
