@@ -1,9 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class frmAddBlotter
-    Public newComplainantID As Long
-    Public newBlotterID As Long
-    Public newNarrativeID As Long
+    Dim newComplainantID As Long
+    Dim newNarrativeID As Long
     Private Sub closeButton_Click(sender As Object, e As EventArgs) Handles closeButton.Click
         Me.Close()
     End Sub
@@ -61,6 +60,9 @@ Public Class frmAddBlotter
 
     End Sub
     Private Sub InsertBlotterComplainant()
+        Dim conn As New MySqlConnection
+        Dim sql As String
+        Dim cmd As MySqlCommand
         Try
             sql = "INSERT INTO complainants(
                     case_type, case_id, first_name,middle_name, last_name, gender, civil_status, birthday, age, address, occupation, contact )
@@ -112,6 +114,10 @@ Public Class frmAddBlotter
 
     End Sub
     Private Sub InsertNewBlotter()
+        Dim conn As New MySqlConnection
+        Dim sql As String
+        Dim newBlotterID As Long
+        Dim cmd As MySqlCommand
         Try
             sql = "INSERT INTO blotter(
                     blotterNo, complainant_id, incident_type,incident_location, incident_date, incident_time, detail_id, date_reported, recorded_by, status )
@@ -143,6 +149,9 @@ Public Class frmAddBlotter
 
     End Sub
     Private Sub InsertNewNarrative()
+        Dim conn As New MySqlConnection
+        Dim sql As String
+        Dim cmd As MySqlCommand
         Try
             sql = "INSERT INTO blotter_narrative(
                     blotterNo, narrative )
@@ -166,6 +175,10 @@ Public Class frmAddBlotter
     End Sub
 
     Private Sub GenerateNewBlotterNumber()
+        Dim conn As New MySqlConnection
+        Dim sql As String
+        Dim cmd As MySqlCommand
+        Dim dr As MySqlDataReader
         Dim previousNumber As Integer
         Try
             sql = "SELECT MAX(blotterNo) as newBlotterNumber

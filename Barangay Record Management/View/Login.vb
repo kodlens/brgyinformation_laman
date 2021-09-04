@@ -2,7 +2,6 @@
 
     Private Sub closeButton_Click(sender As Object, e As EventArgs) Handles closeButton.Click
         Me.Close()
-
     End Sub
 
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown

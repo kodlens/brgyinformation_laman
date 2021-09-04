@@ -11,7 +11,9 @@ Public Class frmBlotterList
         GetAllBlotter()
     End Sub
     Public Sub GetAllBlotter()
-
+        Dim conn As New MySqlConnection
+        Dim sql As String
+        Dim cmd As MySqlCommand
         Dim dt As New DataTable
         Try
             sql = "SELECT b.incident_type, b.incident_date, b.incident_time, b.incident_location, b.status, CONCAT(c.first_name,' ', LEFT(c.middle_name,1),'. ', c.last_name) AS complainant, b.recorded_by, b.date_reported
