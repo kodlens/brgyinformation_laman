@@ -1,4 +1,15 @@
-﻿Public Class frmResidentProfile
+﻿Public Class ResidentProfile
+    Dim rel As New Religion
+    Dim nat As New Nationality
+    Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        rel.all(cbHReligion)
+        nat.all(cmbNationality)
+    End Sub
+
+
     Private Sub btnNext1_Click(sender As Object, e As EventArgs) Handles btnNext1.Click
         TabControl1.SelectedTab = tabAdditionalInfo
     End Sub
@@ -38,6 +49,9 @@
         txtHSerialNumber.Focus()
         rbHead.Checked = True
         frmDashboard.GeneralHeading.Text = "Resident Profile"
+
+        'init data
+
     End Sub
     Private Sub ageCalculator(ByVal dtPicker As DateTimePicker, ByVal ageBox As TextBox)
 

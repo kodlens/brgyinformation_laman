@@ -5,6 +5,13 @@ Module DbConnection
     Dim password As String = ""
     Dim database As String = "brgyinfo_laman"
 
+
+    'public init
+    Public con As MySqlConnection
+    Public cmd As MySqlCommand
+    Public query As String
+
+
     Dim conn As New MySqlConnection
 
     Public Sub CreateDbConnection()
@@ -17,10 +24,15 @@ Module DbConnection
 
     'extra connection
     'return connection as object
-    Public Function con() As MySqlConnection
-        Return New MySqlConnection("Server ='" & server & "'; Username ='" & user & "';Password ='" & password & "';Database ='" & database & "'")
-    End Function
+    Public Sub conOpen()
+        con = New MySqlConnection("Server ='" & server & "'; Username ='" & user & "';Password ='" & password & "';Database ='" & database & "'")
+        con.Open()
+    End Sub
 
+    Public Sub conClose()
+        con.Dispose()
+        con.Close()
+    End Sub
 
 
 

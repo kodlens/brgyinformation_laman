@@ -107,7 +107,10 @@
   <ItemGroup>
     <Compile Include="Controller\Address.vb" />
     <Compile Include="Controller\Box.vb" />
+    <Compile Include="Controller\Nationality.vb" />
+    <Compile Include="Controller\Religion.vb" />
     <Compile Include="Controller\Login.vb" />
+    <Compile Include="Controller\Resident.vb" />
     <Compile Include="View\Clearances.Designer.vb">
       <DependentUpon>Clearances.vb</DependentUpon>
     </Compile>

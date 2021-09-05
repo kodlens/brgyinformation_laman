@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmResidentProfile
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class ResidentProfile
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,11 @@ Partial Class frmResidentProfile
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmResidentProfile))
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ResidentProfile))
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tabProfile = New System.Windows.Forms.TabPage()
         Me.btnNext1 = New System.Windows.Forms.Button()
@@ -49,8 +49,9 @@ Partial Class frmResidentProfile
         Me.rbMember = New System.Windows.Forms.RadioButton()
         Me.rbHead = New System.Windows.Forms.RadioButton()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.txtSuffix = New System.Windows.Forms.TextBox()
         Me.txtHYearsLiving = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.txtHIncome = New System.Windows.Forms.TextBox()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -66,7 +67,7 @@ Partial Class frmResidentProfile
         Me.Label21 = New System.Windows.Forms.Label()
         Me.cbHCivilStatus = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.cbHPurok = New System.Windows.Forms.ComboBox()
+        Me.cmbNationality = New System.Windows.Forms.ComboBox()
         Me.txtHOccupation = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
@@ -98,6 +99,18 @@ Partial Class frmResidentProfile
         Me.cbRegisterdVoter = New System.Windows.Forms.ComboBox()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox14 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox11 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox10 = New System.Windows.Forms.ComboBox()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -209,18 +222,6 @@ Partial Class frmResidentProfile
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtLastName = New System.Windows.Forms.TextBox()
         Me.backButton = New System.Windows.Forms.PictureBox()
-        Me.ComboBox10 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox11 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox14 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tabProfile.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -274,6 +275,7 @@ Partial Class frmResidentProfile
         Me.tabProfile.Controls.Add(Me.Button2)
         Me.tabProfile.Controls.Add(Me.Button1)
         Me.tabProfile.Controls.Add(Me.PictureBox1)
+        Me.tabProfile.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tabProfile.Location = New System.Drawing.Point(4, 44)
         Me.tabProfile.Name = "tabProfile"
         Me.tabProfile.Padding = New System.Windows.Forms.Padding(3)
@@ -284,18 +286,19 @@ Partial Class frmResidentProfile
         '
         'btnNext1
         '
-        Me.btnNext1.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnNext1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnNext1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnNext1.FlatAppearance.BorderSize = 0
         Me.btnNext1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnNext1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnNext1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNext1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnNext1.Image = CType(resources.GetObject("btnNext1.Image"), System.Drawing.Image)
         Me.btnNext1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNext1.Location = New System.Drawing.Point(987, 530)
+        Me.btnNext1.Location = New System.Drawing.Point(987, 553)
         Me.btnNext1.Name = "btnNext1"
-        Me.btnNext1.Size = New System.Drawing.Size(120, 31)
+        Me.btnNext1.Size = New System.Drawing.Size(120, 41)
         Me.btnNext1.TabIndex = 20
         Me.btnNext1.Text = "Next"
         Me.btnNext1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -354,7 +357,7 @@ Partial Class frmResidentProfile
         Me.GroupBox4.Controls.Add(Me.dtHBirthdate)
         Me.GroupBox4.Controls.Add(Me.Label31)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(280, 391)
+        Me.GroupBox4.Location = New System.Drawing.Point(280, 425)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(827, 122)
         Me.GroupBox4.TabIndex = 16
@@ -513,8 +516,9 @@ Partial Class frmResidentProfile
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.Label28)
+        Me.GroupBox6.Controls.Add(Me.txtSuffix)
         Me.GroupBox6.Controls.Add(Me.txtHYearsLiving)
-        Me.GroupBox6.Controls.Add(Me.Label22)
         Me.GroupBox6.Controls.Add(Me.Label53)
         Me.GroupBox6.Controls.Add(Me.txtHIncome)
         Me.GroupBox6.Controls.Add(Me.Label27)
@@ -530,7 +534,7 @@ Partial Class frmResidentProfile
         Me.GroupBox6.Controls.Add(Me.Label21)
         Me.GroupBox6.Controls.Add(Me.cbHCivilStatus)
         Me.GroupBox6.Controls.Add(Me.Label24)
-        Me.GroupBox6.Controls.Add(Me.cbHPurok)
+        Me.GroupBox6.Controls.Add(Me.cmbNationality)
         Me.GroupBox6.Controls.Add(Me.txtHOccupation)
         Me.GroupBox6.Controls.Add(Me.Label29)
         Me.GroupBox6.Controls.Add(Me.Label30)
@@ -539,43 +543,50 @@ Partial Class frmResidentProfile
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(280, 106)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(827, 273)
+        Me.GroupBox6.Size = New System.Drawing.Size(827, 313)
         Me.GroupBox6.TabIndex = 4
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Personal Information"
         '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(98, 141)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(39, 16)
+        Me.Label28.TabIndex = 42
+        Me.Label28.Text = "Suffix"
+        '
+        'txtSuffix
+        '
+        Me.txtSuffix.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSuffix.Location = New System.Drawing.Point(143, 139)
+        Me.txtSuffix.Name = "txtSuffix"
+        Me.txtSuffix.Size = New System.Drawing.Size(82, 24)
+        Me.txtSuffix.TabIndex = 43
+        '
         'txtHYearsLiving
         '
         Me.txtHYearsLiving.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHYearsLiving.Location = New System.Drawing.Point(547, 185)
+        Me.txtHYearsLiving.Location = New System.Drawing.Point(547, 211)
         Me.txtHYearsLiving.Name = "txtHYearsLiving"
         Me.txtHYearsLiving.Size = New System.Drawing.Size(239, 24)
         Me.txtHYearsLiving.TabIndex = 15
         '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(413, 196)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(123, 16)
-        Me.Label22.TabIndex = 41
-        Me.Label22.Text = "Residing in Lam-an"
-        '
         'Label53
         '
-        Me.Label53.AutoSize = True
         Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.Location = New System.Drawing.Point(413, 178)
+        Me.Label53.Location = New System.Drawing.Point(407, 202)
         Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(91, 16)
+        Me.Label53.Size = New System.Drawing.Size(132, 39)
         Me.Label53.TabIndex = 15
-        Me.Label53.Text = "Years/Months"
+        Me.Label53.Text = "Years/Months Residing in Lam-an"
         '
         'txtHIncome
         '
         Me.txtHIncome.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHIncome.Location = New System.Drawing.Point(547, 149)
+        Me.txtHIncome.Location = New System.Drawing.Point(547, 175)
         Me.txtHIncome.Name = "txtHIncome"
         Me.txtHIncome.Size = New System.Drawing.Size(239, 24)
         Me.txtHIncome.TabIndex = 14
@@ -584,7 +595,7 @@ Partial Class frmResidentProfile
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(413, 154)
+        Me.Label27.Location = New System.Drawing.Point(440, 177)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(96, 16)
         Me.Label27.TabIndex = 40
@@ -594,7 +605,7 @@ Partial Class frmResidentProfile
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(413, 44)
+        Me.Label50.Location = New System.Drawing.Point(465, 67)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(71, 16)
         Me.Label50.TabIndex = 38
@@ -605,10 +616,9 @@ Partial Class frmResidentProfile
         Me.cbHReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbHReligion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbHReligion.FormattingEnabled = True
-        Me.cbHReligion.Items.AddRange(New Object() {"Aglipay", "Bible Baptist Church", "Church of Christ", "Free Methodist Church", "Iglisia Ni Cristo", "Iglesia Filipina Independiente", "Islam", "Jehovah's Witness", "Pentecostal Church of God Asia Mission", "Roman Catholic", "Seventh Day Adventist", "United Methodists Church", "United Church of Christ in the Philippines", "Other Religion"})
-        Me.cbHReligion.Location = New System.Drawing.Point(143, 213)
+        Me.cbHReligion.Location = New System.Drawing.Point(547, 26)
         Me.cbHReligion.Name = "cbHReligion"
-        Me.cbHReligion.Size = New System.Drawing.Size(231, 26)
+        Me.cbHReligion.Size = New System.Drawing.Size(239, 26)
         Me.cbHReligion.TabIndex = 9
         '
         'cbHGender
@@ -617,7 +627,7 @@ Partial Class frmResidentProfile
         Me.cbHGender.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbHGender.FormattingEnabled = True
         Me.cbHGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cbHGender.Location = New System.Drawing.Point(143, 141)
+        Me.cbHGender.Location = New System.Drawing.Point(139, 173)
         Me.cbHGender.Name = "cbHGender"
         Me.cbHGender.Size = New System.Drawing.Size(231, 26)
         Me.cbHGender.TabIndex = 7
@@ -626,7 +636,7 @@ Partial Class frmResidentProfile
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(49, 42)
+        Me.Label14.Location = New System.Drawing.Point(64, 43)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(73, 16)
         Me.Label14.TabIndex = 0
@@ -644,7 +654,7 @@ Partial Class frmResidentProfile
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(49, 78)
+        Me.Label15.Location = New System.Drawing.Point(49, 74)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(89, 16)
         Me.Label15.TabIndex = 3
@@ -662,7 +672,7 @@ Partial Class frmResidentProfile
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(49, 112)
+        Me.Label17.Location = New System.Drawing.Point(64, 106)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(73, 16)
         Me.Label17.TabIndex = 5
@@ -680,7 +690,7 @@ Partial Class frmResidentProfile
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(49, 182)
+        Me.Label21.Location = New System.Drawing.Point(60, 212)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(73, 16)
         Me.Label21.TabIndex = 7
@@ -692,7 +702,7 @@ Partial Class frmResidentProfile
         Me.cbHCivilStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbHCivilStatus.FormattingEnabled = True
         Me.cbHCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Widow", "Separated"})
-        Me.cbHCivilStatus.Location = New System.Drawing.Point(143, 177)
+        Me.cbHCivilStatus.Location = New System.Drawing.Point(139, 209)
         Me.cbHCivilStatus.Name = "cbHCivilStatus"
         Me.cbHCivilStatus.Size = New System.Drawing.Size(231, 26)
         Me.cbHCivilStatus.TabIndex = 8
@@ -701,27 +711,27 @@ Partial Class frmResidentProfile
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(49, 146)
+        Me.Label24.Location = New System.Drawing.Point(102, 176)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(53, 16)
+        Me.Label24.Size = New System.Drawing.Size(31, 16)
         Me.Label24.TabIndex = 24
-        Me.Label24.Text = "Gender"
+        Me.Label24.Text = "Sex"
         '
-        'cbHPurok
+        'cmbNationality
         '
-        Me.cbHPurok.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbHPurok.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbHPurok.FormattingEnabled = True
-        Me.cbHPurok.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7"})
-        Me.cbHPurok.Location = New System.Drawing.Point(547, 37)
-        Me.cbHPurok.Name = "cbHPurok"
-        Me.cbHPurok.Size = New System.Drawing.Size(239, 26)
-        Me.cbHPurok.TabIndex = 10
+        Me.cmbNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbNationality.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbNationality.FormattingEnabled = True
+        Me.cmbNationality.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7"})
+        Me.cmbNationality.Location = New System.Drawing.Point(547, 63)
+        Me.cmbNationality.Name = "cmbNationality"
+        Me.cmbNationality.Size = New System.Drawing.Size(239, 26)
+        Me.cmbNationality.TabIndex = 10
         '
         'txtHOccupation
         '
         Me.txtHOccupation.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHOccupation.Location = New System.Drawing.Point(547, 113)
+        Me.txtHOccupation.Location = New System.Drawing.Point(547, 139)
         Me.txtHOccupation.Name = "txtHOccupation"
         Me.txtHOccupation.Size = New System.Drawing.Size(239, 24)
         Me.txtHOccupation.TabIndex = 13
@@ -730,7 +740,7 @@ Partial Class frmResidentProfile
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(49, 218)
+        Me.Label29.Location = New System.Drawing.Point(478, 31)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(58, 16)
         Me.Label29.TabIndex = 9
@@ -740,7 +750,7 @@ Partial Class frmResidentProfile
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(413, 118)
+        Me.Label30.Location = New System.Drawing.Point(460, 139)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(76, 16)
         Me.Label30.TabIndex = 17
@@ -752,7 +762,7 @@ Partial Class frmResidentProfile
         Me.cbHEmploymentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbHEmploymentStatus.FormattingEnabled = True
         Me.cbHEmploymentStatus.Items.AddRange(New Object() {"Employed", "Unemployed", "Self-Employed"})
-        Me.cbHEmploymentStatus.Location = New System.Drawing.Point(547, 75)
+        Me.cbHEmploymentStatus.Location = New System.Drawing.Point(547, 101)
         Me.cbHEmploymentStatus.Name = "cbHEmploymentStatus"
         Me.cbHEmploymentStatus.Size = New System.Drawing.Size(239, 26)
         Me.cbHEmploymentStatus.TabIndex = 12
@@ -761,7 +771,7 @@ Partial Class frmResidentProfile
         '
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(413, 80)
+        Me.Label32.Location = New System.Drawing.Point(413, 106)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(123, 16)
         Me.Label32.TabIndex = 15
@@ -811,17 +821,18 @@ Partial Class frmResidentProfile
         '
         'btnBack1
         '
-        Me.btnBack1.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnBack1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBack1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBack1.FlatAppearance.BorderSize = 0
         Me.btnBack1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBack1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnBack1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBack1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnBack1.Image = CType(resources.GetObject("btnBack1.Image"), System.Drawing.Image)
-        Me.btnBack1.Location = New System.Drawing.Point(29, 558)
+        Me.btnBack1.Location = New System.Drawing.Point(29, 547)
         Me.btnBack1.Name = "btnBack1"
-        Me.btnBack1.Size = New System.Drawing.Size(111, 31)
+        Me.btnBack1.Size = New System.Drawing.Size(111, 42)
         Me.btnBack1.TabIndex = 88
         Me.btnBack1.Text = "    Back"
         Me.btnBack1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -829,18 +840,19 @@ Partial Class frmResidentProfile
         '
         'tbnNext2
         '
-        Me.tbnNext2.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.tbnNext2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.tbnNext2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.tbnNext2.FlatAppearance.BorderSize = 0
         Me.tbnNext2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.tbnNext2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.tbnNext2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.tbnNext2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbnNext2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbnNext2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.tbnNext2.Image = CType(resources.GetObject("tbnNext2.Image"), System.Drawing.Image)
         Me.tbnNext2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.tbnNext2.Location = New System.Drawing.Point(993, 558)
+        Me.tbnNext2.Location = New System.Drawing.Point(993, 547)
         Me.tbnNext2.Name = "tbnNext2"
-        Me.tbnNext2.Size = New System.Drawing.Size(120, 31)
+        Me.tbnNext2.Size = New System.Drawing.Size(120, 42)
         Me.tbnNext2.TabIndex = 87
         Me.tbnNext2.Text = "Next"
         Me.tbnNext2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -1074,6 +1086,128 @@ Partial Class frmResidentProfile
         Me.GroupBox8.TabIndex = 4
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Secondary Contact Information"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(477, 165)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(220, 24)
+        Me.TextBox4.TabIndex = 88
+        '
+        'ComboBox13
+        '
+        Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox13.FormattingEnabled = True
+        Me.ComboBox13.Items.AddRange(New Object() {"Male", "Female"})
+        Me.ComboBox13.Location = New System.Drawing.Point(477, 133)
+        Me.ComboBox13.Name = "ComboBox13"
+        Me.ComboBox13.Size = New System.Drawing.Size(220, 26)
+        Me.ComboBox13.TabIndex = 87
+        '
+        'ComboBox14
+        '
+        Me.ComboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox14.FormattingEnabled = True
+        Me.ComboBox14.Items.AddRange(New Object() {"Male", "Female"})
+        Me.ComboBox14.Location = New System.Drawing.Point(477, 101)
+        Me.ComboBox14.Name = "ComboBox14"
+        Me.ComboBox14.Size = New System.Drawing.Size(220, 26)
+        Me.ComboBox14.TabIndex = 86
+        '
+        'ComboBox15
+        '
+        Me.ComboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox15.FormattingEnabled = True
+        Me.ComboBox15.Items.AddRange(New Object() {"Male", "Female"})
+        Me.ComboBox15.Location = New System.Drawing.Point(477, 69)
+        Me.ComboBox15.Name = "ComboBox15"
+        Me.ComboBox15.Size = New System.Drawing.Size(220, 26)
+        Me.ComboBox15.TabIndex = 85
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(410, 69)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(53, 16)
+        Me.Label34.TabIndex = 84
+        Me.Label34.Text = "Country"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Location = New System.Drawing.Point(402, 99)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(61, 16)
+        Me.Label35.TabIndex = 83
+        Me.Label35.Text = "Province"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.Location = New System.Drawing.Point(359, 134)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(104, 16)
+        Me.Label36.TabIndex = 82
+        Me.Label36.Text = "City/Municipality"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.Location = New System.Drawing.Point(381, 168)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(82, 16)
+        Me.Label37.TabIndex = 81
+        Me.Label37.Text = "Street/Purok"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(124, 156)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(220, 24)
+        Me.TextBox2.TabIndex = 80
+        '
+        'ComboBox12
+        '
+        Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox12.FormattingEnabled = True
+        Me.ComboBox12.Items.AddRange(New Object() {"Male", "Female"})
+        Me.ComboBox12.Location = New System.Drawing.Point(124, 124)
+        Me.ComboBox12.Name = "ComboBox12"
+        Me.ComboBox12.Size = New System.Drawing.Size(220, 26)
+        Me.ComboBox12.TabIndex = 79
+        '
+        'ComboBox11
+        '
+        Me.ComboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox11.FormattingEnabled = True
+        Me.ComboBox11.Items.AddRange(New Object() {"Male", "Female"})
+        Me.ComboBox11.Location = New System.Drawing.Point(124, 92)
+        Me.ComboBox11.Name = "ComboBox11"
+        Me.ComboBox11.Size = New System.Drawing.Size(220, 26)
+        Me.ComboBox11.TabIndex = 78
+        '
+        'ComboBox10
+        '
+        Me.ComboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox10.FormattingEnabled = True
+        Me.ComboBox10.Items.AddRange(New Object() {"Male", "Female"})
+        Me.ComboBox10.Location = New System.Drawing.Point(124, 60)
+        Me.ComboBox10.Name = "ComboBox10"
+        Me.ComboBox10.Size = New System.Drawing.Size(220, 26)
+        Me.ComboBox10.TabIndex = 77
         '
         'Label41
         '
@@ -1369,24 +1503,24 @@ Partial Class frmResidentProfile
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(51, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(51, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.ColumnHeadersHeight = 40
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Delete, Me.edit, Me.nickname, Me.householdNo, Me.first_name, Me.middle_name, Me.last_name, Me.gender, Me.civilstatus, Me.purok, Me.birthdate, Me.religion})
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.Ivory
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Ivory
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(14, 218)
         Me.DataGridView1.Name = "DataGridView1"
@@ -2246,129 +2380,7 @@ Partial Class frmResidentProfile
         Me.backButton.TabIndex = 55
         Me.backButton.TabStop = False
         '
-        'ComboBox10
-        '
-        Me.ComboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox10.FormattingEnabled = True
-        Me.ComboBox10.Items.AddRange(New Object() {"Male", "Female"})
-        Me.ComboBox10.Location = New System.Drawing.Point(124, 60)
-        Me.ComboBox10.Name = "ComboBox10"
-        Me.ComboBox10.Size = New System.Drawing.Size(220, 26)
-        Me.ComboBox10.TabIndex = 77
-        '
-        'ComboBox11
-        '
-        Me.ComboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox11.FormattingEnabled = True
-        Me.ComboBox11.Items.AddRange(New Object() {"Male", "Female"})
-        Me.ComboBox11.Location = New System.Drawing.Point(124, 92)
-        Me.ComboBox11.Name = "ComboBox11"
-        Me.ComboBox11.Size = New System.Drawing.Size(220, 26)
-        Me.ComboBox11.TabIndex = 78
-        '
-        'ComboBox12
-        '
-        Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Items.AddRange(New Object() {"Male", "Female"})
-        Me.ComboBox12.Location = New System.Drawing.Point(124, 124)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(220, 26)
-        Me.ComboBox12.TabIndex = 79
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(124, 156)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(220, 24)
-        Me.TextBox2.TabIndex = 80
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(477, 165)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(220, 24)
-        Me.TextBox4.TabIndex = 88
-        '
-        'ComboBox13
-        '
-        Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox13.FormattingEnabled = True
-        Me.ComboBox13.Items.AddRange(New Object() {"Male", "Female"})
-        Me.ComboBox13.Location = New System.Drawing.Point(477, 133)
-        Me.ComboBox13.Name = "ComboBox13"
-        Me.ComboBox13.Size = New System.Drawing.Size(220, 26)
-        Me.ComboBox13.TabIndex = 87
-        '
-        'ComboBox14
-        '
-        Me.ComboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox14.FormattingEnabled = True
-        Me.ComboBox14.Items.AddRange(New Object() {"Male", "Female"})
-        Me.ComboBox14.Location = New System.Drawing.Point(477, 101)
-        Me.ComboBox14.Name = "ComboBox14"
-        Me.ComboBox14.Size = New System.Drawing.Size(220, 26)
-        Me.ComboBox14.TabIndex = 86
-        '
-        'ComboBox15
-        '
-        Me.ComboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox15.FormattingEnabled = True
-        Me.ComboBox15.Items.AddRange(New Object() {"Male", "Female"})
-        Me.ComboBox15.Location = New System.Drawing.Point(477, 69)
-        Me.ComboBox15.Name = "ComboBox15"
-        Me.ComboBox15.Size = New System.Drawing.Size(220, 26)
-        Me.ComboBox15.TabIndex = 85
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(410, 69)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(53, 16)
-        Me.Label34.TabIndex = 84
-        Me.Label34.Text = "Country"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(402, 99)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(61, 16)
-        Me.Label35.TabIndex = 83
-        Me.Label35.Text = "Province"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(359, 134)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(104, 16)
-        Me.Label36.TabIndex = 82
-        Me.Label36.Text = "City/Municipality"
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(381, 168)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(82, 16)
-        Me.Label37.TabIndex = 81
-        Me.Label37.Text = "Street/Purok"
-        '
-        'frmResidentProfile
+        'ResidentProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -2377,7 +2389,7 @@ Partial Class frmResidentProfile
         Me.Controls.Add(Me.backButton)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmResidentProfile"
+        Me.Name = "ResidentProfile"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Text = "ResidentProfile"
@@ -2437,7 +2449,7 @@ Partial Class frmResidentProfile
     Friend WithEvents Label21 As Label
     Friend WithEvents cbHCivilStatus As ComboBox
     Friend WithEvents Label24 As Label
-    Friend WithEvents cbHPurok As ComboBox
+    Friend WithEvents cmbNationality As ComboBox
     Friend WithEvents txtHOccupation As TextBox
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
@@ -2471,7 +2483,6 @@ Partial Class frmResidentProfile
     Friend WithEvents Label52 As Label
     Friend WithEvents txtHAge As TextBox
     Friend WithEvents txtHYearsLiving As TextBox
-    Friend WithEvents Label22 As Label
     Friend WithEvents Label53 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label44 As Label
@@ -2613,4 +2624,6 @@ Partial Class frmResidentProfile
     Friend WithEvents Label35 As Label
     Friend WithEvents Label36 As Label
     Friend WithEvents Label37 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents txtSuffix As TextBox
 End Class

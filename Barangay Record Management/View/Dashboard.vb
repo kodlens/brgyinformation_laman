@@ -75,7 +75,7 @@ Public Class frmDashboard
     End Sub
 
     Private Sub btnResident_Click(sender As Object, e As EventArgs) Handles btnResident.Click
-        insertNewForm(New frmResidentsList)
+        insertNewForm(New ResidentList)
 
         HidePanels()
     End Sub
@@ -112,7 +112,7 @@ Public Class frmDashboard
     End Sub
 
     Private Sub btnCencus_Click(sender As Object, e As EventArgs) Handles btnCencus.Click
-        insertNewForm(New frmResidentProfile)
+        insertNewForm(New ResidentProfile)
 
         HidePanels()
     End Sub

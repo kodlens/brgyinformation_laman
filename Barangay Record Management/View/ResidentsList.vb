@@ -1,6 +1,6 @@
-﻿Public Class frmResidentsList
+﻿Public Class ResidentList
     Private Sub btnAddResident_Click_1(sender As Object, e As EventArgs) Handles btnAddResident.Click
-        insertNewForm(New frmResidentProfile)
+        insertNewForm(New ResidentProfile)
     End Sub
 
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
