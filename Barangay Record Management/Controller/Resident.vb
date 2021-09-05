@@ -122,7 +122,7 @@ Public Class Resident
     Public Sub All(ByVal grid As DataGridView)
         Try
             conOpen()
-            query = "SELET * FROM residents ORDER BY lname ASC"
+            query = "SELECT * FROM residents ORDER BY lname ASC"
             cmd = New MySqlCommand(query, con)
             Dim dt As New DataTable
             Dim adprtr As New MySqlDataAdapter(cmd)
@@ -130,7 +130,9 @@ Public Class Resident
             adprtr.Dispose()
             cmd.Dispose()
 
+            grid.AutoGenerateColumns = False
             grid.DataSource = dt
+
         Catch ex As Exception
             ErrBox(ex.Message)
         End Try

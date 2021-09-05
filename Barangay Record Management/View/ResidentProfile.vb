@@ -11,7 +11,7 @@
 
 
     Private Sub btnNext1_Click(sender As Object, e As EventArgs) Handles btnNext1.Click
-        TabControl1.SelectedTab = tabAdditionalInfo
+        TabControl1.SelectedTab = tabContactAddress
     End Sub
 
     Private Sub btnBack1_Click(sender As Object, e As EventArgs) Handles btnBack1.Click
@@ -24,7 +24,7 @@
 
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
         Me.Close()
-
+        insertNewForm(New ResidentList)
     End Sub
 
     Private Sub dtHBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtHBirthdate.ValueChanged

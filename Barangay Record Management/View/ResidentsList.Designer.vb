@@ -22,24 +22,10 @@ Partial Class ResidentList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ResidentList))
         Me.dtGridResident = New System.Windows.Forms.DataGridView()
-        Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.edit = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.nickname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.first_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.middle_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.last_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.purok = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.gender = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.civilstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.birthdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.voterstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.employmentstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.occupation = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.religion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAddResident = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -49,6 +35,14 @@ Partial Class ResidentList
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbResidentNumber = New System.Windows.Forms.RadioButton()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.nickname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.first_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.middle_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.last_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.civilstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.voterstatus = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.employmentstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dtGridResident, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.backButton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -59,118 +53,38 @@ Partial Class ResidentList
         Me.dtGridResident.AllowUserToAddRows = False
         Me.dtGridResident.AllowUserToDeleteRows = False
         Me.dtGridResident.AllowUserToResizeColumns = False
-        Me.dtGridResident.AllowUserToResizeRows = False
+        Me.dtGridResident.AllowUserToResizeRows =
         Me.dtGridResident.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtGridResident.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtGridResident.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dtGridResident.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(51, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtGridResident.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(51, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtGridResident.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dtGridResident.ColumnHeadersHeight = 40
-        Me.dtGridResident.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Delete, Me.edit, Me.nickname, Me.first_name, Me.middle_name, Me.last_name, Me.purok, Me.gender, Me.civilstatus, Me.birthdate, Me.voterstatus, Me.employmentstatus, Me.occupation, Me.religion})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Ivory
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtGridResident.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dtGridResident.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nickname, Me.first_name, Me.middle_name, Me.last_name, Me.sex, Me.civilstatus, Me.voterstatus, Me.employmentstatus})
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Ivory
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtGridResident.DefaultCellStyle = DataGridViewCellStyle6
         Me.dtGridResident.EnableHeadersVisualStyles = False
-        Me.dtGridResident.Location = New System.Drawing.Point(8, 119)
+        Me.dtGridResident.Location = New System.Drawing.Point(16, 119)
         Me.dtGridResident.Name = "dtGridResident"
         Me.dtGridResident.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dtGridResident.RowHeadersVisible = False
         Me.dtGridResident.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtGridResident.ShowEditingIcon = False
-        Me.dtGridResident.Size = New System.Drawing.Size(1146, 599)
+        Me.dtGridResident.Size = New System.Drawing.Size(1137, 396)
         Me.dtGridResident.TabIndex = 1
-        '
-        'Delete
-        '
-        Me.Delete.HeaderText = ""
-        Me.Delete.Name = "Delete"
-        Me.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Delete.Width = 50
-        '
-        'edit
-        '
-        Me.edit.HeaderText = ""
-        Me.edit.Name = "edit"
-        Me.edit.Width = 50
-        '
-        'nickname
-        '
-        Me.nickname.HeaderText = "Resident No."
-        Me.nickname.Name = "nickname"
-        Me.nickname.Width = 120
-        '
-        'first_name
-        '
-        Me.first_name.HeaderText = "First Name"
-        Me.first_name.Name = "first_name"
-        Me.first_name.Width = 150
-        '
-        'middle_name
-        '
-        Me.middle_name.HeaderText = "Middle Name"
-        Me.middle_name.Name = "middle_name"
-        Me.middle_name.Width = 130
-        '
-        'last_name
-        '
-        Me.last_name.HeaderText = "Last Name"
-        Me.last_name.Name = "last_name"
-        Me.last_name.Width = 150
-        '
-        'purok
-        '
-        Me.purok.HeaderText = "Purok"
-        Me.purok.Name = "purok"
-        '
-        'gender
-        '
-        Me.gender.HeaderText = "Gender"
-        Me.gender.Name = "gender"
-        Me.gender.Width = 90
-        '
-        'civilstatus
-        '
-        Me.civilstatus.HeaderText = "Civil Status"
-        Me.civilstatus.Name = "civilstatus"
-        '
-        'birthdate
-        '
-        Me.birthdate.HeaderText = "Age"
-        Me.birthdate.Name = "birthdate"
-        '
-        'voterstatus
-        '
-        Me.voterstatus.HeaderText = "isRegVoter"
-        Me.voterstatus.Name = "voterstatus"
-        Me.voterstatus.Width = 90
-        '
-        'employmentstatus
-        '
-        Me.employmentstatus.HeaderText = "Years Residing"
-        Me.employmentstatus.Name = "employmentstatus"
-        Me.employmentstatus.Width = 90
-        '
-        'occupation
-        '
-        Me.occupation.HeaderText = "Occupation"
-        Me.occupation.Name = "occupation"
-        '
-        'religion
-        '
-        Me.religion.HeaderText = "Religion"
-        Me.religion.Name = "religion"
         '
         'btnAddResident
         '
@@ -224,23 +138,23 @@ Partial Class ResidentList
         'rbFirstName
         '
         Me.rbFirstName.AutoSize = True
-        Me.rbFirstName.Location = New System.Drawing.Point(141, 17)
+        Me.rbFirstName.Location = New System.Drawing.Point(141, 14)
         Me.rbFirstName.Name = "rbFirstName"
-        Me.rbFirstName.Size = New System.Drawing.Size(75, 17)
+        Me.rbFirstName.Size = New System.Drawing.Size(80, 19)
         Me.rbFirstName.TabIndex = 59
         Me.rbFirstName.TabStop = True
-        Me.rbFirstName.Text = "First Name"
+        Me.rbFirstName.Text = "Firstname"
         Me.rbFirstName.UseVisualStyleBackColor = True
         '
         'rbLastName
         '
         Me.rbLastName.AutoSize = True
-        Me.rbLastName.Location = New System.Drawing.Point(238, 17)
+        Me.rbLastName.Location = New System.Drawing.Point(238, 15)
         Me.rbLastName.Name = "rbLastName"
-        Me.rbLastName.Size = New System.Drawing.Size(76, 17)
+        Me.rbLastName.Size = New System.Drawing.Size(80, 19)
         Me.rbLastName.TabIndex = 60
         Me.rbLastName.TabStop = True
-        Me.rbLastName.Text = "Last Name"
+        Me.rbLastName.Text = "Lastname"
         Me.rbLastName.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -248,6 +162,7 @@ Partial Class ResidentList
         Me.GroupBox1.Controls.Add(Me.rbResidentNumber)
         Me.GroupBox1.Controls.Add(Me.rbFirstName)
         Me.GroupBox1.Controls.Add(Me.rbLastName)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(98, 68)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(336, 45)
@@ -257,9 +172,9 @@ Partial Class ResidentList
         'rbResidentNumber
         '
         Me.rbResidentNumber.AutoSize = True
-        Me.rbResidentNumber.Location = New System.Drawing.Point(18, 17)
+        Me.rbResidentNumber.Location = New System.Drawing.Point(13, 13)
         Me.rbResidentNumber.Name = "rbResidentNumber"
-        Me.rbResidentNumber.Size = New System.Drawing.Size(107, 17)
+        Me.rbResidentNumber.Size = New System.Drawing.Size(122, 19)
         Me.rbResidentNumber.TabIndex = 62
         Me.rbResidentNumber.TabStop = True
         Me.rbResidentNumber.Text = "Resident Number"
@@ -273,6 +188,55 @@ Partial Class ResidentList
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(1140, 1)
         Me.Label14.TabIndex = 67
+        '
+        'nickname
+        '
+        Me.nickname.HeaderText = "Resident No."
+        Me.nickname.Name = "nickname"
+        Me.nickname.Width = 120
+        '
+        'first_name
+        '
+        Me.first_name.HeaderText = "First Name"
+        Me.first_name.Name = "first_name"
+        Me.first_name.Width = 150
+        '
+        'middle_name
+        '
+        Me.middle_name.HeaderText = "Middle Name"
+        Me.middle_name.Name = "middle_name"
+        Me.middle_name.Width = 130
+        '
+        'last_name
+        '
+        Me.last_name.HeaderText = "Last Name"
+        Me.last_name.Name = "last_name"
+        Me.last_name.Width = 150
+        '
+        'sex
+        '
+        Me.sex.HeaderText = "Sex"
+        Me.sex.Name = "sex"
+        Me.sex.Width = 90
+        '
+        'civilstatus
+        '
+        Me.civilstatus.HeaderText = "Civil Status"
+        Me.civilstatus.Name = "civilstatus"
+        '
+        'voterstatus
+        '
+        Me.voterstatus.HeaderText = "Voter"
+        Me.voterstatus.Name = "voterstatus"
+        Me.voterstatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.voterstatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.voterstatus.Width = 90
+        '
+        'employmentstatus
+        '
+        Me.employmentstatus.HeaderText = "Years Residing"
+        Me.employmentstatus.Name = "employmentstatus"
+        Me.employmentstatus.Width = 90
         '
         'ResidentList
         '
@@ -309,19 +273,13 @@ Partial Class ResidentList
     Friend WithEvents rbLastName As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents Delete As DataGridViewButtonColumn
-    Friend WithEvents edit As DataGridViewButtonColumn
+    Friend WithEvents rbResidentNumber As RadioButton
     Friend WithEvents nickname As DataGridViewTextBoxColumn
     Friend WithEvents first_name As DataGridViewTextBoxColumn
     Friend WithEvents middle_name As DataGridViewTextBoxColumn
     Friend WithEvents last_name As DataGridViewTextBoxColumn
-    Friend WithEvents purok As DataGridViewTextBoxColumn
-    Friend WithEvents gender As DataGridViewTextBoxColumn
+    Friend WithEvents sex As DataGridViewTextBoxColumn
     Friend WithEvents civilstatus As DataGridViewTextBoxColumn
-    Friend WithEvents birthdate As DataGridViewTextBoxColumn
-    Friend WithEvents voterstatus As DataGridViewTextBoxColumn
+    Friend WithEvents voterstatus As DataGridViewCheckBoxColumn
     Friend WithEvents employmentstatus As DataGridViewTextBoxColumn
-    Friend WithEvents occupation As DataGridViewTextBoxColumn
-    Friend WithEvents religion As DataGridViewTextBoxColumn
-    Friend WithEvents rbResidentNumber As RadioButton
 End Class

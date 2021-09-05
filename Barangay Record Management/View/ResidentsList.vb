@@ -1,4 +1,20 @@
 ﻿Public Class ResidentList
+    Dim res As New Resident
+
+
+    Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        LoadData()
+
+    End Sub
+
+    Public Sub LoadData()
+        res.All(dtGridResident)
+    End Sub
     Private Sub btnAddResident_Click_1(sender As Object, e As EventArgs) Handles btnAddResident.Click
         insertNewForm(New ResidentProfile)
     End Sub
@@ -11,5 +27,6 @@
         txtSearch.Focus()
         rbResidentNumber.Checked = True
         frmDashboard.GeneralHeading.Text = "Resident List"
+
     End Sub
 End Class

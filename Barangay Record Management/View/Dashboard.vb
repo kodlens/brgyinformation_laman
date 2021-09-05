@@ -76,7 +76,6 @@ Public Class frmDashboard
 
     Private Sub btnResident_Click(sender As Object, e As EventArgs) Handles btnResident.Click
         insertNewForm(New ResidentList)
-
         HidePanels()
     End Sub
 
