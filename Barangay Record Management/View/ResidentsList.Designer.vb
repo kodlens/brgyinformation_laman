@@ -22,9 +22,10 @@ Partial Class ResidentList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ResidentList))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dtGridResident = New System.Windows.Forms.DataGridView()
         Me.btnAddResident = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,7 +36,8 @@ Partial Class ResidentList
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbResidentNumber = New System.Windows.Forms.RadioButton()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.nickname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.resident_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.is_head = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.first_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.middle_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.last_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,29 +55,29 @@ Partial Class ResidentList
         Me.dtGridResident.AllowUserToAddRows = False
         Me.dtGridResident.AllowUserToDeleteRows = False
         Me.dtGridResident.AllowUserToResizeColumns = False
-        Me.dtGridResident.AllowUserToResizeRows =
+        Me.dtGridResident.AllowUserToResizeRows = False
         Me.dtGridResident.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtGridResident.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtGridResident.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dtGridResident.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(51, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtGridResident.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(51, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtGridResident.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtGridResident.ColumnHeadersHeight = 40
-        Me.dtGridResident.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nickname, Me.first_name, Me.middle_name, Me.last_name, Me.sex, Me.civilstatus, Me.voterstatus, Me.employmentstatus})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Ivory
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtGridResident.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dtGridResident.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.resident_id, Me.is_head, Me.first_name, Me.middle_name, Me.last_name, Me.sex, Me.civilstatus, Me.voterstatus, Me.employmentstatus})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Ivory
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtGridResident.DefaultCellStyle = DataGridViewCellStyle3
         Me.dtGridResident.EnableHeadersVisualStyles = False
         Me.dtGridResident.Location = New System.Drawing.Point(16, 119)
         Me.dtGridResident.Name = "dtGridResident"
@@ -83,7 +85,7 @@ Partial Class ResidentList
         Me.dtGridResident.RowHeadersVisible = False
         Me.dtGridResident.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtGridResident.ShowEditingIcon = False
-        Me.dtGridResident.Size = New System.Drawing.Size(1137, 396)
+        Me.dtGridResident.Size = New System.Drawing.Size(1137, 599)
         Me.dtGridResident.TabIndex = 1
         '
         'btnAddResident
@@ -189,43 +191,59 @@ Partial Class ResidentList
         Me.Label14.Size = New System.Drawing.Size(1140, 1)
         Me.Label14.TabIndex = 67
         '
-        'nickname
+        'resident_id
         '
-        Me.nickname.HeaderText = "Resident No."
-        Me.nickname.Name = "nickname"
-        Me.nickname.Width = 120
+        Me.resident_id.DataPropertyName = "resident_id"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.resident_id.DefaultCellStyle = DataGridViewCellStyle2
+        Me.resident_id.HeaderText = "Resident No."
+        Me.resident_id.Name = "resident_id"
+        Me.resident_id.Width = 80
+        '
+        'is_head
+        '
+        Me.is_head.DataPropertyName = "is_head"
+        Me.is_head.HeaderText = "Is Head"
+        Me.is_head.Name = "is_head"
+        Me.is_head.ReadOnly = True
         '
         'first_name
         '
+        Me.first_name.DataPropertyName = "fname"
         Me.first_name.HeaderText = "First Name"
         Me.first_name.Name = "first_name"
         Me.first_name.Width = 150
         '
         'middle_name
         '
+        Me.middle_name.DataPropertyName = "mname"
         Me.middle_name.HeaderText = "Middle Name"
         Me.middle_name.Name = "middle_name"
         Me.middle_name.Width = 130
         '
         'last_name
         '
+        Me.last_name.DataPropertyName = "lname"
         Me.last_name.HeaderText = "Last Name"
         Me.last_name.Name = "last_name"
         Me.last_name.Width = 150
         '
         'sex
         '
+        Me.sex.DataPropertyName = "sex"
         Me.sex.HeaderText = "Sex"
         Me.sex.Name = "sex"
         Me.sex.Width = 90
         '
         'civilstatus
         '
+        Me.civilstatus.DataPropertyName = "civil_status"
         Me.civilstatus.HeaderText = "Civil Status"
         Me.civilstatus.Name = "civilstatus"
         '
         'voterstatus
         '
+        Me.voterstatus.DataPropertyName = "is_voter"
         Me.voterstatus.HeaderText = "Voter"
         Me.voterstatus.Name = "voterstatus"
         Me.voterstatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -234,6 +252,7 @@ Partial Class ResidentList
         '
         'employmentstatus
         '
+        Me.employmentstatus.DataPropertyName = "year_residence"
         Me.employmentstatus.HeaderText = "Years Residing"
         Me.employmentstatus.Name = "employmentstatus"
         Me.employmentstatus.Width = 90
@@ -274,7 +293,8 @@ Partial Class ResidentList
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label14 As Label
     Friend WithEvents rbResidentNumber As RadioButton
-    Friend WithEvents nickname As DataGridViewTextBoxColumn
+    Friend WithEvents resident_id As DataGridViewTextBoxColumn
+    Friend WithEvents is_head As DataGridViewCheckBoxColumn
     Friend WithEvents first_name As DataGridViewTextBoxColumn
     Friend WithEvents middle_name As DataGridViewTextBoxColumn
     Friend WithEvents last_name As DataGridViewTextBoxColumn

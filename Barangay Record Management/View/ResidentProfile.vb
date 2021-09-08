@@ -5,7 +5,7 @@
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        rel.all(cbHReligion)
+        rel.all(cmbReligion)
         nat.all(cmbNationality)
     End Sub
 
@@ -27,8 +27,8 @@
         insertNewForm(New ResidentList)
     End Sub
 
-    Private Sub dtHBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtHBirthdate.ValueChanged
-        ageCalculator(dtHBirthdate, txtHAge)
+    Private Sub dtHBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtBdate.ValueChanged
+        ageCalculator(dtBdate, txtAge)
 
     End Sub
 
@@ -73,4 +73,33 @@
     Private Sub dtFBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtFBirthdate.ValueChanged
         ageCalculator(dtFBirthdate, txtFAge)
     End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim res As New Resident
+
+
+        If rbHead.Checked Then
+            res.IsHead = 1
+        Else
+            res.IsHead = 0
+        End If
+        res.Lname = Me.txtLastname.Text.Trim
+        res.Fname = Me.txtFirstname.Text.Trim
+        res.Mname = Me.txtMiddlename.Text.Trim
+        res.Suffix = Me.txtSuffix.Text.Trim
+        res.Sex = Me.cmbSex.Text
+        res.CiviStatus = Me.cmbCivilStatus.Text
+        res.Religion = Me.cmbReligion.Text
+        res.Nationality = Me.cmbNationality.Text
+        res.EmploymentStatus = Me.cmbEmploymentStatus.Text
+        res.Occupation = Me.txtOccupation.Text
+        res.AnnualIncome = Me.txtAnnualIncome.Text
+        res.YearResidence = Me.txtYearResidency.Text
+
+        If res.Save() > 0 Then
+            InfoBox("Successfully saved!")
+        End If
+    End Sub
+
+
 End Class

@@ -82,6 +82,7 @@ Partial Class frmDashboard
         '
         Me.sideMenuPanel.AutoScroll = True
         Me.sideMenuPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.sideMenuPanel.CausesValidation = False
         Me.sideMenuPanel.Controls.Add(Me.btnOptions)
         Me.sideMenuPanel.Controls.Add(Me.panelBHW)
         Me.sideMenuPanel.Controls.Add(Me.btnBHW)
@@ -109,7 +110,7 @@ Partial Class frmDashboard
         Me.btnOptions.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnOptions.Image = CType(resources.GetObject("btnOptions.Image"), System.Drawing.Image)
         Me.btnOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOptions.Location = New System.Drawing.Point(0, 1351)
+        Me.btnOptions.Location = New System.Drawing.Point(0, 1327)
         Me.btnOptions.Name = "btnOptions"
         Me.btnOptions.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnOptions.Size = New System.Drawing.Size(183, 50)
@@ -127,7 +128,7 @@ Partial Class frmDashboard
         Me.panelBHW.Controls.Add(Me.btnCencus)
         Me.panelBHW.Controls.Add(Me.btnInventory)
         Me.panelBHW.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelBHW.Location = New System.Drawing.Point(0, 1149)
+        Me.panelBHW.Location = New System.Drawing.Point(0, 1125)
         Me.panelBHW.Name = "panelBHW"
         Me.panelBHW.Size = New System.Drawing.Size(183, 202)
         Me.panelBHW.TabIndex = 6
@@ -240,7 +241,7 @@ Partial Class frmDashboard
         Me.btnBHW.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnBHW.Image = CType(resources.GetObject("btnBHW.Image"), System.Drawing.Image)
         Me.btnBHW.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBHW.Location = New System.Drawing.Point(0, 1099)
+        Me.btnBHW.Location = New System.Drawing.Point(0, 1075)
         Me.btnBHW.Name = "btnBHW"
         Me.btnBHW.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnBHW.Size = New System.Drawing.Size(183, 50)
@@ -257,7 +258,7 @@ Partial Class frmDashboard
         Me.panelTreasurer.Controls.Add(Me.btnCashflow)
         Me.panelTreasurer.Controls.Add(Me.btnTreasCedula)
         Me.panelTreasurer.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTreasurer.Location = New System.Drawing.Point(0, 936)
+        Me.panelTreasurer.Location = New System.Drawing.Point(0, 912)
         Me.panelTreasurer.Name = "panelTreasurer"
         Me.panelTreasurer.Size = New System.Drawing.Size(183, 163)
         Me.panelTreasurer.TabIndex = 4
@@ -351,7 +352,7 @@ Partial Class frmDashboard
         Me.btnTreasurer.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnTreasurer.Image = CType(resources.GetObject("btnTreasurer.Image"), System.Drawing.Image)
         Me.btnTreasurer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTreasurer.Location = New System.Drawing.Point(0, 886)
+        Me.btnTreasurer.Location = New System.Drawing.Point(0, 862)
         Me.btnTreasurer.Name = "btnTreasurer"
         Me.btnTreasurer.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnTreasurer.Size = New System.Drawing.Size(183, 50)
@@ -374,7 +375,7 @@ Partial Class frmDashboard
         Me.panelSecretary.Controls.Add(Me.btnClearance)
         Me.panelSecretary.Controls.Add(Me.btnResident)
         Me.panelSecretary.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSecretary.Location = New System.Drawing.Point(0, 326)
+        Me.panelSecretary.Location = New System.Drawing.Point(0, 302)
         Me.panelSecretary.Name = "panelSecretary"
         Me.panelSecretary.Size = New System.Drawing.Size(183, 560)
         Me.panelSecretary.TabIndex = 2
@@ -696,7 +697,7 @@ Partial Class frmDashboard
         Me.btnSecretary.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnSecretary.Image = CType(resources.GetObject("btnSecretary.Image"), System.Drawing.Image)
         Me.btnSecretary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSecretary.Location = New System.Drawing.Point(0, 276)
+        Me.btnSecretary.Location = New System.Drawing.Point(0, 252)
         Me.btnSecretary.Name = "btnSecretary"
         Me.btnSecretary.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnSecretary.Size = New System.Drawing.Size(183, 50)
@@ -714,7 +715,7 @@ Partial Class frmDashboard
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(183, 276)
+        Me.Panel1.Size = New System.Drawing.Size(183, 252)
         Me.Panel1.TabIndex = 1
         '
         'btnLogout
