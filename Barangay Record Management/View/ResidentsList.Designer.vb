@@ -24,18 +24,9 @@ Partial Class ResidentList
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ResidentList))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ResidentList))
         Me.dtGridResident = New System.Windows.Forms.DataGridView()
-        Me.btnAddResident = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.backButton = New System.Windows.Forms.PictureBox()
-        Me.rbFirstName = New System.Windows.Forms.RadioButton()
-        Me.rbLastName = New System.Windows.Forms.RadioButton()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.rbResidentNumber = New System.Windows.Forms.RadioButton()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.resident_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.is_head = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.first_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,6 +36,15 @@ Partial Class ResidentList
         Me.civilstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.voterstatus = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.employmentstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAddResident = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.backButton = New System.Windows.Forms.PictureBox()
+        Me.rbFirstName = New System.Windows.Forms.RadioButton()
+        Me.rbLastName = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbResidentNumber = New System.Windows.Forms.RadioButton()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.dtGridResident, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.backButton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -56,6 +56,9 @@ Partial Class ResidentList
         Me.dtGridResident.AllowUserToDeleteRows = False
         Me.dtGridResident.AllowUserToResizeColumns = False
         Me.dtGridResident.AllowUserToResizeRows = False
+        Me.dtGridResident.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtGridResident.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtGridResident.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtGridResident.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
@@ -81,6 +84,7 @@ Partial Class ResidentList
         Me.dtGridResident.EnableHeadersVisualStyles = False
         Me.dtGridResident.Location = New System.Drawing.Point(16, 119)
         Me.dtGridResident.Name = "dtGridResident"
+        Me.dtGridResident.ReadOnly = True
         Me.dtGridResident.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dtGridResident.RowHeadersVisible = False
         Me.dtGridResident.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -88,8 +92,83 @@ Partial Class ResidentList
         Me.dtGridResident.Size = New System.Drawing.Size(1137, 599)
         Me.dtGridResident.TabIndex = 1
         '
+        'resident_id
+        '
+        Me.resident_id.DataPropertyName = "resident_id"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.resident_id.DefaultCellStyle = DataGridViewCellStyle2
+        Me.resident_id.HeaderText = "Resident No."
+        Me.resident_id.Name = "resident_id"
+        Me.resident_id.ReadOnly = True
+        Me.resident_id.Width = 80
+        '
+        'is_head
+        '
+        Me.is_head.DataPropertyName = "is_head"
+        Me.is_head.HeaderText = "Is Head"
+        Me.is_head.Name = "is_head"
+        Me.is_head.ReadOnly = True
+        '
+        'first_name
+        '
+        Me.first_name.DataPropertyName = "fname"
+        Me.first_name.HeaderText = "First Name"
+        Me.first_name.Name = "first_name"
+        Me.first_name.ReadOnly = True
+        Me.first_name.Width = 150
+        '
+        'middle_name
+        '
+        Me.middle_name.DataPropertyName = "mname"
+        Me.middle_name.HeaderText = "Middle Name"
+        Me.middle_name.Name = "middle_name"
+        Me.middle_name.ReadOnly = True
+        Me.middle_name.Width = 130
+        '
+        'last_name
+        '
+        Me.last_name.DataPropertyName = "lname"
+        Me.last_name.HeaderText = "Last Name"
+        Me.last_name.Name = "last_name"
+        Me.last_name.ReadOnly = True
+        Me.last_name.Width = 150
+        '
+        'sex
+        '
+        Me.sex.DataPropertyName = "sex"
+        Me.sex.HeaderText = "Sex"
+        Me.sex.Name = "sex"
+        Me.sex.ReadOnly = True
+        Me.sex.Width = 90
+        '
+        'civilstatus
+        '
+        Me.civilstatus.DataPropertyName = "civil_status"
+        Me.civilstatus.HeaderText = "Civil Status"
+        Me.civilstatus.Name = "civilstatus"
+        Me.civilstatus.ReadOnly = True
+        '
+        'voterstatus
+        '
+        Me.voterstatus.DataPropertyName = "is_voter"
+        Me.voterstatus.HeaderText = "Voter"
+        Me.voterstatus.Name = "voterstatus"
+        Me.voterstatus.ReadOnly = True
+        Me.voterstatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.voterstatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.voterstatus.Width = 90
+        '
+        'employmentstatus
+        '
+        Me.employmentstatus.DataPropertyName = "year_residence"
+        Me.employmentstatus.HeaderText = "Years Residing"
+        Me.employmentstatus.Name = "employmentstatus"
+        Me.employmentstatus.ReadOnly = True
+        Me.employmentstatus.Width = 90
+        '
         'btnAddResident
         '
+        Me.btnAddResident.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAddResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.btnAddResident.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAddResident.FlatAppearance.BorderSize = 0
@@ -190,72 +269,6 @@ Partial Class ResidentList
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(1140, 1)
         Me.Label14.TabIndex = 67
-        '
-        'resident_id
-        '
-        Me.resident_id.DataPropertyName = "resident_id"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.resident_id.DefaultCellStyle = DataGridViewCellStyle2
-        Me.resident_id.HeaderText = "Resident No."
-        Me.resident_id.Name = "resident_id"
-        Me.resident_id.Width = 80
-        '
-        'is_head
-        '
-        Me.is_head.DataPropertyName = "is_head"
-        Me.is_head.HeaderText = "Is Head"
-        Me.is_head.Name = "is_head"
-        Me.is_head.ReadOnly = True
-        '
-        'first_name
-        '
-        Me.first_name.DataPropertyName = "fname"
-        Me.first_name.HeaderText = "First Name"
-        Me.first_name.Name = "first_name"
-        Me.first_name.Width = 150
-        '
-        'middle_name
-        '
-        Me.middle_name.DataPropertyName = "mname"
-        Me.middle_name.HeaderText = "Middle Name"
-        Me.middle_name.Name = "middle_name"
-        Me.middle_name.Width = 130
-        '
-        'last_name
-        '
-        Me.last_name.DataPropertyName = "lname"
-        Me.last_name.HeaderText = "Last Name"
-        Me.last_name.Name = "last_name"
-        Me.last_name.Width = 150
-        '
-        'sex
-        '
-        Me.sex.DataPropertyName = "sex"
-        Me.sex.HeaderText = "Sex"
-        Me.sex.Name = "sex"
-        Me.sex.Width = 90
-        '
-        'civilstatus
-        '
-        Me.civilstatus.DataPropertyName = "civil_status"
-        Me.civilstatus.HeaderText = "Civil Status"
-        Me.civilstatus.Name = "civilstatus"
-        '
-        'voterstatus
-        '
-        Me.voterstatus.DataPropertyName = "is_voter"
-        Me.voterstatus.HeaderText = "Voter"
-        Me.voterstatus.Name = "voterstatus"
-        Me.voterstatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.voterstatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.voterstatus.Width = 90
-        '
-        'employmentstatus
-        '
-        Me.employmentstatus.DataPropertyName = "year_residence"
-        Me.employmentstatus.HeaderText = "Years Residing"
-        Me.employmentstatus.Name = "employmentstatus"
-        Me.employmentstatus.Width = 90
         '
         'ResidentList
         '
