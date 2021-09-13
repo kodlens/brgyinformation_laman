@@ -43730,12 +43730,56 @@ insert  into `cities`(`id`,`psgcCode`,`citymunDesc`,`regDesc`,`provCode`,`citymu
 (1646,'168506000','SAN JOSE (Capital)','16','1685','168506',NULL,1),
 (1647,'168507000','TUBAJON','16','1685','168507',NULL,1);
 
+/*Table structure for table `civil_status` */
+
+DROP TABLE IF EXISTS `civil_status`;
+
+CREATE TABLE `civil_status` (
+  `civil_status_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `civil_status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`civil_status_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `civil_status` */
+
+/*Table structure for table `countries` */
+
+DROP TABLE IF EXISTS `countries`;
+
+CREATE TABLE `countries` (
+  `country_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`country_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `countries` */
+
+insert  into `countries`(`country_id`,`country`) values 
+(1,'PHILIPPINES');
+
+/*Table structure for table `nationalities` */
+
+DROP TABLE IF EXISTS `nationalities`;
+
+CREATE TABLE `nationalities` (
+  `nationality_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nationality` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`nationality_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `nationalities` */
+
+insert  into `nationalities`(`nationality_id`,`nationality`) values 
+(1,'FILIPINO'),
+(2,'AMERICAN');
+
 /*Table structure for table `provinces` */
 
 DROP TABLE IF EXISTS `provinces`;
 
 CREATE TABLE `provinces` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
   `psgcCode` varchar(255) DEFAULT NULL,
   `provDesc` text DEFAULT NULL,
   `regCode` varchar(255) DEFAULT NULL,
@@ -43746,95 +43790,95 @@ CREATE TABLE `provinces` (
 
 /*Data for the table `provinces` */
 
-insert  into `provinces`(`id`,`psgcCode`,`provDesc`,`regCode`,`provCode`,`active`) values 
-(1,'012800000','ILOCOS NORTE','01','0128',1),
-(2,'012900000','ILOCOS SUR','01','0129',1),
-(3,'013300000','LA UNION','01','0133',1),
-(4,'015500000','PANGASINAN','01','0155',1),
-(5,'020900000','BATANES','02','0209',1),
-(6,'021500000','CAGAYAN','02','0215',1),
-(7,'023100000','ISABELA','02','0231',1),
-(8,'025000000','NUEVA VIZCAYA','02','0250',1),
-(9,'025700000','QUIRINO','02','0257',1),
-(10,'030800000','BATAAN','03','0308',1),
-(11,'031400000','BULACAN','03','0314',1),
-(12,'034900000','NUEVA ECIJA','03','0349',1),
-(13,'035400000','PAMPANGA','03','0354',1),
-(14,'036900000','TARLAC','03','0369',1),
-(15,'037100000','ZAMBALES','03','0371',1),
-(16,'037700000','AURORA','03','0377',1),
-(17,'041000000','BATANGAS','04','0410',1),
-(18,'042100000','CAVITE','04','0421',1),
-(19,'043400000','LAGUNA','04','0434',1),
-(20,'045600000','QUEZON','04','0456',1),
-(21,'045800000','RIZAL','04','0458',1),
-(22,'174000000','MARINDUQUE','17','1740',1),
-(23,'175100000','OCCIDENTAL MINDORO','17','1751',1),
-(24,'175200000','ORIENTAL MINDORO','17','1752',1),
-(25,'175300000','PALAWAN','17','1753',1),
-(26,'175900000','ROMBLON','17','1759',1),
-(27,'050500000','ALBAY','05','0505',1),
-(28,'051600000','CAMARINES NORTE','05','0516',1),
-(29,'051700000','CAMARINES SUR','05','0517',1),
-(30,'052000000','CATANDUANES','05','0520',1),
-(31,'054100000','MASBATE','05','0541',1),
-(32,'056200000','SORSOGON','05','0562',1),
-(33,'060400000','AKLAN','06','0604',1),
-(34,'060600000','ANTIQUE','06','0606',1),
-(35,'061900000','CAPIZ','06','0619',1),
-(36,'063000000','ILOILO','06','0630',1),
-(37,'064500000','NEGROS OCCIDENTAL','06','0645',1),
-(38,'067900000','GUIMARAS','06','0679',1),
-(39,'071200000','BOHOL','07','0712',1),
-(40,'072200000','CEBU','07','0722',1),
-(41,'074600000','NEGROS ORIENTAL','07','0746',1),
-(42,'076100000','SIQUIJOR','07','0761',1),
-(43,'082600000','EASTERN SAMAR','08','0826',1),
-(44,'083700000','LEYTE','08','0837',1),
-(45,'084800000','NORTHERN SAMAR','08','0848',1),
-(46,'086000000','SAMAR (WESTERN SAMAR)','08','0860',1),
-(47,'086400000','SOUTHERN LEYTE','08','0864',1),
-(48,'087800000','BILIRAN','08','0878',1),
-(49,'097200000','ZAMBOANGA DEL NORTE','09','0972',1),
-(50,'097300000','ZAMBOANGA DEL SUR','09','0973',1),
-(51,'098300000','ZAMBOANGA SIBUGAY','09','0983',1),
-(52,'099700000','CITY OF ISABELA','09','0997',1),
-(53,'101300000','BUKIDNON','10','1013',1),
-(54,'101800000','CAMIGUIN','10','1018',1),
-(55,'103500000','LANAO DEL NORTE','10','1035',1),
-(56,'104200000','MISAMIS OCCIDENTAL','10','1042',1),
-(57,'104300000','MISAMIS ORIENTAL','10','1043',1),
-(58,'112300000','DAVAO DEL NORTE','11','1123',1),
-(59,'112400000','DAVAO DEL SUR','11','1124',1),
-(60,'112500000','DAVAO ORIENTAL','11','1125',1),
-(61,'118200000','COMPOSTELA VALLEY','11','1182',1),
-(62,'118600000','DAVAO OCCIDENTAL','11','1186',1),
-(63,'124700000','COTABATO (NORTH COTABATO)','12','1247',1),
-(64,'126300000','SOUTH COTABATO','12','1263',1),
-(65,'126500000','SULTAN KUDARAT','12','1265',1),
-(66,'128000000','SARANGANI','12','1280',1),
-(67,'129800000','COTABATO CITY','12','1298',1),
-(68,'133900000','NCR, CITY OF MANILA, FIRST DISTRICT','13','1339',1),
-(69,'133900000','CITY OF MANILA','13','1339',1),
-(70,'137400000','NCR, SECOND DISTRICT','13','1374',1),
-(71,'137500000','NCR, THIRD DISTRICT','13','1375',1),
-(72,'137600000','NCR, FOURTH DISTRICT','13','1376',1),
-(73,'140100000','ABRA','14','1401',1),
-(74,'141100000','BENGUET','14','1411',1),
-(75,'142700000','IFUGAO','14','1427',1),
-(76,'143200000','KALINGA','14','1432',1),
-(77,'144400000','MOUNTAIN PROVINCE','14','1444',1),
-(78,'148100000','APAYAO','14','1481',1),
-(79,'150700000','BASILAN','15','1507',1),
-(80,'153600000','LANAO DEL SUR','15','1536',1),
-(81,'153800000','MAGUINDANAO','15','1538',1),
-(82,'156600000','SULU','15','1566',1),
-(83,'157000000','TAWI-TAWI','15','1570',1),
-(84,'160200000','AGUSAN DEL NORTE','16','1602',1),
-(85,'160300000','AGUSAN DEL SUR','16','1603',1),
-(86,'166700000','SURIGAO DEL NORTE','16','1667',1),
-(87,'166800000','SURIGAO DEL SUR','16','1668',1),
-(88,'168500000','DINAGAT ISLANDS','16','1685',1);
+insert  into `provinces`(`id`,`country_id`,`psgcCode`,`provDesc`,`regCode`,`provCode`,`active`) values 
+(1,1,'012800000','ILOCOS NORTE','01','0128',1),
+(2,1,'012900000','ILOCOS SUR','01','0129',1),
+(3,1,'013300000','LA UNION','01','0133',1),
+(4,1,'015500000','PANGASINAN','01','0155',1),
+(5,1,'020900000','BATANES','02','0209',1),
+(6,1,'021500000','CAGAYAN','02','0215',1),
+(7,1,'023100000','ISABELA','02','0231',1),
+(8,1,'025000000','NUEVA VIZCAYA','02','0250',1),
+(9,1,'025700000','QUIRINO','02','0257',1),
+(10,1,'030800000','BATAAN','03','0308',1),
+(11,1,'031400000','BULACAN','03','0314',1),
+(12,1,'034900000','NUEVA ECIJA','03','0349',1),
+(13,1,'035400000','PAMPANGA','03','0354',1),
+(14,1,'036900000','TARLAC','03','0369',1),
+(15,1,'037100000','ZAMBALES','03','0371',1),
+(16,1,'037700000','AURORA','03','0377',1),
+(17,1,'041000000','BATANGAS','04','0410',1),
+(18,1,'042100000','CAVITE','04','0421',1),
+(19,1,'043400000','LAGUNA','04','0434',1),
+(20,1,'045600000','QUEZON','04','0456',1),
+(21,1,'045800000','RIZAL','04','0458',1),
+(22,1,'174000000','MARINDUQUE','17','1740',1),
+(23,1,'175100000','OCCIDENTAL MINDORO','17','1751',1),
+(24,1,'175200000','ORIENTAL MINDORO','17','1752',1),
+(25,1,'175300000','PALAWAN','17','1753',1),
+(26,1,'175900000','ROMBLON','17','1759',1),
+(27,1,'050500000','ALBAY','05','0505',1),
+(28,1,'051600000','CAMARINES NORTE','05','0516',1),
+(29,1,'051700000','CAMARINES SUR','05','0517',1),
+(30,1,'052000000','CATANDUANES','05','0520',1),
+(31,1,'054100000','MASBATE','05','0541',1),
+(32,1,'056200000','SORSOGON','05','0562',1),
+(33,1,'060400000','AKLAN','06','0604',1),
+(34,1,'060600000','ANTIQUE','06','0606',1),
+(35,1,'061900000','CAPIZ','06','0619',1),
+(36,1,'063000000','ILOILO','06','0630',1),
+(37,1,'064500000','NEGROS OCCIDENTAL','06','0645',1),
+(38,1,'067900000','GUIMARAS','06','0679',1),
+(39,1,'071200000','BOHOL','07','0712',1),
+(40,1,'072200000','CEBU','07','0722',1),
+(41,1,'074600000','NEGROS ORIENTAL','07','0746',1),
+(42,1,'076100000','SIQUIJOR','07','0761',1),
+(43,1,'082600000','EASTERN SAMAR','08','0826',1),
+(44,1,'083700000','LEYTE','08','0837',1),
+(45,1,'084800000','NORTHERN SAMAR','08','0848',1),
+(46,1,'086000000','SAMAR (WESTERN SAMAR)','08','0860',1),
+(47,1,'086400000','SOUTHERN LEYTE','08','0864',1),
+(48,1,'087800000','BILIRAN','08','0878',1),
+(49,1,'097200000','ZAMBOANGA DEL NORTE','09','0972',1),
+(50,1,'097300000','ZAMBOANGA DEL SUR','09','0973',1),
+(51,1,'098300000','ZAMBOANGA SIBUGAY','09','0983',1),
+(52,1,'099700000','CITY OF ISABELA','09','0997',1),
+(53,1,'101300000','BUKIDNON','10','1013',1),
+(54,1,'101800000','CAMIGUIN','10','1018',1),
+(55,1,'103500000','LANAO DEL NORTE','10','1035',1),
+(56,1,'104200000','MISAMIS OCCIDENTAL','10','1042',1),
+(57,1,'104300000','MISAMIS ORIENTAL','10','1043',1),
+(58,1,'112300000','DAVAO DEL NORTE','11','1123',1),
+(59,1,'112400000','DAVAO DEL SUR','11','1124',1),
+(60,1,'112500000','DAVAO ORIENTAL','11','1125',1),
+(61,1,'118200000','COMPOSTELA VALLEY','11','1182',1),
+(62,1,'118600000','DAVAO OCCIDENTAL','11','1186',1),
+(63,1,'124700000','COTABATO (NORTH COTABATO)','12','1247',1),
+(64,1,'126300000','SOUTH COTABATO','12','1263',1),
+(65,1,'126500000','SULTAN KUDARAT','12','1265',1),
+(66,1,'128000000','SARANGANI','12','1280',1),
+(67,1,'129800000','COTABATO CITY','12','1298',1),
+(68,1,'133900000','NCR, CITY OF MANILA, FIRST DISTRICT','13','1339',1),
+(69,1,'133900000','CITY OF MANILA','13','1339',1),
+(70,1,'137400000','NCR, SECOND DISTRICT','13','1374',1),
+(71,1,'137500000','NCR, THIRD DISTRICT','13','1375',1),
+(72,1,'137600000','NCR, FOURTH DISTRICT','13','1376',1),
+(73,1,'140100000','ABRA','14','1401',1),
+(74,1,'141100000','BENGUET','14','1411',1),
+(75,1,'142700000','IFUGAO','14','1427',1),
+(76,1,'143200000','KALINGA','14','1432',1),
+(77,1,'144400000','MOUNTAIN PROVINCE','14','1444',1),
+(78,1,'148100000','APAYAO','14','1481',1),
+(79,1,'150700000','BASILAN','15','1507',1),
+(80,1,'153600000','LANAO DEL SUR','15','1536',1),
+(81,1,'153800000','MAGUINDANAO','15','1538',1),
+(82,1,'156600000','SULU','15','1566',1),
+(83,1,'157000000','TAWI-TAWI','15','1570',1),
+(84,1,'160200000','AGUSAN DEL NORTE','16','1602',1),
+(85,1,'160300000','AGUSAN DEL SUR','16','1603',1),
+(86,1,'166700000','SURIGAO DEL NORTE','16','1667',1),
+(87,1,'166800000','SURIGAO DEL SUR','16','1668',1),
+(88,1,'168500000','DINAGAT ISLANDS','16','1685',1);
 
 /*Table structure for table `regions` */
 
@@ -43869,6 +43913,34 @@ insert  into `regions`(`id`,`psgcCode`,`regDesc`,`regCode`) values
 (16,'150000000','AUTONOMOUS REGION IN MUSLIM MINDANAO (ARMM)','15'),
 (17,'160000000','REGION XIII (Caraga)','16');
 
+/*Table structure for table `religions` */
+
+DROP TABLE IF EXISTS `religions`;
+
+CREATE TABLE `religions` (
+  `religion_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `religion` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`religion_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `religions` */
+
+insert  into `religions`(`religion_id`,`religion`) values 
+(1,'Aglipay'),
+(2,'Bible Baptist Church'),
+(3,'Church of Christ'),
+(4,'Free Methodist Church'),
+(5,'Iglisia Ni Cristo'),
+(6,'Iglesia Filipina Independiente'),
+(7,'Islam'),
+(8,'Jehovah\'s Witness'),
+(9,'Pentecostal Church of God Asia Mission'),
+(10,'Roman Catholic'),
+(11,'Seventh Day Adventist'),
+(12,'United Methodists Church'),
+(13,'United Church of Christ in the Philippines'),
+(14,'Other Religion');
+
 /*Table structure for table `residents` */
 
 DROP TABLE IF EXISTS `residents`;
@@ -43877,17 +43949,39 @@ CREATE TABLE `residents` (
   `resident_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `household_no` varchar(50) DEFAULT NULL,
   `family_no` varchar(50) DEFAULT NULL,
+  `is_head` tinyint(4) DEFAULT 0,
   `lname` varchar(70) DEFAULT NULL,
   `fname` varchar(70) DEFAULT NULL,
   `mname` varchar(70) DEFAULT NULL,
+  `suffix` varchar(20) DEFAULT NULL,
   `sex` varchar(10) DEFAULT NULL,
   `civil_status` varchar(15) DEFAULT NULL,
+  `bdate` varchar(30) DEFAULT NULL,
+  `present_country` varchar(255) DEFAULT NULL,
+  `present_province` varchar(255) DEFAULT NULL,
+  `present_city` varchar(255) DEFAULT NULL,
+  `present_barangay` varchar(255) DEFAULT NULL,
+  `present_street` varchar(255) DEFAULT NULL,
+  `permanent_country` varchar(255) DEFAULT NULL,
+  `permanent_province` varchar(255) DEFAULT NULL,
+  `permanent_city` varchar(255) DEFAULT NULL,
+  `permanent_barangay` varchar(255) DEFAULT NULL,
+  `permament_street` varchar(255) DEFAULT NULL,
   `religion` varchar(255) DEFAULT NULL,
   `nationality` varchar(100) DEFAULT NULL,
+  `employment_status` varchar(100) DEFAULT NULL,
+  `occupation` varchar(255) DEFAULT NULL,
+  `annual_income` varchar(100) DEFAULT NULL,
+  `year_residence` varchar(255) DEFAULT NULL,
+  `is_voter` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`resident_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `residents` */
+
+insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`bdate`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permament_street`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`is_voter`) values 
+(3,NULL,NULL,NULL,'amparado','etienne','','','Male','Single',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Bible Baptist Church','FILIPINO','Employed','it staff','10000','1 year',0),
+(4,NULL,NULL,1,'ampz','etet','','','Male','Single',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'United Church of Christ in the Philippines','AMERICAN','Unemployed','WALA','','',0);
 
 /*Table structure for table `users` */
 

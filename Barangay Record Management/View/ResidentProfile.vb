@@ -2,6 +2,9 @@
     Dim rel As New Religion
     Dim nat As New Nationality
 
+    Dim address As New Addresses
+
+
     Dim dtSiblingDatePicker As DateTimePicker
 
 
@@ -11,6 +14,10 @@
         ' Add any initialization after the InitializeComponent() call.
         rel.all(cmbReligion)
         nat.all(cmbNationality)
+
+        address.country(cmbPresentCountry)
+        address.country(cmbPermanentCountry)
+
     End Sub
 
 
@@ -87,14 +94,52 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        'FILTERING PRESENT ADDRESS
+        If String.IsNullOrEmpty(cmbPresentCountry.Text) Then
+            WarnBox("Please select Present Country.")
+            Return
+        End If
+        If String.IsNullOrEmpty(cmbPresentProvince.Text) Then
+            WarnBox("Please select Present Province.")
+            Return
+        End If
+        If String.IsNullOrEmpty(cmbPresentCity.Text) Then
+            WarnBox("Please select Present City.")
+            Return
+        End If
+        If String.IsNullOrEmpty(cmbPresentBarangay.Text) Then
+            WarnBox("Please select Present Barangay.")
+            Return
+        End If
+
+        'FILTERING PERMANENT ADDRESS
+        If String.IsNullOrEmpty(cmbPermanentCountry.Text) Then
+            WarnBox("Please select Permanent Country.")
+            Return
+        End If
+        If String.IsNullOrEmpty(cmbPermanentProvince.Text) Then
+            WarnBox("Please select Permanent Province.")
+            Return
+        End If
+        If String.IsNullOrEmpty(cmbPermanentCity.Text) Then
+            WarnBox("Please select Permanent City.")
+            Return
+        End If
+        If String.IsNullOrEmpty(cmbPermanentBarangay.Text) Then
+            WarnBox("Please select Permanent Barangay.")
+            Return
+        End If
+
+
+
         Dim res As New Resident
-
-
         If rbHead.Checked Then
             res.IsHead = 1
         Else
             res.IsHead = 0
         End If
+
+
         res.Lname = Me.txtLastname.Text.Trim
         res.Fname = Me.txtFirstname.Text.Trim
         res.Mname = Me.txtMiddlename.Text.Trim
@@ -161,5 +206,69 @@
 
     Private Sub dtSiblingPicker_ValueChanged(sender As Object, e As EventArgs)
         dgSibling.CurrentCell.Value = dtSiblingDatePicker.Value.ToString("d")
+    End Sub
+
+    Private Sub cmbPresentCoutnry_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPresentCountry.SelectedIndexChanged
+        Try
+            address.province(Me.cmbPresentCountry.Text, Me.cmbPresentProvince)
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub cmbPresentProvince_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPresentProvince.SelectedIndexChanged
+        Try
+            address.cities(Me.cmbPresentProvince.Text, cmbPresentCity)
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub cmbPresentCity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPresentCity.SelectedIndexChanged
+        Try
+            address.barangays(Me.cmbPresentProvince.Text, Me.cmbPresentCity.Text, cmbPresentBarangay)
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub cmbPermanentCountry_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPermanentCountry.SelectedIndexChanged
+        Try
+            address.province(Me.cmbPermanentCountry.Text, Me.cmbPermanentProvince)
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub cmbPermanentProvince_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPermanentProvince.SelectedIndexChanged
+        Try
+            address.cities(Me.cmbPermanentProvince.Text, cmbPermanentCity)
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub cmbPermanentCity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPermanentCity.SelectedIndexChanged
+        Try
+            address.barangays(Me.cmbPermanentProvince.Text, Me.cmbPermanentCity.Text, cmbPermanentBarangay)
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub checkIsSameWithPresentAddress_CheckedChanged(sender As Object, e As EventArgs) Handles checkIsSameWithPresentAddress.CheckedChanged
+        If checkIsSameWithPresentAddress.Checked Then
+            cmbPermanentCountry.Text = cmbPresentCountry.Text
+            cmbPermanentProvince.Text = cmbPresentProvince.Text
+            cmbPermanentCity.Text = cmbPresentCity.Text
+            cmbPermanentBarangay.Text = cmbPresentBarangay.Text
+            txtPermanentStreet.Text = txtPresentStreet.Text
+        Else
+            cmbPermanentCountry.SelectedIndex = -1
+            cmbPermanentProvince.SelectedIndex = -1
+            cmbPermanentCity.SelectedIndex = -1
+            cmbPermanentBarangay.SelectedIndex = -1
+            txtPermanentStreet.Text = ""
+        End If
     End Sub
 End Class

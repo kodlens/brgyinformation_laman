@@ -22,6 +22,7 @@ Partial Class ResidentList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -45,9 +46,12 @@ Partial Class ResidentList
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbResidentNumber = New System.Windows.Forms.RadioButton()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.NewResidentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dtGridResident, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.backButton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dtGridResident
@@ -73,6 +77,7 @@ Partial Class ResidentList
         Me.dtGridResident.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtGridResident.ColumnHeadersHeight = 40
         Me.dtGridResident.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.resident_id, Me.is_head, Me.first_name, Me.middle_name, Me.last_name, Me.sex, Me.civilstatus, Me.voterstatus, Me.employmentstatus})
+        Me.dtGridResident.ContextMenuStrip = Me.ContextMenuStrip1
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.Ivory
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -270,6 +275,18 @@ Partial Class ResidentList
         Me.Label14.Size = New System.Drawing.Size(1140, 1)
         Me.Label14.TabIndex = 67
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewResidentToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 48)
+        '
+        'NewResidentToolStripMenuItem
+        '
+        Me.NewResidentToolStripMenuItem.Name = "NewResidentToolStripMenuItem"
+        Me.NewResidentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewResidentToolStripMenuItem.Text = "New Resident"
+        '
         'ResidentList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -292,6 +309,7 @@ Partial Class ResidentList
         CType(Me.backButton, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -315,4 +333,6 @@ Partial Class ResidentList
     Friend WithEvents civilstatus As DataGridViewTextBoxColumn
     Friend WithEvents voterstatus As DataGridViewCheckBoxColumn
     Friend WithEvents employmentstatus As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents NewResidentToolStripMenuItem As ToolStripMenuItem
 End Class

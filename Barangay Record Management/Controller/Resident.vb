@@ -12,6 +12,22 @@ Public Class Resident
     Public Property Sex As String
     Public Property CiviStatus As String
     Public Property BirthDate As String
+
+    'PRESENT ADDRESS
+    Public Property PresentCountry As String
+    Public Property PresentProvince As String
+    Public Property PresentCity As String
+    Public Property PresentBarangay As String
+    Public Property PresentStreet As String
+
+    'PERMANENT ADDRESS
+    Public Property PermanentCountry As String
+    Public Property PermanentProvince As String
+    Public Property PermanentCity As String
+    Public Property PermanentBarangay As String
+    Public Property PermanentStreet As String
+
+
     Public Property Religion As String
     Public Property Nationality As String
     Public Property EmploymentStatus As String
@@ -30,7 +46,10 @@ Public Class Resident
             query = "INSERT INTO residents SET " &
                 "is_head = @ishead, " &
                 "household_no = @household_no, family_no = @family_no, lname = @lname, fname = @fname, mname = @mname, " &
-                "suffix = @suffix, sex = @sex, civil_status = @cstatus, religion = @religion, nationality = @nationality, " &
+                "suffix = @suffix, sex = @sex, civil_status = @cstatus, " &
+                "present_country = @pre_country, present_province = @pre_province, present_city = @pre_city, present_barangay = @pre_brgy, present_street = @pre_street" &
+                "permament_country = @per_country, permament_province = @per_province, permanent_city = @per_city, permanent_barangay = @per_brgy, permanent_barangay = @per_street " &
+                "religion = @religion, nationality = @nationality, " &
                 "employment_status = @employment, occupation = @occupation, annual_income = @annual_income, year_residence = @yr_residence"
             cmd = New MySqlCommand(query, con)
             With cmd.Parameters
@@ -44,6 +63,21 @@ Public Class Resident
                 .AddWithValue("@sex", Me.Sex)
                 .AddWithValue("@cstatus", Me.CiviStatus)
                 .AddWithValue("@bdate", Me.BirthDate)
+
+                'present address
+                .AddWithValue("@pre_country", Me.PresentCountry)
+                .AddWithValue("@pre_province", Me.PresentProvince)
+                .AddWithValue("@pre_city", Me.PresentCity)
+                .AddWithValue("@pre_brgy", Me.PresentBarangay)
+                .AddWithValue("@pre_street", Me.PresentStreet)
+
+                'permament address
+                .AddWithValue("@per_country", Me.PermanentCountry)
+                .AddWithValue("@per_province", Me.PermanentProvince)
+                .AddWithValue("@per_city", Me.PermanentCity)
+                .AddWithValue("@per_brgy", Me.PermanentBarangay)
+                .AddWithValue("@per_street", Me.PermanentStreet)
+
                 .AddWithValue("@religion", Me.Religion)
                 .AddWithValue("@nationality", Me.Nationality)
                 .AddWithValue("@employment", Me.EmploymentStatus)

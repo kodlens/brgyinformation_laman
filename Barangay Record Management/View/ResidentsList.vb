@@ -29,4 +29,8 @@
         frmDashboard.GeneralHeading.Text = "Resident List"
 
     End Sub
+
+    Private Sub NewResidentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewResidentToolStripMenuItem.Click
+        btnAddResident_Click_1(sender, e)
+    End Sub
 End Class
