@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v12.14 (64 bit)
-MySQL - 10.4.17-MariaDB : Database - brgyinfo_laman
+MySQL - 10.4.13-MariaDB : Database - brgyinfo_laman
 *********************************************************************
 */
 
@@ -43738,9 +43738,15 @@ CREATE TABLE `civil_status` (
   `civil_status_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `civil_status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`civil_status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `civil_status` */
+
+insert  into `civil_status`(`civil_status_id`,`civil_status`) values 
+(1,'SINGLE'),
+(2,'MARRIED'),
+(3,'WINDOW'),
+(4,'SEPARATED');
 
 /*Table structure for table `countries` */
 
@@ -43941,6 +43947,25 @@ insert  into `religions`(`religion_id`,`religion`) values
 (13,'United Church of Christ in the Philippines'),
 (14,'Other Religion');
 
+/*Table structure for table `resident_siblings` */
+
+DROP TABLE IF EXISTS `resident_siblings`;
+
+CREATE TABLE `resident_siblings` (
+  `resident_sibling_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `resident_id` bigint(20) unsigned NOT NULL,
+  `lname` varchar(100) DEFAULT NULL,
+  `mname` varchar(100) DEFAULT NULL,
+  `fname` varchar(100) DEFAULT NULL,
+  `sex` varchar(20) DEFAULT NULL,
+  `civil_status` varchar(30) DEFAULT NULL,
+  `bdate` varchar(20) DEFAULT NULL,
+  `is_living_with_you` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`resident_sibling_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `resident_siblings` */
+
 /*Table structure for table `residents` */
 
 DROP TABLE IF EXISTS `residents`;
@@ -43956,7 +43981,14 @@ CREATE TABLE `residents` (
   `suffix` varchar(20) DEFAULT NULL,
   `sex` varchar(10) DEFAULT NULL,
   `civil_status` varchar(15) DEFAULT NULL,
+  `religion` varchar(255) DEFAULT NULL,
+  `nationality` varchar(100) DEFAULT NULL,
+  `employment_status` varchar(100) DEFAULT NULL,
+  `occupation` varchar(255) DEFAULT NULL,
+  `annual_income` varchar(100) DEFAULT NULL,
+  `year_residence` varchar(255) DEFAULT NULL,
   `bdate` varchar(30) DEFAULT NULL,
+  `place_of_birth` varchar(255) DEFAULT NULL,
   `present_country` varchar(255) DEFAULT NULL,
   `present_province` varchar(255) DEFAULT NULL,
   `present_city` varchar(255) DEFAULT NULL,
@@ -43966,22 +43998,16 @@ CREATE TABLE `residents` (
   `permanent_province` varchar(255) DEFAULT NULL,
   `permanent_city` varchar(255) DEFAULT NULL,
   `permanent_barangay` varchar(255) DEFAULT NULL,
-  `permament_street` varchar(255) DEFAULT NULL,
-  `religion` varchar(255) DEFAULT NULL,
-  `nationality` varchar(100) DEFAULT NULL,
-  `employment_status` varchar(100) DEFAULT NULL,
-  `occupation` varchar(255) DEFAULT NULL,
-  `annual_income` varchar(100) DEFAULT NULL,
-  `year_residence` varchar(255) DEFAULT NULL,
+  `permanent_street` varchar(255) DEFAULT NULL,
   `is_voter` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`resident_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `residents` */
 
-insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`bdate`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permament_street`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`is_voter`) values 
-(3,NULL,NULL,NULL,'amparado','etienne','','','Male','Single',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Bible Baptist Church','FILIPINO','Employed','it staff','10000','1 year',0),
-(4,NULL,NULL,1,'ampz','etet','','','Male','Single',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'United Church of Christ in the Philippines','AMERICAN','Unemployed','WALA','','',0);
+insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`bdate`,`place_of_birth`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permanent_street`,`is_voter`) values 
+(7,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR',NULL,NULL,'PHILIPPINES','CAMARINES NORTE','JOSE PANGANIBAN','San Pedro','adada','PHILIPPINES','CAVITE','SILANG','San Miguel II','asdawd',0),
+(8,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-15','BAROY, LANAO DEL NORTE','PHILIPPINES','CAPIZ','DUMARAO','San Juan','sdfsef','PHILIPPINES','CAPIZ','IVISAN','Cabugao','sdawda',0);
 
 /*Table structure for table `users` */
 

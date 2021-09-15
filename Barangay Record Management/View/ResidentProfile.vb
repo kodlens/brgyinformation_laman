@@ -45,13 +45,6 @@
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
-        'add datetime on datagrid
-        dtSiblingDatePicker = New DateTimePicker
-        dtSiblingDatePicker.Format = DateTimePickerFormat.Short
-        dtSiblingDatePicker.Visible = False
-        dtSiblingDatePicker.Width = 100
-        dgSibling.Controls.Add(dtSiblingDatePicker)
-        AddHandler dtSiblingDatePicker.ValueChanged, AddressOf dtSiblingPicker_ValueChanged
 
         If TabControl1.SelectedTab.Name = "tabProfile" Then
             txtHSerialNumber.Focus()
@@ -65,6 +58,16 @@
     End Sub
 
     Private Sub frmResidentProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'add datetime on datagrid
+        dtSiblingDatePicker = New DateTimePicker
+        dtSiblingDatePicker.Format = DateTimePickerFormat.Short
+        dtSiblingDatePicker.Visible = False
+        dtSiblingDatePicker.Width = 100
+        dGridSibling.Controls.Add(dtSiblingDatePicker)
+        AddHandler dtSiblingDatePicker.ValueChanged, AddressOf dtSiblingPicker_ValueChanged
+
+
         txtHSerialNumber.Focus()
         rbHead.Checked = True
         frmDashboard.GeneralHeading.Text = "Resident Profile"
@@ -152,6 +155,22 @@
         res.Occupation = Me.txtOccupation.Text
         res.AnnualIncome = Me.txtAnnualIncome.Text
         res.YearResidence = Me.txtYearResidency.Text
+        res.BirthDate = Me.dtBdate.Value.ToString("yyyy-MM-dd")
+        res.PlaceOfBirth = Me.txtPlaceBirth.Text
+
+        'PRESENT ADDRESS
+        res.PresentCountry = Me.cmbPresentCountry.Text
+        res.PresentProvince = Me.cmbPresentProvince.Text
+        res.PresentCity = Me.cmbPresentCity.Text
+        res.PresentBarangay = Me.cmbPresentBarangay.Text
+        res.PresentStreet = Me.txtPresentStreet.Text
+
+        'PERMANENT ADDRESS
+        res.PermanentCountry = Me.cmbPermanentCountry.Text
+        res.PermanentProvince = Me.cmbPermanentProvince.Text
+        res.PermanentCity = Me.cmbPermanentCity.Text
+        res.PermanentBarangay = Me.cmbPermanentBarangay.Text
+        res.PermanentStreet = Me.txtPermanentStreet.Text
 
         If res.Save() > 0 Then
             InfoBox("Successfully saved!")
@@ -170,42 +189,8 @@
         TabControl1.SelectedTab = tabFamilyMembers
     End Sub
 
-    'datepicker for bdate
-
-    Private Sub dtSibling_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles dgSibling.CellBeginEdit
-        Try
-            If dgSibling.CurrentCell.ColumnIndex = 6 Then
-                dtSiblingDatePicker.Location = dgSibling.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, False).Location
-                dtSiblingDatePicker.Visible = True
-                dtSiblingDatePicker.Value = DateTime.Today
-                'If dgSibling.CurrentCell.Value IsNot DBNull.Value Then
-                '    'dtSiblingDatePicker.Value = CType(dgSibling.CurrentCell.Value, DateTime)
-                'Else
-
-                'End If
-
-                ''continue ni kay error ni dere
-            Else
-                dtSiblingDatePicker.Visible = False
-            End If
-        Catch ex As Exception
-            ErrBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub dtSibling_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgSibling.CellEndEdit
-        Try
-            If dgSibling.CurrentCell.ColumnIndex = 6 Then
-                dgSibling.CurrentCell.Value = dtSiblingDatePicker.Value.ToString("d")
-
-            End If
-        Catch ex As Exception
-            ErrBox(ex.Message)
-        End Try
-    End Sub
-
     Private Sub dtSiblingPicker_ValueChanged(sender As Object, e As EventArgs)
-        dgSibling.CurrentCell.Value = dtSiblingDatePicker.Value.ToString("d")
+        dGridSibling.CurrentCell.Value = dtSiblingDatePicker.Value.ToString("d")
     End Sub
 
     Private Sub cmbPresentCoutnry_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPresentCountry.SelectedIndexChanged
@@ -270,5 +255,54 @@
             cmbPermanentBarangay.SelectedIndex = -1
             txtPermanentStreet.Text = ""
         End If
+    End Sub
+
+    Private Sub btnDebug_Click(sender As Object, e As EventArgs) Handles btnDebug.Click
+        Me.txtFirstname.Text = "ETIENNE WAYNE"
+        txtLastname.Text = "AMPARADO"
+        txtMiddlename.Text = "NAMOCATCAT"
+        txtSuffix.Text = "TEST"
+        cmbSex.Text = "MALE"
+        cmbCivilStatus.Text = "SINGLE"
+        cmbReligion.Text = "Bible Baptist Church"
+        cmbNationality.Text = "FILIPINO"
+        cmbEmploymentStatus.Text = "EMPLOYED"
+        txtOccupation.Text = "IT PROGRAMMER"
+        txtAnnualIncome.Text = "11000"
+        txtYearResidency.Text = "1 YEAR"
+        txtPlaceBirth.Text = "BAROY, LANAO DEL NORTE"
+    End Sub
+
+    Private Sub dGridSibling_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles dGridSibling.CellBeginEdit
+        If dGridSibling.CurrentCell.ColumnIndex = 6 Then
+            dtSiblingDatePicker.Location = dGridSibling.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, False).Location
+            dtSiblingDatePicker.Visible = True
+            dtSiblingDatePicker.Value = DateTime.Today
+            'If dgSibling.CurrentCell.Value IsNot DBNull.Value Then
+            '    'dtSiblingDatePicker.Value = CType(dgSibling.CurrentCell.Value, DateTime)
+            'Else
+
+            'End If
+
+            ''continue ni kay error ni dere
+        Else
+            dtSiblingDatePicker.Visible = False
+        End If
+        Try
+
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub dGridSibling_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dGridSibling.CellEndEdit
+        If dGridSibling.CurrentCell.ColumnIndex = 6 Then
+            dGridSibling.CurrentCell.Value = dtSiblingDatePicker.Value.ToString("d")
+        End If
+        Try
+
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
     End Sub
 End Class

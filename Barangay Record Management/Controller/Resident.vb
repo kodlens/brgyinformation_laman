@@ -12,6 +12,8 @@ Public Class Resident
     Public Property Sex As String
     Public Property CiviStatus As String
     Public Property BirthDate As String
+    Public Property PlaceOfBirth As String
+
 
     'PRESENT ADDRESS
     Public Property PresentCountry As String
@@ -47,10 +49,12 @@ Public Class Resident
                 "is_head = @ishead, " &
                 "household_no = @household_no, family_no = @family_no, lname = @lname, fname = @fname, mname = @mname, " &
                 "suffix = @suffix, sex = @sex, civil_status = @cstatus, " &
-                "present_country = @pre_country, present_province = @pre_province, present_city = @pre_city, present_barangay = @pre_brgy, present_street = @pre_street" &
-                "permament_country = @per_country, permament_province = @per_province, permanent_city = @per_city, permanent_barangay = @per_brgy, permanent_barangay = @per_street " &
                 "religion = @religion, nationality = @nationality, " &
-                "employment_status = @employment, occupation = @occupation, annual_income = @annual_income, year_residence = @yr_residence"
+                "employment_status = @employment, occupation = @occupation, annual_income = @annual_income, year_residence = @yr_residence, " &
+                "bdate = @bdate, place_of_birth = @placebdate, " &
+                "present_country = @pre_country, present_province = @pre_province, present_city = @pre_city, present_barangay = @pre_brgy, present_street = @pre_street, " &
+                "permanent_country = @per_country, permanent_province = @per_province, permanent_city = @per_city, permanent_barangay = @per_brgy, permanent_street = @per_street"
+
             cmd = New MySqlCommand(query, con)
             With cmd.Parameters
                 .AddWithValue("@ishead", Me.IsHead)
@@ -62,7 +66,14 @@ Public Class Resident
                 .AddWithValue("@suffix", Me.Suffix)
                 .AddWithValue("@sex", Me.Sex)
                 .AddWithValue("@cstatus", Me.CiviStatus)
+                .AddWithValue("@religion", Me.Religion)
+                .AddWithValue("@nationality", Me.Nationality)
+                .AddWithValue("@employment", Me.EmploymentStatus)
+                .AddWithValue("@occupation", Me.Occupation)
+                .AddWithValue("@annual_income", Me.AnnualIncome)
+                .AddWithValue("@yr_residence", Me.YearResidence)
                 .AddWithValue("@bdate", Me.BirthDate)
+                .AddWithValue("@placebdate", Me.PlaceOfBirth)
 
                 'present address
                 .AddWithValue("@pre_country", Me.PresentCountry)
@@ -78,12 +89,6 @@ Public Class Resident
                 .AddWithValue("@per_brgy", Me.PermanentBarangay)
                 .AddWithValue("@per_street", Me.PermanentStreet)
 
-                .AddWithValue("@religion", Me.Religion)
-                .AddWithValue("@nationality", Me.Nationality)
-                .AddWithValue("@employment", Me.EmploymentStatus)
-                .AddWithValue("@occupation", Me.Occupation)
-                .AddWithValue("@annual_income", Me.AnnualIncome)
-                .AddWithValue("@yr_residence", Me.YearResidence)
             End With
             i = cmd.ExecuteNonQuery
             cmd.Dispose()
