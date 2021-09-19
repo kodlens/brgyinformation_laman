@@ -13,6 +13,20 @@ Public Class Resident
     Public Property CiviStatus As String
     Public Property BirthDate As String
     Public Property PlaceOfBirth As String
+    Public Property Religion As String
+    Public Property Nationality As String
+    Public Property EmploymentStatus As String
+    Public Property Occupation As String
+    Public Property AnnualIncome As String
+
+    Public YearResidence As String
+
+    'CONTACT INFORMATION
+    Public Property ContactNo As String
+    Public Property Email As String
+    Public Property TypeValidId As String
+    Public Property IdNo As String
+
 
 
     'PRESENT ADDRESS
@@ -29,14 +43,12 @@ Public Class Resident
     Public Property PermanentBarangay As String
     Public Property PermanentStreet As String
 
+    'VOTERS INFORMATION
 
-    Public Property Religion As String
-    Public Property Nationality As String
-    Public Property EmploymentStatus As String
-    Public Property Occupation As String
-    Public Property AnnualIncome As String
-
-    Public YearResidence As String
+    Public Property IsVoter As Int16
+    Public Property VoterType As String
+    Public Property IsSK As Int16
+    Public Property PlaceRegistration As String
 
 
 
@@ -52,8 +64,10 @@ Public Class Resident
                 "religion = @religion, nationality = @nationality, " &
                 "employment_status = @employment, occupation = @occupation, annual_income = @annual_income, year_residence = @yr_residence, " &
                 "bdate = @bdate, place_of_birth = @placebdate, " &
+                "contact_no = @contact, email = @email, type_valid_id = @typeId, id_no = @idno, " &
                 "present_country = @pre_country, present_province = @pre_province, present_city = @pre_city, present_barangay = @pre_brgy, present_street = @pre_street, " &
-                "permanent_country = @per_country, permanent_province = @per_province, permanent_city = @per_city, permanent_barangay = @per_brgy, permanent_street = @per_street"
+                "permanent_country = @per_country, permanent_province = @per_province, permanent_city = @per_city, permanent_barangay = @per_brgy, permanent_street = @per_street, " &
+                "is_voter = @isvoter, voter_type = @voter_type, is_sk = @issk, place_registration = @placereg"
 
             cmd = New MySqlCommand(query, con)
             With cmd.Parameters
@@ -75,6 +89,12 @@ Public Class Resident
                 .AddWithValue("@bdate", Me.BirthDate)
                 .AddWithValue("@placebdate", Me.PlaceOfBirth)
 
+                'contact
+                .AddWithValue("@contact", Me.ContactNo)
+                .AddWithValue("@email", Me.Email)
+                .AddWithValue("@typeId", Me.TypeValidId)
+                .AddWithValue("@idno", Me.IdNo)
+
                 'present address
                 .AddWithValue("@pre_country", Me.PresentCountry)
                 .AddWithValue("@pre_province", Me.PresentProvince)
@@ -88,6 +108,13 @@ Public Class Resident
                 .AddWithValue("@per_city", Me.PermanentCity)
                 .AddWithValue("@per_brgy", Me.PermanentBarangay)
                 .AddWithValue("@per_street", Me.PermanentStreet)
+
+                'voters info
+                .AddWithValue("@isvoter", Me.IsVoter)
+                .AddWithValue("@voter_type", Me.VoterType)
+                .AddWithValue("@issk", Me.IsSK)
+                .AddWithValue("@placereg", Me.PlaceRegistration)
+
 
             End With
             i = cmd.ExecuteNonQuery

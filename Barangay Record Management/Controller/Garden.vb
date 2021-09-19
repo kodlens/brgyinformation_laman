@@ -1,37 +1,44 @@
-﻿
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
-Public Class Nationality
 
-    Public Sub all(ByVal cmb As ComboBox)
+
+Public Class Garden
+
+
+
+    Public Sub fillComboBox(ByVal cmb As ComboBox)
+        cmb.Items.Clear()
+
         conOpen()
-        query = "select * from nationalities order by nationality asc"
+        query = "select * from gardens order by garden asc"
         cmd = New MySqlCommand(query, con)
         Dim dr As MySqlDataReader
         dr = cmd.ExecuteReader
+
+        'subject for refactoring
         While dr.Read
-            cmb.Items.Add(Convert.ToString(dr("nationality")))
+            cmb.Items.Add(Convert.ToString(dr("garden")))
         End While
         dr.Dispose()
         cmd.Dispose()
         conClose()
-
     End Sub
 
     Public Sub fillComboBoxPerCon(ByVal cmb As ComboBox)
+        cmb.Items.Clear()
 
-        query = "select * from nationalities order by nationality asc"
+
+        query = "select * from gardens order by garden asc"
         cmd = New MySqlCommand(query, con)
         Dim dr As MySqlDataReader
         dr = cmd.ExecuteReader
+
+        'subject for refactoring
         While dr.Read
-            cmb.Items.Add(Convert.ToString(dr("nationality")))
+            cmb.Items.Add(Convert.ToString(dr("garden")))
         End While
         dr.Dispose()
         cmd.Dispose()
 
-
     End Sub
-
-
 End Class

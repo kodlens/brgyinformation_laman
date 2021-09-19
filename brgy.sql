@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v12.14 (64 bit)
-MySQL - 10.4.13-MariaDB : Database - brgyinfo_laman
+MySQL - 10.4.17-MariaDB : Database - brgyinfo_laman
 *********************************************************************
 */
 
@@ -43748,6 +43748,23 @@ insert  into `civil_status`(`civil_status_id`,`civil_status`) values
 (3,'WINDOW'),
 (4,'SEPARATED');
 
+/*Table structure for table `contraceptives` */
+
+DROP TABLE IF EXISTS `contraceptives`;
+
+CREATE TABLE `contraceptives` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `contraceptive` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `contraceptives` */
+
+insert  into `contraceptives`(`id`,`contraceptive`) values 
+(1,'CONTRA 1'),
+(2,'CONTRA 2'),
+(3,'CONTRA 3');
+
 /*Table structure for table `countries` */
 
 DROP TABLE IF EXISTS `countries`;
@@ -43762,6 +43779,23 @@ CREATE TABLE `countries` (
 
 insert  into `countries`(`country_id`,`country`) values 
 (1,'PHILIPPINES');
+
+/*Table structure for table `gardens` */
+
+DROP TABLE IF EXISTS `gardens`;
+
+CREATE TABLE `gardens` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `garden` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `gardens` */
+
+insert  into `gardens`(`id`,`garden`) values 
+(1,'GARDEN 1'),
+(2,'GARDEN 2'),
+(3,'GARDEN 3');
 
 /*Table structure for table `nationalities` */
 
@@ -43778,6 +43812,25 @@ CREATE TABLE `nationalities` (
 insert  into `nationalities`(`nationality_id`,`nationality`) values 
 (1,'FILIPINO'),
 (2,'AMERICAN');
+
+/*Table structure for table `pets` */
+
+DROP TABLE IF EXISTS `pets`;
+
+CREATE TABLE `pets` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pets` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `pets` */
+
+insert  into `pets`(`id`,`pets`) values 
+(1,'DOG'),
+(2,'CAT'),
+(3,'MOUSE'),
+(4,'CRABS'),
+(5,'PIG');
 
 /*Table structure for table `provinces` */
 
@@ -43961,7 +44014,9 @@ CREATE TABLE `resident_siblings` (
   `civil_status` varchar(30) DEFAULT NULL,
   `bdate` varchar(20) DEFAULT NULL,
   `is_living_with_you` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`resident_sibling_id`)
+  PRIMARY KEY (`resident_sibling_id`),
+  KEY `resident_id` (`resident_id`),
+  CONSTRAINT `resident_siblings_ibfk_1` FOREIGN KEY (`resident_id`) REFERENCES `residents` (`resident_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `resident_siblings` */
@@ -43989,6 +44044,10 @@ CREATE TABLE `residents` (
   `year_residence` varchar(255) DEFAULT NULL,
   `bdate` varchar(30) DEFAULT NULL,
   `place_of_birth` varchar(255) DEFAULT NULL,
+  `contact_no` varchar(30) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `type_valid_id` varchar(100) DEFAULT NULL,
+  `id_no` varchar(50) DEFAULT NULL,
   `present_country` varchar(255) DEFAULT NULL,
   `present_province` varchar(255) DEFAULT NULL,
   `present_city` varchar(255) DEFAULT NULL,
@@ -44000,14 +44059,34 @@ CREATE TABLE `residents` (
   `permanent_barangay` varchar(255) DEFAULT NULL,
   `permanent_street` varchar(255) DEFAULT NULL,
   `is_voter` tinyint(4) DEFAULT 0,
+  `voter_type` varchar(30) DEFAULT NULL,
+  `is_sk` tinyint(4) DEFAULT 0,
+  `place_registration` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`resident_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `residents` */
 
-insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`bdate`,`place_of_birth`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permanent_street`,`is_voter`) values 
-(7,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR',NULL,NULL,'PHILIPPINES','CAMARINES NORTE','JOSE PANGANIBAN','San Pedro','adada','PHILIPPINES','CAVITE','SILANG','San Miguel II','asdawd',0),
-(8,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-15','BAROY, LANAO DEL NORTE','PHILIPPINES','CAPIZ','DUMARAO','San Juan','sdfsef','PHILIPPINES','CAPIZ','IVISAN','Cabugao','sdawda',0);
+insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`bdate`,`place_of_birth`,`contact_no`,`email`,`type_valid_id`,`id_no`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permanent_street`,`is_voter`,`voter_type`,`is_sk`,`place_registration`) values 
+(7,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR',NULL,NULL,NULL,NULL,NULL,NULL,'PHILIPPINES','CAMARINES NORTE','JOSE PANGANIBAN','San Pedro','adada','PHILIPPINES','CAVITE','SILANG','San Miguel II','asdawd',0,NULL,0,NULL),
+(8,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-15','BAROY, LANAO DEL NORTE',NULL,NULL,NULL,NULL,'PHILIPPINES','CAPIZ','DUMARAO','San Juan','sdfsef','PHILIPPINES','CAPIZ','IVISAN','Cabugao','sdawda',0,NULL,0,NULL),
+(9,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-19','BAROY, LANAO DEL NORTE','09167789585','et@yahoo.com','DRIVER LICENSE','K09-1234-214','PHILIPPINES','CITY OF ISABELA','CITY OF ISABELA','Marang-marang','asada','PHILIPPINES','CITY OF ISABELA','CITY OF ISABELA','Marang-marang','asada',1,'OLD',0,'MALORO, TANGUB CITY');
+
+/*Table structure for table `toilets` */
+
+DROP TABLE IF EXISTS `toilets`;
+
+CREATE TABLE `toilets` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `toilet` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `toilets` */
+
+insert  into `toilets`(`id`,`toilet`) values 
+(1,'TOILET 1'),
+(2,'TOILET 2');
 
 /*Table structure for table `users` */
 
@@ -44032,6 +44111,22 @@ CREATE TABLE `users` (
 
 insert  into `users`(`user_id`,`username`,`password`,`lname`,`fname`,`mname`,`sex`,`role`,`created_at`,`updated_at`) values 
 (2,'admin','d033e22ae348aeb5660fc2140aec35850c4da997','AMPARADO','ETIENNE',NULL,'MALE','ADMINISTRATOR','2021-09-05 04:00:44','2021-09-05 04:01:02');
+
+/*Table structure for table `water_sources` */
+
+DROP TABLE IF EXISTS `water_sources`;
+
+CREATE TABLE `water_sources` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `water_source` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `water_sources` */
+
+insert  into `water_sources`(`id`,`water_source`) values 
+(1,'POSIT'),
+(2,'PUSO');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

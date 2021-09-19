@@ -1,22 +1,35 @@
 ﻿Public Class ResidentProfile
     Dim rel As New Religion
     Dim nat As New Nationality
+    Dim waterSource As New WaterSource
+    Dim toilet As New Toilet
+    Dim garden As New Garden
 
     Dim address As New Addresses
-
-
     Dim dtSiblingDatePicker As DateTimePicker
 
+    Dim maskBoxColumn As New MaskedTextBox
 
     Sub New()
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        rel.all(cmbReligion)
-        nat.all(cmbNationality)
 
-        address.country(cmbPresentCountry)
-        address.country(cmbPermanentCountry)
+        'fill combobox using 1 connection only
+        conOpen()
+        rel.fillComboBoxPerCon(cmbReligion)
+        nat.fillComboBoxPerCon(cmbNationality)
+        waterSource.fillComboBoxPerCon(cmbWaterSource)
+        toilet.fillComboBoxPerCon(cmbToilet)
+        garden.fillComboBoxPerCon(cmbGarden)
+        address.countryPerCon(cmbPresentCountry)
+        address.countryPerCon(cmbPermanentCountry)
+        conClose()
+
+
+        'maskBoxColumn.Visible = False
+        'maskBoxColumn.ValidatingType = GetType(Date)
+        'dGridSibling.Controls.Add(maskBoxColumn)
 
     End Sub
 
@@ -45,7 +58,6 @@
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
-
         If TabControl1.SelectedTab.Name = "tabProfile" Then
             txtHSerialNumber.Focus()
             rbHead.Checked = True
@@ -63,7 +75,7 @@
         dtSiblingDatePicker = New DateTimePicker
         dtSiblingDatePicker.Format = DateTimePickerFormat.Short
         dtSiblingDatePicker.Visible = False
-        dtSiblingDatePicker.Width = 100
+        dtSiblingDatePicker.Width = 120
         dGridSibling.Controls.Add(dtSiblingDatePicker)
         AddHandler dtSiblingDatePicker.ValueChanged, AddressOf dtSiblingPicker_ValueChanged
 
@@ -133,15 +145,19 @@
             Return
         End If
 
+        'Save if data validated
+        Save()
 
 
+    End Sub
+
+    Sub Save()
         Dim res As New Resident
         If rbHead.Checked Then
             res.IsHead = 1
         Else
             res.IsHead = 0
         End If
-
 
         res.Lname = Me.txtLastname.Text.Trim
         res.Fname = Me.txtFirstname.Text.Trim
@@ -158,6 +174,12 @@
         res.BirthDate = Me.dtBdate.Value.ToString("yyyy-MM-dd")
         res.PlaceOfBirth = Me.txtPlaceBirth.Text
 
+        'CONTACT INFO
+        res.ContactNo = txtContactNumber.Text
+        res.Email = txtEmailAddress.Text
+        res.TypeValidId = txtValidID.Text
+        res.IdNo = txtIDNumber.Text
+
         'PRESENT ADDRESS
         res.PresentCountry = Me.cmbPresentCountry.Text
         res.PresentProvince = Me.cmbPresentProvince.Text
@@ -171,6 +193,26 @@
         res.PermanentCity = Me.cmbPermanentCity.Text
         res.PermanentBarangay = Me.cmbPermanentBarangay.Text
         res.PermanentStreet = Me.txtPermanentStreet.Text
+
+        'VOTERS INFO
+        Dim isvoter As Int16
+        If cmbIsVoter.Text = "YES" Then
+            isvoter = 1
+        Else
+            isvoter = 0
+        End If
+        res.IsVoter = isvoter
+        res.VoterType = Me.cmbVoterType.Text
+
+        Dim issk As Int16
+        If cmbIsSK.Text = "YES" Then
+            issk = 1
+        Else
+            issk = 0
+        End If
+        res.IsSK = issk
+
+        res.PlaceRegistration = Me.txtPlaceReg.Text
 
         If res.Save() > 0 Then
             InfoBox("Successfully saved!")
@@ -189,9 +231,7 @@
         TabControl1.SelectedTab = tabFamilyMembers
     End Sub
 
-    Private Sub dtSiblingPicker_ValueChanged(sender As Object, e As EventArgs)
-        dGridSibling.CurrentCell.Value = dtSiblingDatePicker.Value.ToString("d")
-    End Sub
+
 
     Private Sub cmbPresentCoutnry_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPresentCountry.SelectedIndexChanged
         Try
@@ -271,21 +311,54 @@
         txtAnnualIncome.Text = "11000"
         txtYearResidency.Text = "1 YEAR"
         txtPlaceBirth.Text = "BAROY, LANAO DEL NORTE"
+
+        txtContactNumber.Text = "09167789585"
+        txtEmailAddress.Text = "et@yahoo.com"
+        txtValidID.Text = "DRIVER LICENSE"
+        txtIDNumber.Text = "K09-1234-214"
+
+        cmbIsVoter.Text = "YES"
+        cmbVoterType.Text = "OLD"
+        cmbIsSK.Text = "NO"
+        txtPlaceReg.Text = "MALORO, TANGUB CITY"
     End Sub
 
+
     Private Sub dGridSibling_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles dGridSibling.CellBeginEdit
+
         If dGridSibling.CurrentCell.ColumnIndex = 6 Then
-            dtSiblingDatePicker.Location = dGridSibling.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, False).Location
-            dtSiblingDatePicker.Visible = True
-            dtSiblingDatePicker.Value = DateTime.Today
-            'If dgSibling.CurrentCell.Value IsNot DBNull.Value Then
-            '    'dtSiblingDatePicker.Value = CType(dgSibling.CurrentCell.Value, DateTime)
-            'Else
+            'maskBoxColumn.Mask = "00/00/0000"
 
+            'Dim rect As Rectangle = dGridSibling.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, True)
+            'maskBoxColumn.Location = rect.Location
+            'maskBoxColumn.Size = rect.Size
+            'maskBoxColumn.Text = ""
+
+            'If dGridSibling(e.ColumnIndex, e.RowIndex) IsNot Nothing Then
+            '    maskBoxColumn.Text = CStr(dGridSibling(e.ColumnIndex, e.RowIndex).Value)
             'End If
-
+            'maskBoxColumn.Visible = True
             ''continue ni kay error ni dere
+            'DirectCast(e.Control, TextBox).CharacterCasing = CharacterCasing.Upper
+
+            'IF DATAGRID IS DATEPICKER
+            'dtSiblingDatePicker.Visible = True
+
+            Dim rect As Rectangle = dGridSibling.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, True)
+
+            dtSiblingDatePicker.Value = DateTime.Today.ToShortDateString
+            dtSiblingDatePicker.Location = rect.Location
+            dtSiblingDatePicker.Size = New Size(rect.Width, rect.Height)
+            dtSiblingDatePicker.Visible = True
+
+            If dGridSibling.CurrentCell.Value IsNot Nothing Then
+                dtSiblingDatePicker.Text = dGridSibling.CurrentCell.Value.ToString
+                dtSiblingDatePicker.Focus()
+            Else
+                dtSiblingDatePicker.Value = DateTime.Today
+            End If
         Else
+            'maskBoxColumn.Visible = False
             dtSiblingDatePicker.Visible = False
         End If
         Try
@@ -298,11 +371,33 @@
     Private Sub dGridSibling_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dGridSibling.CellEndEdit
         If dGridSibling.CurrentCell.ColumnIndex = 6 Then
             dGridSibling.CurrentCell.Value = dtSiblingDatePicker.Value.ToString("d")
+            'If maskBoxColumn.Visible Then
+            '    dGridSibling.CurrentCell.Value = maskBoxColumn.Text
+            '    maskBoxColumn.Visible = False
+
+            'End If
         End If
+
+
         Try
 
         Catch ex As Exception
             ErrBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub dGridSibling_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dGridSibling.EditingControlShowing
+        'set all textbox in grid to UpperCase
+        If dGridSibling.CurrentCell.ColumnIndex = 1 Or dGridSibling.CurrentCell.ColumnIndex = 2 Or dGridSibling.CurrentCell.ColumnIndex = 3 Then
+            If TypeOf e.Control Is TextBox Then
+                DirectCast(e.Control, TextBox).CharacterCasing = CharacterCasing.Upper
+            End If
+        End If
+
+    End Sub
+    Private Sub dtSiblingPicker_ValueChanged(sender As Object, e As EventArgs)
+        dGridSibling.CurrentCell.Value = dtSiblingDatePicker.Text
+    End Sub
+
+
 End Class

@@ -25,6 +25,27 @@ Public Class Religion
 
     End Sub
 
+    Public Sub fillComboBoxPerCon(ByVal cmb As ComboBox)
+        Try
+
+            query = "select * from religions order by religion asc"
+            cmd = New MySqlCommand(query, con)
+            Dim dr As MySqlDataReader
+            dr = cmd.ExecuteReader
+            While dr.Read
+                cmb.Items.Add(Convert.ToString(dr("religion")))
+            End While
+            dr.Dispose()
+            cmd.Dispose()
+
+        Catch ex As Exception
+            ErrBox(ex.Message)
+
+        End Try
+
+
+    End Sub
+
 
     Public Function Save() As Integer
         Dim i As Integer = 0

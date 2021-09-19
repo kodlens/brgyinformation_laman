@@ -97,6 +97,24 @@ Class Addresses
         conClose()
     End Sub
 
+
+
+    Public Sub countryPerCon(ByVal cmb As ComboBox)
+        cmb.Items.Clear()
+        query = "select * from countries order by country asc"
+        cmd = New MySqlCommand(query, con)
+        Dim dr As MySqlDataReader
+        dr = cmd.ExecuteReader
+
+        'subject for refactoring
+        While dr.Read
+            cmb.Items.Add(Convert.ToString(dr("country")))
+        End While
+        dr.Dispose()
+        cmd.Dispose()
+
+    End Sub
+
     Public Sub province(ByVal country As String, ByVal cmb As ComboBox)
         cmb.Items.Clear()
         conOpen()
