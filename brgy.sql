@@ -43819,13 +43819,13 @@ DROP TABLE IF EXISTS `pets`;
 
 CREATE TABLE `pets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `pets` varchar(100) DEFAULT NULL,
+  `pet` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `pets` */
 
-insert  into `pets`(`id`,`pets`) values 
+insert  into `pets`(`id`,`pet`) values 
 (1,'DOG'),
 (2,'CAT'),
 (3,'MOUSE'),
@@ -44000,6 +44000,26 @@ insert  into `religions`(`religion_id`,`religion`) values
 (13,'United Church of Christ in the Philippines'),
 (14,'Other Religion');
 
+/*Table structure for table `resident_pets` */
+
+DROP TABLE IF EXISTS `resident_pets`;
+
+CREATE TABLE `resident_pets` (
+  `resident_pet_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `resident_id` bigint(20) unsigned NOT NULL,
+  `resident_pet` varchar(100) DEFAULT NULL,
+  `no_of_pet` int(11) DEFAULT NULL,
+  PRIMARY KEY (`resident_pet_id`),
+  KEY `resident_id` (`resident_id`),
+  CONSTRAINT `resident_pets_ibfk_1` FOREIGN KEY (`resident_id`) REFERENCES `residents` (`resident_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `resident_pets` */
+
+insert  into `resident_pets`(`resident_pet_id`,`resident_id`,`resident_pet`,`no_of_pet`) values 
+(21,47,'DOG',2),
+(23,47,'PIG',3);
+
 /*Table structure for table `resident_siblings` */
 
 DROP TABLE IF EXISTS `resident_siblings`;
@@ -44008,8 +44028,8 @@ CREATE TABLE `resident_siblings` (
   `resident_sibling_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `resident_id` bigint(20) unsigned NOT NULL,
   `lname` varchar(100) DEFAULT NULL,
-  `mname` varchar(100) DEFAULT NULL,
   `fname` varchar(100) DEFAULT NULL,
+  `mname` varchar(100) DEFAULT NULL,
   `sex` varchar(20) DEFAULT NULL,
   `civil_status` varchar(30) DEFAULT NULL,
   `bdate` varchar(20) DEFAULT NULL,
@@ -44017,9 +44037,15 @@ CREATE TABLE `resident_siblings` (
   PRIMARY KEY (`resident_sibling_id`),
   KEY `resident_id` (`resident_id`),
   CONSTRAINT `resident_siblings_ibfk_1` FOREIGN KEY (`resident_id`) REFERENCES `residents` (`resident_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `resident_siblings` */
+
+insert  into `resident_siblings`(`resident_sibling_id`,`resident_id`,`lname`,`fname`,`mname`,`sex`,`civil_status`,`bdate`,`is_living_with_you`) values 
+(90,47,'DOCOY','B','JAY AR','MALE','MARRIED','04/08/2020',1),
+(91,47,'SANTARITA','M','JUNREY','MALE','MARRIED','24/05/1995',0),
+(92,47,'ALIA','B','ALBERT','MALE','SINGLE','20/08/1990',1),
+(93,47,'FLORIZA','C','JADE ANN','FEMALE','SINGLE','16/10/1993',1);
 
 /*Table structure for table `residents` */
 
@@ -44062,15 +44088,23 @@ CREATE TABLE `residents` (
   `voter_type` varchar(30) DEFAULT NULL,
   `is_sk` tinyint(4) DEFAULT 0,
   `place_registration` varchar(255) DEFAULT NULL,
+  `water_source` varchar(100) DEFAULT NULL,
+  `toilet` varchar(100) DEFAULT NULL,
+  `garden` varchar(100) DEFAULT NULL,
+  `contraceptive` varchar(100) DEFAULT NULL,
+  `hava_complain` tinyint(4) DEFAULT NULL,
+  `against_whom` varchar(100) DEFAULT NULL,
+  `is_settled` tinyint(4) DEFAULT NULL,
+  `when` date DEFAULT NULL,
+  `if_not_why` text DEFAULT NULL,
+  `is_death_aid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`resident_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `residents` */
 
-insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`bdate`,`place_of_birth`,`contact_no`,`email`,`type_valid_id`,`id_no`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permanent_street`,`is_voter`,`voter_type`,`is_sk`,`place_registration`) values 
-(7,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR',NULL,NULL,NULL,NULL,NULL,NULL,'PHILIPPINES','CAMARINES NORTE','JOSE PANGANIBAN','San Pedro','adada','PHILIPPINES','CAVITE','SILANG','San Miguel II','asdawd',0,NULL,0,NULL),
-(8,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-15','BAROY, LANAO DEL NORTE',NULL,NULL,NULL,NULL,'PHILIPPINES','CAPIZ','DUMARAO','San Juan','sdfsef','PHILIPPINES','CAPIZ','IVISAN','Cabugao','sdawda',0,NULL,0,NULL),
-(9,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-19','BAROY, LANAO DEL NORTE','09167789585','et@yahoo.com','DRIVER LICENSE','K09-1234-214','PHILIPPINES','CITY OF ISABELA','CITY OF ISABELA','Marang-marang','asada','PHILIPPINES','CITY OF ISABELA','CITY OF ISABELA','Marang-marang','asada',1,'OLD',0,'MALORO, TANGUB CITY');
+insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`bdate`,`place_of_birth`,`contact_no`,`email`,`type_valid_id`,`id_no`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permanent_street`,`is_voter`,`voter_type`,`is_sk`,`place_registration`,`water_source`,`toilet`,`garden`,`contraceptive`,`hava_complain`,`against_whom`,`is_settled`,`when`,`if_not_why`,`is_death_aid`) values 
+(47,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-22','BAROY, LANAO DEL NORTE','09167789585','et@yahoo.com','DRIVER LICENSE','K09-1234-214','PHILIPPINES','MISAMIS OCCIDENTAL','TANGUB CITY','Garang','P-SAMPLE LANG','PHILIPPINES','MISAMIS OCCIDENTAL','TANGUB CITY','Garang','P-SAMPLE LANG',1,'OLD',0,'MALORO, TANGUB CITY','','','','',NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `toilets` */
 
@@ -44080,13 +44114,14 @@ CREATE TABLE `toilets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `toilet` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `toilets` */
 
 insert  into `toilets`(`id`,`toilet`) values 
-(1,'TOILET 1'),
-(2,'TOILET 2');
+(1,'OWNED'),
+(2,'SHARED IN ONE HOUSE'),
+(3,'PUBLIC');
 
 /*Table structure for table `users` */
 

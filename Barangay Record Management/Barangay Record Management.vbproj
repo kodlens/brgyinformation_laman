@@ -107,8 +107,10 @@
   <ItemGroup>
     <Compile Include="Controller\Addresses.vb" />
     <Compile Include="Controller\Box.vb" />
+    <Compile Include="Controller\Contraceptive.vb" />
     <Compile Include="Controller\Garden.vb" />
     <Compile Include="Controller\Nationality.vb" />
+    <Compile Include="Controller\Pet.vb" />
     <Compile Include="Controller\Religion.vb" />
     <Compile Include="Controller\Login.vb" />
     <Compile Include="Controller\Resident.vb" />

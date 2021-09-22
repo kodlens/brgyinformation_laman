@@ -4,11 +4,15 @@
     Dim waterSource As New WaterSource
     Dim toilet As New Toilet
     Dim garden As New Garden
+    Dim pet As New Pet
+    Dim contraceptive As New Contraceptive
 
     Dim address As New Addresses
     Dim dtSiblingDatePicker As DateTimePicker
 
     Dim maskBoxColumn As New MaskedTextBox
+
+    Dim returnId As Integer
 
     Sub New()
         ' This call is required by the designer.
@@ -24,6 +28,8 @@
         garden.fillComboBoxPerCon(cmbGarden)
         address.countryPerCon(cmbPresentCountry)
         address.countryPerCon(cmbPermanentCountry)
+        pet.fillComboBoxPerCon(cmbPet)
+        contraceptive.fillComboBoxPerCon(cmbContraceptive)
         conClose()
 
 
@@ -64,7 +70,7 @@
         ElseIf TabControl1.SelectedTab.Name = "tabAdditionalInfo" Then
             txtContactNumber.Focus()
         ElseIf TabControl1.SelectedTab.Name = "tabFamilyMembers" Then
-            txtFFirstName.Focus()
+            txtSiblingFname.Focus()
 
         End If
     End Sub
@@ -104,12 +110,25 @@
 
     End Sub
 
-    Private Sub dtFBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtFBirthdate.ValueChanged
-        ageCalculator(dtFBirthdate, txtFAge)
+    Private Sub dtFBirthdate_ValueChanged(sender As Object, e As EventArgs) Handles dtSiblingBdate.ValueChanged
+        ageCalculator(dtSiblingBdate, txtFAge)
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         'FILTERING PRESENT ADDRESS
+        If String.IsNullOrEmpty(txtLastname.Text) Then
+            WarnBox("Please input lastname.")
+            Return
+        End If
+        If String.IsNullOrEmpty(txtFirstname.Text) Then
+            WarnBox("Please input firstname.")
+            Return
+        End If
+        If String.IsNullOrEmpty(txtMiddlename.Text) Then
+            WarnBox("Please input middlename.")
+            Return
+        End If
+
         If String.IsNullOrEmpty(cmbPresentCountry.Text) Then
             WarnBox("Please select Present Country.")
             Return
@@ -146,12 +165,18 @@
         End If
 
         'Save if data validated
-        Save()
+        If Me.returnId > 0 Then
+            UpdateResident()
+        Else
+            InsertResident()
+
+        End If
+
 
 
     End Sub
 
-    Sub Save()
+    Sub InsertResident()
         Dim res As New Resident
         If rbHead.Checked Then
             res.IsHead = 1
@@ -214,13 +239,108 @@
 
         res.PlaceRegistration = Me.txtPlaceReg.Text
 
-        If res.Save() > 0 Then
-            InfoBox("Successfully saved!")
+        'bind datagridSibling
+        res.Siblings = Me.dGridSibling
+
+        'additional Info
+        res.WaterSource = cmbWaterSource.Text
+        res.Toilet = cmbToilet.Text
+        res.Garden = cmbGarden.Text
+        res.Contraceptive = cmbContraceptive.Text
+
+        res.Pets = dgridPets
+
+        returnId = res.Save()
+        txtResidentId.Text = "RES-" + returnId.ToString("000000")
+        InfoBox("Successfully saved!")
+
+    End Sub
+
+    Sub UpdateResident()
+        'update here
+        Dim res As New Resident
+        If rbHead.Checked Then
+            res.IsHead = 1
+        Else
+            res.IsHead = 0
         End If
+
+        res.Lname = Me.txtLastname.Text.Trim
+        res.Fname = Me.txtFirstname.Text.Trim
+        res.Mname = Me.txtMiddlename.Text.Trim
+        res.Suffix = Me.txtSuffix.Text.Trim
+        res.Sex = Me.cmbSex.Text
+        res.CiviStatus = Me.cmbCivilStatus.Text
+        res.Religion = Me.cmbReligion.Text
+        res.Nationality = Me.cmbNationality.Text
+        res.EmploymentStatus = Me.cmbEmploymentStatus.Text
+        res.Occupation = Me.txtOccupation.Text
+        res.AnnualIncome = Me.txtAnnualIncome.Text
+        res.YearResidence = Me.txtYearResidency.Text
+        res.BirthDate = Me.dtBdate.Value.ToString("yyyy-MM-dd")
+        res.PlaceOfBirth = Me.txtPlaceBirth.Text
+
+        'CONTACT INFO
+        res.ContactNo = txtContactNumber.Text
+        res.Email = txtEmailAddress.Text
+        res.TypeValidId = txtValidID.Text
+        res.IdNo = txtIDNumber.Text
+
+        'PRESENT ADDRESS
+        res.PresentCountry = Me.cmbPresentCountry.Text
+        res.PresentProvince = Me.cmbPresentProvince.Text
+        res.PresentCity = Me.cmbPresentCity.Text
+        res.PresentBarangay = Me.cmbPresentBarangay.Text
+        res.PresentStreet = Me.txtPresentStreet.Text
+
+        'PERMANENT ADDRESS
+        res.PermanentCountry = Me.cmbPermanentCountry.Text
+        res.PermanentProvince = Me.cmbPermanentProvince.Text
+        res.PermanentCity = Me.cmbPermanentCity.Text
+        res.PermanentBarangay = Me.cmbPermanentBarangay.Text
+        res.PermanentStreet = Me.txtPermanentStreet.Text
+
+        'VOTERS INFO
+        Dim isvoter As Int16
+        If cmbIsVoter.Text = "YES" Then
+            isvoter = 1
+        Else
+            isvoter = 0
+        End If
+        res.IsVoter = isvoter
+        res.VoterType = Me.cmbVoterType.Text
+
+        Dim issk As Int16
+        If cmbIsSK.Text = "YES" Then
+            issk = 1
+        Else
+            issk = 0
+        End If
+        res.IsSK = issk
+
+        res.PlaceRegistration = Me.txtPlaceReg.Text
+
+        'bind datagridSibling
+        res.Siblings = Me.dGridSibling
+
+        'additional Info
+        res.WaterSource = cmbWaterSource.Text
+        res.Toilet = cmbToilet.Text
+        res.Garden = cmbGarden.Text
+        res.Contraceptive = cmbContraceptive.Text
+
+        res.Pets = dgridPets
+
+        res.Update(returnId)
+        InfoBox("Successfully updated!")
     End Sub
 
     Private Sub btnNext3_Click(sender As Object, e As EventArgs) Handles btnNext3.Click
         TabControl1.SelectedTab = tabAdditionalInformation
+    End Sub
+
+    Private Sub btnNext4_Click(sender As Object, e As EventArgs) Handles btnNext4.Click
+        TabControl1.SelectedTab = tabSurvey
     End Sub
 
     Private Sub btnBack3_Click(sender As Object, e As EventArgs) Handles btnBack3.Click
@@ -230,7 +350,9 @@
     Private Sub btnBack4_Click(sender As Object, e As EventArgs) Handles btnBack4.Click
         TabControl1.SelectedTab = tabFamilyMembers
     End Sub
-
+    Private Sub btnBack5_Click(sender As Object, e As EventArgs) Handles btnBack5.Click
+        TabControl1.SelectedTab = tabAdditionalInformation
+    End Sub
 
 
     Private Sub cmbPresentCoutnry_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPresentCountry.SelectedIndexChanged
@@ -321,6 +443,23 @@
         cmbVoterType.Text = "OLD"
         cmbIsSK.Text = "NO"
         txtPlaceReg.Text = "MALORO, TANGUB CITY"
+
+        cmbPresentCountry.Text = "PHILIPPINES"
+        cmbPresentProvince.Text = "MISAMIS OCCIDENTAL"
+        cmbPresentCity.Text = "TANGUB CITY"
+        cmbPresentBarangay.Text = "GARANG"
+        txtPresentStreet.Text = "P-SAMPLE LANG"
+
+
+        'add row datagrid sample data
+        Me.dGridSibling.Rows.Add({Nothing, "JAY AR", "B", "DOCOY", "MALE", "MARRIED", "04/08/2020", True})
+
+        Me.dGridSibling.Rows.Add({Nothing, "JUNREY", "M", "SANTARITA", "MALE", "MARRIED", "24/05/1995", False})
+
+        Me.dGridSibling.Rows.Add({Nothing, "ALBERT", "B", "ALIA", "MALE", "SINGLE", "20/08/1990", True})
+
+        Me.dGridSibling.Rows.Add({Nothing, "JADE ANN", "C", "FLORIZA", "FEMALE", "SINGLE", "16/10/1993", True})
+
     End Sub
 
 
@@ -397,6 +536,144 @@
     End Sub
     Private Sub dtSiblingPicker_ValueChanged(sender As Object, e As EventArgs)
         dGridSibling.CurrentCell.Value = dtSiblingDatePicker.Text
+    End Sub
+
+    Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
+        Dim diag As DialogResult = MessageBox.Show("Add another resident?", "NEW?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If diag = DialogResult.Yes Then
+            Me.Clear()
+        End If
+    End Sub
+
+    Sub Clear()
+        returnId = 0
+        txtResidentId.Text = ""
+        txtLastname.Text = ""
+        txtFirstname.Text = ""
+        txtMiddlename.Text = ""
+        txtSuffix.Text = ""
+        cmbSex.SelectedIndex = -1
+        cmbCivilStatus.SelectedIndex = -1
+        cmbReligion.SelectedIndex = -1
+        cmbNationality.SelectedIndex = -1
+        cmbEmploymentStatus.SelectedIndex = -1
+        txtOccupation.Text = ""
+        txtAnnualIncome.Text = ""
+        txtYearResidency.Text = ""
+        txtPlaceBirth.Text = ""
+
+        txtContactNumber.Text = ""
+        txtEmailAddress.Text = ""
+        txtValidID.Text = ""
+        txtIDNumber.Text = ""
+
+        cmbPresentCountry.SelectedIndex = -1
+        cmbPresentProvince.SelectedIndex = -1
+        cmbPresentCity.SelectedIndex = -1
+        cmbPresentBarangay.SelectedIndex = -1
+        txtPresentStreet.Text = ""
+
+        cmbPermanentCountry.SelectedIndex = -1
+        cmbPermanentProvince.SelectedIndex = -1
+        cmbPermanentCity.SelectedIndex = -1
+        cmbPermanentBarangay.SelectedIndex = -1
+        txtPermanentStreet.Text = ""
+
+        cmbIsVoter.SelectedIndex = -1
+        cmbVoterType.SelectedIndex = -1
+        cmbIsSK.SelectedIndex = -1
+        txtPlaceReg.Text = ""
+
+        txtSiblingLname.Text = ""
+        txtSiblingFname.Text = ""
+        txtSiblingFname.Text = ""
+        cmbSiblingSex.SelectedIndex = -1
+        cmbSiblingCivilStatus.SelectedIndex = -1
+        cmbSiblingIsLiving.SelectedIndex = -1
+
+        dGridSibling.Rows.Clear()
+
+        cmbWaterSource.SelectedIndex = -1
+        cmbToilet.SelectedIndex = -1
+        cmbGarden.SelectedIndex = -1
+        cmbPet.SelectedIndex = -1
+        cmbContraceptive.SelectedIndex = -1
+
+        dgridPets.Rows.Clear()
+
+        cmbHaveComplain.SelectedIndex = -1
+        txtAgainstWhom.Text = ""
+        cmbIsSettled.SelectedIndex = -1
+        txtIfNotWhy.Text = ""
+        cmbIsDeathMember.SelectedIndex = -1
+
+
+    End Sub
+
+    Private Sub btnAddFamlyMember_Click(sender As Object, e As EventArgs) Handles btnAddFamlyMember.Click
+        Dim islving As Boolean = False
+
+        If Not String.IsNullOrEmpty(txtSiblingFname.Text) Then
+
+            If String.IsNullOrEmpty(txtSiblingLname.Text) Then
+                Box.WarnBox("Please add sibling lastname.")
+                Return
+            End If
+            If String.IsNullOrEmpty(cmbSiblingSex.Text) Then
+                Box.WarnBox("Please select sibling sex.")
+                Return
+            End If
+            If String.IsNullOrEmpty(cmbSiblingCivilStatus.Text) Then
+                Box.WarnBox("Please select sibling civil status.")
+                Return
+            End If
+            If String.IsNullOrEmpty(cmbSiblingIsLiving.Text) Then
+                Box.WarnBox("Please select sibling sex.")
+                Return
+            End If
+        End If
+
+
+        If cmbSiblingIsLiving.Text = "YES" Then
+            islving = True
+        Else
+            islving = False
+        End If
+
+        Me.dGridSibling.Rows.Add({Nothing, txtSiblingLname.Text, txtSiblingMname.Text, txtSiblingFname.Text, cmbSiblingSex.Text, cmbSiblingCivilStatus.Text, dtSiblingBdate.Value.ToString("dd/mm/yyyy"), islving})
+    End Sub
+
+    Private Sub btnAddPet_Click(sender As Object, e As EventArgs) Handles btnAddPet.Click
+        If cmbPet.SelectedIndex = -1 Then
+            Box.WarnBox("Please select pet.")
+            Return
+        Else
+            If txtNumericNoOfPet.Value < 1 Then
+                Box.WarnBox("No of pet is invalid.")
+                Return
+            End If
+        End If
+        Dim found As Boolean = False
+        If dgridPets.Rows.Count > 1 Then
+            For row As Integer = 0 To dgridPets.Rows.Count - 1
+                If CStr(dgridPets.Rows(row).Cells(1).Value) = cmbPet.Text Then
+                    dgridPets.Rows(row).Cells(1).Value = cmbPet.Text
+                    dgridPets.Rows(row).Cells(2).Value = txtNumericNoOfPet.Value
+                    found = True
+                    Exit For
+                End If
+            Next
+            If Not found Then
+                dgridPets.Rows.Add({Nothing, cmbPet.Text, txtNumericNoOfPet.Value})
+            End If
+
+        Else
+            dgridPets.Rows.Add({Nothing, cmbPet.Text, txtNumericNoOfPet.Value})
+        End If
+
+        cmbPet.SelectedIndex = -1
+        txtNumericNoOfPet.Value = 0
+
     End Sub
 
 

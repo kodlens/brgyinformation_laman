@@ -37,6 +37,8 @@ Partial Class ResidentList
         Me.civilstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.voterstatus = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.employmentstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.NewResidentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnAddResident = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -46,12 +48,12 @@ Partial Class ResidentList
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbResidentNumber = New System.Windows.Forms.RadioButton()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.NewResidentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dtGridResident, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.backButton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dtGridResident
@@ -171,6 +173,18 @@ Partial Class ResidentList
         Me.employmentstatus.ReadOnly = True
         Me.employmentstatus.Width = 90
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewResidentToolStripMenuItem, Me.RefreshToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 92)
+        '
+        'NewResidentToolStripMenuItem
+        '
+        Me.NewResidentToolStripMenuItem.Name = "NewResidentToolStripMenuItem"
+        Me.NewResidentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewResidentToolStripMenuItem.Text = "New Resident"
+        '
         'btnAddResident
         '
         Me.btnAddResident.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -275,17 +289,17 @@ Partial Class ResidentList
         Me.Label14.Size = New System.Drawing.Size(1140, 1)
         Me.Label14.TabIndex = 67
         '
-        'ContextMenuStrip1
+        'RefreshToolStripMenuItem
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewResidentToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 48)
+        Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
+        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RefreshToolStripMenuItem.Text = "Refresh"
         '
-        'NewResidentToolStripMenuItem
+        'DeleteToolStripMenuItem
         '
-        Me.NewResidentToolStripMenuItem.Name = "NewResidentToolStripMenuItem"
-        Me.NewResidentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.NewResidentToolStripMenuItem.Text = "New Resident"
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'ResidentList
         '
@@ -306,10 +320,10 @@ Partial Class ResidentList
         Me.ShowInTaskbar = False
         Me.Text = "Residents"
         CType(Me.dtGridResident, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.backButton, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -335,4 +349,6 @@ Partial Class ResidentList
     Friend WithEvents employmentstatus As DataGridViewTextBoxColumn
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents NewResidentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RefreshToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
 End Class

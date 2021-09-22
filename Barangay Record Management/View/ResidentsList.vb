@@ -33,4 +33,18 @@
     Private Sub NewResidentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewResidentToolStripMenuItem.Click
         btnAddResident_Click_1(sender, e)
     End Sub
+
+    Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
+        LoadData()
+
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+        Dim diagResult As DialogResult = MessageBox.Show("Are you sure you want to delete this data?", "DELETE?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If diagResult = DialogResult.Yes Then
+            res.Delete(CInt(Me.dtGridResident.SelectedRows(0).Cells(0).Value))
+            Box.InfoBox("Deleted successfully")
+            LoadData()
+        End If
+    End Sub
 End Class
