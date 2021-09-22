@@ -16,7 +16,9 @@
         res.All(dtGridResident)
     End Sub
     Private Sub btnAddResident_Click_1(sender As Object, e As EventArgs) Handles btnAddResident.Click
-        insertNewForm(New ResidentProfile)
+        Dim frm As New ResidentProfile
+        frm.returnId = 0
+        insertNewForm(frm)
     End Sub
 
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
@@ -45,6 +47,17 @@
             res.Delete(CInt(Me.dtGridResident.SelectedRows(0).Cells(0).Value))
             Box.InfoBox("Deleted successfully")
             LoadData()
+        End If
+    End Sub
+
+    Private Sub EditModifyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditModifyToolStripMenuItem.Click
+        If dtGridResident.Rows.Count > 0 Then
+            Dim id As Integer
+            id = CInt(dtGridResident.SelectedRows(0).Cells(0).Value)
+            Dim frm As New ResidentProfile
+            frm.returnId = id
+            insertNewForm(frm)
+
         End If
     End Sub
 End Class

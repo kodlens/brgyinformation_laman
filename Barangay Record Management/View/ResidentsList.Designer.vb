@@ -39,6 +39,8 @@ Partial Class ResidentList
         Me.employmentstatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.NewResidentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnAddResident = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -48,8 +50,7 @@ Partial Class ResidentList
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbResidentNumber = New System.Windows.Forms.RadioButton()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditModifyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dtGridResident, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.backButton, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,15 +176,27 @@ Partial Class ResidentList
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewResidentToolStripMenuItem, Me.RefreshToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewResidentToolStripMenuItem, Me.EditModifyToolStripMenuItem, Me.RefreshToolStripMenuItem, Me.DeleteToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 92)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 114)
         '
         'NewResidentToolStripMenuItem
         '
         Me.NewResidentToolStripMenuItem.Name = "NewResidentToolStripMenuItem"
         Me.NewResidentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NewResidentToolStripMenuItem.Text = "New Resident"
+        '
+        'RefreshToolStripMenuItem
+        '
+        Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
+        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RefreshToolStripMenuItem.Text = "Refresh"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'btnAddResident
         '
@@ -289,17 +302,11 @@ Partial Class ResidentList
         Me.Label14.Size = New System.Drawing.Size(1140, 1)
         Me.Label14.TabIndex = 67
         '
-        'RefreshToolStripMenuItem
+        'EditModifyToolStripMenuItem
         '
-        Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.RefreshToolStripMenuItem.Text = "Refresh"
-        '
-        'DeleteToolStripMenuItem
-        '
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.DeleteToolStripMenuItem.Text = "Delete"
+        Me.EditModifyToolStripMenuItem.Name = "EditModifyToolStripMenuItem"
+        Me.EditModifyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EditModifyToolStripMenuItem.Text = "Edit/Modify"
         '
         'ResidentList
         '
@@ -351,4 +358,5 @@ Partial Class ResidentList
     Friend WithEvents NewResidentToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RefreshToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditModifyToolStripMenuItem As ToolStripMenuItem
 End Class

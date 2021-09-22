@@ -12,7 +12,9 @@
 
     Dim maskBoxColumn As New MaskedTextBox
 
-    Dim returnId As Integer
+    Public returnId As Integer
+
+    Dim res As New Resident
 
     Sub New()
         ' This call is required by the designer.
@@ -78,20 +80,44 @@
     Private Sub frmResidentProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'add datetime on datagrid
-        dtSiblingDatePicker = New DateTimePicker
-        dtSiblingDatePicker.Format = DateTimePickerFormat.Short
-        dtSiblingDatePicker.Visible = False
-        dtSiblingDatePicker.Width = 120
-        dGridSibling.Controls.Add(dtSiblingDatePicker)
-        AddHandler dtSiblingDatePicker.ValueChanged, AddressOf dtSiblingPicker_ValueChanged
+        'dtSiblingDatePicker = New DateTimePicker
+        'dtSiblingDatePicker.Format = DateTimePickerFormat.Short
+        'dtSiblingDatePicker.Visible = False
+        'dtSiblingDatePicker.Width = 120
+        'dGridSibling.Controls.Add(dtSiblingDatePicker)
+        'AddHandler dtSiblingDatePicker.ValueChanged, AddressOf dtSiblingPicker_ValueChanged
 
 
         txtHSerialNumber.Focus()
         rbHead.Checked = True
         frmDashboard.GeneralHeading.Text = "Resident Profile"
 
+        If returnId > 0 Then
+            res.GetData(returnId)
+            SetData()
+
+        End If
+
         'init data
 
+    End Sub
+
+    Sub SetData()
+        'set data for edit 
+        Me.txtResidentId.Text = "RES-" & res.ResidentId.ToString("000000")
+
+        Me.txtLastname.Text = res.Lname
+        Me.txtFirstname.Text = res.Fname
+        Me.txtMiddlename.Text = res.Mname
+        Me.txtSuffix.Text = res.Suffix
+        Me.cmbSex.Text = res.Sex
+        Me.cmbCivilStatus.Text = res.CiviStatus
+        Me.cmbReligion.Text = res.Religion
+        Me.cmbNationality.Text = res.Nationality
+        Me.cmbEmploymentStatus.Text = res.EmploymentStatus
+        Me.txtOccupation.Text = res.Occupation
+        Me.txtAnnualIncome.Text = res.AnnualIncome
+        Me.txtYearResidency.Text = res.YearResidence
     End Sub
     Private Sub ageCalculator(ByVal dtPicker As DateTimePicker, ByVal ageBox As TextBox)
 
@@ -177,7 +203,7 @@
     End Sub
 
     Sub InsertResident()
-        Dim res As New Resident
+
         If rbHead.Checked Then
             res.IsHead = 1
         Else
@@ -249,6 +275,32 @@
         res.Contraceptive = cmbContraceptive.Text
 
         res.Pets = dgridPets
+
+        'survey info
+        Dim haveComplain As Int16 = 0
+        If cmbHaveComplain.Text = "YES" Then
+            haveComplain = 1
+        Else
+            haveComplain = 0
+        End If
+        res.HaveComplain = haveComplain
+        res.AgainstWhom = txtAgainstWhom.Text
+        Dim issettle As Int16 = 0
+        If cmbIsSettled.Text = "YES" Then
+            issettle = 1
+        Else
+            issettle = 0
+        End If
+        res.IsSettled = issettle
+        res.DateSettled = dtComplainWhen.Value.ToString("yyyy-MM-dd")
+        res.IfNotWhy = txtIfNotWhy.Text
+        Dim isdeathMember As Int16 = 0
+        If cmbIsDeathMember.Text = "YES" Then
+            isdeathMember = 1
+        Else
+            isdeathMember = 0
+        End If
+        res.IsAideMember = isdeathMember
 
         returnId = res.Save()
         txtResidentId.Text = "RES-" + returnId.ToString("000000")
@@ -258,7 +310,7 @@
 
     Sub UpdateResident()
         'update here
-        Dim res As New Resident
+
         If rbHead.Checked Then
             res.IsHead = 1
         Else
@@ -330,6 +382,32 @@
         res.Contraceptive = cmbContraceptive.Text
 
         res.Pets = dgridPets
+
+        'survey info
+        Dim haveComplain As Int16 = 0
+        If cmbHaveComplain.Text = "YES" Then
+            haveComplain = 1
+        Else
+            haveComplain = 0
+        End If
+        res.HaveComplain = haveComplain
+        res.AgainstWhom = txtAgainstWhom.Text
+        Dim issettle As Int16 = 0
+        If cmbIsSettled.Text = "YES" Then
+            issettle = 1
+        Else
+            issettle = 0
+        End If
+        res.IsSettled = issettle
+        res.DateSettled = dtComplainWhen.Value.ToString("yyyy-MM-dd")
+        res.IfNotWhy = txtIfNotWhy.Text
+        Dim isdeathMember As Int16 = 0
+        If cmbIsDeathMember.Text = "YES" Then
+            isdeathMember = 1
+        Else
+            isdeathMember = 0
+        End If
+        res.IsAideMember = isdeathMember
 
         res.Update(returnId)
         InfoBox("Successfully updated!")

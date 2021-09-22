@@ -2,7 +2,8 @@
 
 Public Class Resident
 
-    Public Property IsHead As Integer
+    Public Property ResidentId As Integer
+    Public Property IsHead As Int16
     Public Property HouseHoldNo As String
     Public Property FamilyNo As String
     Public Property Lname As String
@@ -60,7 +61,7 @@ Public Class Resident
     Public Property Contraceptive As String
 
     Public Property HaveComplain As Int16
-    Public Property AgainstWhome As String
+    Public Property AgainstWhom As String
     Public Property IsSettled As Int16
     Public Property DateSettled As Date
     Public Property IfNotWhy As String
@@ -90,7 +91,7 @@ Public Class Resident
                 "permanent_country = @per_country, permanent_province = @per_province, permanent_city = @per_city, permanent_barangay = @per_brgy, permanent_street = @per_street, " &
                 "is_voter = @isvoter, voter_type = @voter_type, is_sk = @issk, place_registration = @placereg, " &
                 "water_source=@wsource, toilet=@toilet, garden=@garden, contraceptive=@contraceptive, " &
-                "have_complain=@havecomplain, against_whom=@whom, is_settled=@issettled, when=@when, if_not_why=@why, is_death_aid=@isaid; SELECT last_insert_id()"
+                "have_complain=@havecomplain, against_whom=@whom, is_settled=@issettled, date_settled=@when, if_not_why=@why, is_death_aid=@isaid; SELECT last_insert_id()"
 
             cmd = New MySqlCommand(query, con)
             With cmd.Parameters
@@ -146,7 +147,7 @@ Public Class Resident
 
                 'Survey info
                 .AddWithValue("@havecomplain", Me.HaveComplain)
-                .AddWithValue("@whom", Me.AgainstWhome)
+                .AddWithValue("@whom", Me.AgainstWhom)
                 .AddWithValue("@issettled", Me.IsSettled)
                 .AddWithValue("@when", Me.DateSettled)
                 .AddWithValue("@why", Me.IfNotWhy)
@@ -239,7 +240,7 @@ Public Class Resident
                 "permanent_country = @per_country, permanent_province = @per_province, permanent_city = @per_city, permanent_barangay = @per_brgy, permanent_street = @per_street, " &
                 "is_voter = @isvoter, voter_type = @voter_type, is_sk = @issk, place_registration = @placereg, " &
                 "water_source=@wsource, toilet=@toilet, garden=@garden, contraceptive=@contraceptive, " &
-                "have_complain=@havecomplain, against_whom=@whom, is_settled=@issettled, when=@when, if_not_why=@why, is_death_aid=@isaid " &
+                "have_complain=@havecomplain, against_whom=@whom, is_settled=@issettled, date_settled=@when, if_not_why=@why, is_death_aid=@isaid " &
                 "WHERE resident_id = @id;"
             cmd = New MySqlCommand(query, con)
             With cmd.Parameters
@@ -295,7 +296,7 @@ Public Class Resident
 
                 'survey info
                 .AddWithValue("@havecomplain", Me.HaveComplain)
-                .AddWithValue("@whom", Me.AgainstWhome)
+                .AddWithValue("@whom", Me.AgainstWhom)
                 .AddWithValue("@issettled", Me.IsSettled)
                 .AddWithValue("@when", Me.DateSettled)
                 .AddWithValue("@why", Me.IfNotWhy)
@@ -523,6 +524,96 @@ Public Class Resident
         End Try
     End Sub
 
+
+    Public Sub GetData(ByVal id As Integer)
+        Try
+            conOpen()
+            query = "SELECT * FROM residents WHERE resident_id = @id"
+            cmd = New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@id", id)
+            Dim dt As New DataTable
+            Dim adprtr As New MySqlDataAdapter(cmd)
+            adprtr.Fill(dt)
+            adprtr.Dispose()
+            cmd.Dispose()
+
+            query = "SELECT * FROM resident_siblings WHERE resident_id = @id"
+            cmd = New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@id", id)
+            Dim dtSIblings As New DataTable
+            adprtr = New MySqlDataAdapter(cmd)
+            adprtr.Fill(dtSIblings)
+            adprtr.Dispose()
+            cmd.Dispose()
+
+            query = "SELECT * FROM resident_pets WHERE resident_id = @id"
+            cmd = New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@id", id)
+            Dim dtPets As New DataTable
+            adprtr = New MySqlDataAdapter(cmd)
+            adprtr.Fill(dtPets)
+            adprtr.Dispose()
+            cmd.Dispose()
+
+            If dt.Rows.Count > 0 Then
+                Me.ResidentId = CInt(dt.Rows(0)("resident_id"))
+                Me.HouseHoldNo = Convert.ToString(dt.Rows(0)("household_no"))
+                Me.FamilyNo = Convert.ToString(dt.Rows(0)("family_no"))
+                Me.IsHead = Convert.ToInt16(dt.Rows(0)("is_head"))
+                Me.Lname = Convert.ToString(dt.Rows(0)("lname"))
+                Me.Fname = Convert.ToString(dt.Rows(0)("fname"))
+                Me.Mname = Convert.ToString(dt.Rows(0)("mname"))
+                Me.Suffix = Convert.ToString(dt.Rows(0)("suffix"))
+                Me.Sex = Convert.ToString(dt.Rows(0)("sex"))
+                Me.CiviStatus = Convert.ToString(dt.Rows(0)("civil_status"))
+                Me.Religion = Convert.ToString(dt.Rows(0)("religion"))
+                Me.Nationality = Convert.ToString(dt.Rows(0)("nationality"))
+                Me.EmploymentStatus = Convert.ToString(dt.Rows(0)("employment_status"))
+                Me.Occupation = Convert.ToString(dt.Rows(0)("occupation"))
+                Me.AnnualIncome = Convert.ToString(dt.Rows(0)("annual_income"))
+                Me.YearResidence = Convert.ToString(dt.Rows(0)("year_residence"))
+                Me.BirthDate = Convert.ToString(dt.Rows(0)("bdate"))
+                Me.PlaceOfBirth = Convert.ToString(dt.Rows(0)("place_of_birth"))
+                Me.ContactNo = Convert.ToString(dt.Rows(0)("contact_no"))
+                Me.Email = Convert.ToString(dt.Rows(0)("email"))
+                Me.TypeValidId = Convert.ToString(dt.Rows(0)("type_valid_id"))
+                Me.IdNo = Convert.ToString(dt.Rows(0)("id_no"))
+
+                Me.PresentCountry = Convert.ToString(dt.Rows(0)("present_country"))
+                Me.PresentProvince = Convert.ToString(dt.Rows(0)("present_province"))
+                Me.PresentCity = Convert.ToString(dt.Rows(0)("present_city"))
+                Me.PresentBarangay = Convert.ToString(dt.Rows(0)("present_barangay"))
+                Me.PresentStreet = Convert.ToString(dt.Rows(0)("present_street"))
+
+                Me.PermanentCountry = Convert.ToString(dt.Rows(0)("permanent_country"))
+                Me.PermanentProvince = Convert.ToString(dt.Rows(0)("permanent_province"))
+                Me.PermanentCity = Convert.ToString(dt.Rows(0)("permanent_city"))
+                Me.PermanentBarangay = Convert.ToString(dt.Rows(0)("permanent_barangay"))
+                Me.PermanentStreet = Convert.ToString(dt.Rows(0)("permanent_street"))
+
+                Me.IsVoter = CInt(dt.Rows(0)("is_voter"))
+                Me.VoterType = Convert.ToString(dt.Rows(0)("voter_type"))
+                Me.IsSK = CInt(dt.Rows(0)("is_sk"))
+                Me.PlaceRegistration = Convert.ToString(dt.Rows(0)("place_registration"))
+
+                Me.WaterSource = CStr(dt.Rows(0)("water_source"))
+                Me.Toilet = Convert.ToString(dt.Rows(0)("toilet"))
+                Me.Garden = CStr(dt.Rows(0)("garden"))
+                Me.Contraceptive = Convert.ToString(dt.Rows(0)("contraceptive"))
+
+                Me.HaveComplain = CInt(dt.Rows(0)("have_complain"))
+                Me.AgainstWhom = Convert.ToString(dt.Rows(0)("against_whom"))
+                Me.IsSettled = CInt(dt.Rows(0)("is_settled"))
+                Me.DateSettled = CDate(dt.Rows(0)("date_settled"))
+                Me.IfNotWhy = Convert.ToString(dt.Rows(0)("if_not_why"))
+                Me.IsAideMember = CInt(dt.Rows(0)("is_death_aid"))
+
+            End If
+
+        Catch ex As Exception
+            ErrBox(ex.Message)
+        End Try
+    End Sub
 
 
 
