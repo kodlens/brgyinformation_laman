@@ -44016,10 +44016,6 @@ CREATE TABLE `resident_pets` (
 
 /*Data for the table `resident_pets` */
 
-insert  into `resident_pets`(`resident_pet_id`,`resident_id`,`resident_pet`,`no_of_pet`) values 
-(21,47,'DOG',2),
-(23,47,'PIG',3);
-
 /*Table structure for table `resident_siblings` */
 
 DROP TABLE IF EXISTS `resident_siblings`;
@@ -44037,15 +44033,15 @@ CREATE TABLE `resident_siblings` (
   PRIMARY KEY (`resident_sibling_id`),
   KEY `resident_id` (`resident_id`),
   CONSTRAINT `resident_siblings_ibfk_1` FOREIGN KEY (`resident_id`) REFERENCES `residents` (`resident_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `resident_siblings` */
 
 insert  into `resident_siblings`(`resident_sibling_id`,`resident_id`,`lname`,`fname`,`mname`,`sex`,`civil_status`,`bdate`,`is_living_with_you`) values 
-(90,47,'DOCOY','B','JAY AR','MALE','MARRIED','04/08/2020',1),
-(91,47,'SANTARITA','M','JUNREY','MALE','MARRIED','24/05/1995',0),
-(92,47,'ALIA','B','ALBERT','MALE','SINGLE','20/08/1990',1),
-(93,47,'FLORIZA','C','JADE ANN','FEMALE','SINGLE','16/10/1993',1);
+(94,48,'DOCOY','B','JAY AR','MALE','MARRIED','04/08/2020',1),
+(95,48,'SANTARITA','M','JUNREY','MALE','MARRIED','24/05/1995',0),
+(96,48,'ALIA','B','ALBERT','MALE','SINGLE','20/08/1990',1),
+(97,48,'FLORIZA','C','JADE ANN','FEMALE','SINGLE','16/10/1993',1);
 
 /*Table structure for table `residents` */
 
@@ -44092,19 +44088,19 @@ CREATE TABLE `residents` (
   `toilet` varchar(100) DEFAULT NULL,
   `garden` varchar(100) DEFAULT NULL,
   `contraceptive` varchar(100) DEFAULT NULL,
-  `hava_complain` tinyint(4) DEFAULT NULL,
+  `have_complain` tinyint(4) DEFAULT NULL,
   `against_whom` varchar(100) DEFAULT NULL,
   `is_settled` tinyint(4) DEFAULT NULL,
-  `when` date DEFAULT NULL,
+  `date_settled` date DEFAULT NULL,
   `if_not_why` text DEFAULT NULL,
   `is_death_aid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`resident_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `residents` */
 
-insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`bdate`,`place_of_birth`,`contact_no`,`email`,`type_valid_id`,`id_no`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permanent_street`,`is_voter`,`voter_type`,`is_sk`,`place_registration`,`water_source`,`toilet`,`garden`,`contraceptive`,`hava_complain`,`against_whom`,`is_settled`,`when`,`if_not_why`,`is_death_aid`) values 
-(47,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-22','BAROY, LANAO DEL NORTE','09167789585','et@yahoo.com','DRIVER LICENSE','K09-1234-214','PHILIPPINES','MISAMIS OCCIDENTAL','TANGUB CITY','Garang','P-SAMPLE LANG','PHILIPPINES','MISAMIS OCCIDENTAL','TANGUB CITY','Garang','P-SAMPLE LANG',1,'OLD',0,'MALORO, TANGUB CITY','','','','',NULL,NULL,NULL,NULL,NULL,NULL);
+insert  into `residents`(`resident_id`,`household_no`,`family_no`,`is_head`,`lname`,`fname`,`mname`,`suffix`,`sex`,`civil_status`,`religion`,`nationality`,`employment_status`,`occupation`,`annual_income`,`year_residence`,`bdate`,`place_of_birth`,`contact_no`,`email`,`type_valid_id`,`id_no`,`present_country`,`present_province`,`present_city`,`present_barangay`,`present_street`,`permanent_country`,`permanent_province`,`permanent_city`,`permanent_barangay`,`permanent_street`,`is_voter`,`voter_type`,`is_sk`,`place_registration`,`water_source`,`toilet`,`garden`,`contraceptive`,`have_complain`,`against_whom`,`is_settled`,`date_settled`,`if_not_why`,`is_death_aid`) values 
+(48,NULL,NULL,1,'AMPARADO','ETIENNE WAYNE','NAMOCATCAT','TEST','MALE','SINGLE','Bible Baptist Church','FILIPINO','EMPLOYED','IT PROGRAMMER','11000','1 YEAR','2021-09-22','BAROY, LANAO DEL NORTE','09167789585','et@yahoo.com','DRIVER LICENSE','K09-1234-214','PHILIPPINES','MISAMIS OCCIDENTAL','TANGUB CITY','Garang','P-SAMPLE LANG','PHILIPPINES','MISAMIS OCCIDENTAL','TANGUB CITY','Garang','P-SAMPLE LANG',1,'OLD',0,'MALORO, TANGUB CITY','','','','',0,'ETET',1,'1995-09-14','NNNN',1);
 
 /*Table structure for table `toilets` */
 
