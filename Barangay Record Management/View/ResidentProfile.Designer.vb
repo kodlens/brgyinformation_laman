@@ -23,8 +23,8 @@ Partial Class ResidentProfile
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ResidentProfile))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tabProfile = New System.Windows.Forms.TabPage()
         Me.btnNext1 = New System.Windows.Forms.Button()
@@ -120,14 +120,6 @@ Partial Class ResidentProfile
         Me.Label18 = New System.Windows.Forms.Label()
         Me.tabFamilyMembers = New System.Windows.Forms.TabPage()
         Me.dGridSibling = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.firstname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.middlename = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.civil_status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.is_living_with_you = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.btnBack3 = New System.Windows.Forms.Button()
         Me.btnNext3 = New System.Windows.Forms.Button()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
@@ -171,6 +163,12 @@ Partial Class ResidentProfile
         Me.btnBack5 = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.cmbIsDeathMember = New System.Windows.Forms.ComboBox()
+        Me.txtIfNotWhy = New System.Windows.Forms.TextBox()
+        Me.dtComplainWhen = New System.Windows.Forms.DateTimePicker()
+        Me.cmbIsSettled = New System.Windows.Forms.ComboBox()
+        Me.txtAgainstWhom = New System.Windows.Forms.TextBox()
+        Me.cmbHaveComplain = New System.Windows.Forms.ComboBox()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.Label58 = New System.Windows.Forms.Label()
         Me.Label57 = New System.Windows.Forms.Label()
@@ -180,12 +178,14 @@ Partial Class ResidentProfile
         Me.btnDebug = New System.Windows.Forms.Button()
         Me.backButton = New System.Windows.Forms.PictureBox()
         Me.btnNew = New System.Windows.Forms.Button()
-        Me.cmbHaveComplain = New System.Windows.Forms.ComboBox()
-        Me.txtAgainstWhom = New System.Windows.Forms.TextBox()
-        Me.cmbIsSettled = New System.Windows.Forms.ComboBox()
-        Me.dtComplainWhen = New System.Windows.Forms.DateTimePicker()
-        Me.txtIfNotWhy = New System.Windows.Forms.TextBox()
-        Me.cmbIsDeathMember = New System.Windows.Forms.ComboBox()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.firstname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.middlename = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.civil_status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.is_living_with_you = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.tabProfile.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -1269,16 +1269,16 @@ Partial Class ResidentProfile
         Me.dGridSibling.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dGridSibling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dGridSibling.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.firstname, Me.middlename, Me.lastname, Me.sex, Me.civil_status, Me.bdate, Me.is_living_with_you})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.Format = "d"
-        DataGridViewCellStyle2.NullValue = Nothing
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dGridSibling.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.Format = "d"
+        DataGridViewCellStyle6.NullValue = Nothing
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dGridSibling.DefaultCellStyle = DataGridViewCellStyle6
         Me.dGridSibling.Location = New System.Drawing.Point(14, 207)
         Me.dGridSibling.MultiSelect = False
         Me.dGridSibling.Name = "dGridSibling"
@@ -1286,72 +1286,6 @@ Partial Class ResidentProfile
         Me.dGridSibling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dGridSibling.Size = New System.Drawing.Size(1104, 325)
         Me.dGridSibling.TabIndex = 90
-        '
-        'id
-        '
-        Me.id.FillWeight = 15.0!
-        Me.id.HeaderText = "ID"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'firstname
-        '
-        Me.firstname.FillWeight = 22.92252!
-        Me.firstname.HeaderText = "Firstname"
-        Me.firstname.Name = "firstname"
-        Me.firstname.ReadOnly = True
-        '
-        'middlename
-        '
-        Me.middlename.FillWeight = 22.92252!
-        Me.middlename.HeaderText = "Middlename"
-        Me.middlename.Name = "middlename"
-        Me.middlename.ReadOnly = True
-        '
-        'lastname
-        '
-        Me.lastname.FillWeight = 22.92252!
-        Me.lastname.HeaderText = "Lastname"
-        Me.lastname.Name = "lastname"
-        Me.lastname.ReadOnly = True
-        '
-        'sex
-        '
-        Me.sex.FillWeight = 22.92252!
-        Me.sex.HeaderText = "Sex"
-        Me.sex.Name = "sex"
-        Me.sex.ReadOnly = True
-        Me.sex.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.sex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'civil_status
-        '
-        Me.civil_status.FillWeight = 22.92252!
-        Me.civil_status.HeaderText = "Civil Status"
-        Me.civil_status.Name = "civil_status"
-        Me.civil_status.ReadOnly = True
-        Me.civil_status.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.civil_status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'bdate
-        '
-        DataGridViewCellStyle1.Format = "d"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.bdate.DefaultCellStyle = DataGridViewCellStyle1
-        Me.bdate.FillWeight = 22.92252!
-        Me.bdate.HeaderText = "Birthdate"
-        Me.bdate.Name = "bdate"
-        Me.bdate.ReadOnly = True
-        Me.bdate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bdate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'is_living_with_you
-        '
-        Me.is_living_with_you.FillWeight = 22.92252!
-        Me.is_living_with_you.HeaderText = "Is Living With You"
-        Me.is_living_with_you.Name = "is_living_with_you"
-        Me.is_living_with_you.ReadOnly = True
         '
         'btnBack3
         '
@@ -1886,6 +1820,67 @@ Partial Class ResidentProfile
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Survey"
         '
+        'cmbIsDeathMember
+        '
+        Me.cmbIsDeathMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbIsDeathMember.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbIsDeathMember.FormattingEnabled = True
+        Me.cmbIsDeathMember.Items.AddRange(New Object() {"YES", "NO"})
+        Me.cmbIsDeathMember.Location = New System.Drawing.Point(450, 196)
+        Me.cmbIsDeathMember.Name = "cmbIsDeathMember"
+        Me.cmbIsDeathMember.Size = New System.Drawing.Size(116, 26)
+        Me.cmbIsDeathMember.TabIndex = 46
+        '
+        'txtIfNotWhy
+        '
+        Me.txtIfNotWhy.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtIfNotWhy.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIfNotWhy.Location = New System.Drawing.Point(158, 161)
+        Me.txtIfNotWhy.Name = "txtIfNotWhy"
+        Me.txtIfNotWhy.Size = New System.Drawing.Size(408, 24)
+        Me.txtIfNotWhy.TabIndex = 45
+        '
+        'dtComplainWhen
+        '
+        Me.dtComplainWhen.CustomFormat = "yyyy-MM-dd"
+        Me.dtComplainWhen.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtComplainWhen.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtComplainWhen.Location = New System.Drawing.Point(393, 119)
+        Me.dtComplainWhen.Name = "dtComplainWhen"
+        Me.dtComplainWhen.Size = New System.Drawing.Size(173, 24)
+        Me.dtComplainWhen.TabIndex = 44
+        '
+        'cmbIsSettled
+        '
+        Me.cmbIsSettled.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbIsSettled.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbIsSettled.FormattingEnabled = True
+        Me.cmbIsSettled.Items.AddRange(New Object() {"YES", "NO"})
+        Me.cmbIsSettled.Location = New System.Drawing.Point(158, 119)
+        Me.cmbIsSettled.Name = "cmbIsSettled"
+        Me.cmbIsSettled.Size = New System.Drawing.Size(116, 26)
+        Me.cmbIsSettled.TabIndex = 43
+        '
+        'txtAgainstWhom
+        '
+        Me.txtAgainstWhom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtAgainstWhom.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAgainstWhom.Location = New System.Drawing.Point(214, 72)
+        Me.txtAgainstWhom.Name = "txtAgainstWhom"
+        Me.txtAgainstWhom.Size = New System.Drawing.Size(352, 24)
+        Me.txtAgainstWhom.TabIndex = 42
+        '
+        'cmbHaveComplain
+        '
+        Me.cmbHaveComplain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbHaveComplain.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbHaveComplain.FormattingEnabled = True
+        Me.cmbHaveComplain.Items.AddRange(New Object() {"YES", "NO"})
+        Me.cmbHaveComplain.Location = New System.Drawing.Point(450, 30)
+        Me.cmbHaveComplain.Name = "cmbHaveComplain"
+        Me.cmbHaveComplain.Size = New System.Drawing.Size(116, 26)
+        Me.cmbHaveComplain.TabIndex = 41
+        '
         'Label63
         '
         Me.Label63.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1976,65 +1971,79 @@ Partial Class ResidentProfile
         Me.btnNew.Text = "(F5) NEW"
         Me.btnNew.UseVisualStyleBackColor = True
         '
-        'cmbHaveComplain
+        'id
         '
-        Me.cmbHaveComplain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbHaveComplain.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbHaveComplain.FormattingEnabled = True
-        Me.cmbHaveComplain.Items.AddRange(New Object() {"YES", "NO"})
-        Me.cmbHaveComplain.Location = New System.Drawing.Point(450, 30)
-        Me.cmbHaveComplain.Name = "cmbHaveComplain"
-        Me.cmbHaveComplain.Size = New System.Drawing.Size(116, 26)
-        Me.cmbHaveComplain.TabIndex = 41
+        Me.id.DataPropertyName = "resident_sibling_id"
+        Me.id.FillWeight = 15.0!
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
-        'txtAgainstWhom
+        'firstname
         '
-        Me.txtAgainstWhom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtAgainstWhom.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAgainstWhom.Location = New System.Drawing.Point(214, 72)
-        Me.txtAgainstWhom.Name = "txtAgainstWhom"
-        Me.txtAgainstWhom.Size = New System.Drawing.Size(352, 24)
-        Me.txtAgainstWhom.TabIndex = 42
+        Me.firstname.DataPropertyName = "fname"
+        Me.firstname.FillWeight = 22.92252!
+        Me.firstname.HeaderText = "Firstname"
+        Me.firstname.Name = "firstname"
+        Me.firstname.ReadOnly = True
         '
-        'cmbIsSettled
+        'middlename
         '
-        Me.cmbIsSettled.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbIsSettled.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbIsSettled.FormattingEnabled = True
-        Me.cmbIsSettled.Items.AddRange(New Object() {"YES", "NO"})
-        Me.cmbIsSettled.Location = New System.Drawing.Point(158, 119)
-        Me.cmbIsSettled.Name = "cmbIsSettled"
-        Me.cmbIsSettled.Size = New System.Drawing.Size(116, 26)
-        Me.cmbIsSettled.TabIndex = 43
+        Me.middlename.DataPropertyName = "mname"
+        Me.middlename.FillWeight = 22.92252!
+        Me.middlename.HeaderText = "Middlename"
+        Me.middlename.Name = "middlename"
+        Me.middlename.ReadOnly = True
         '
-        'dtComplainWhen
+        'lastname
         '
-        Me.dtComplainWhen.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtComplainWhen.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtComplainWhen.Location = New System.Drawing.Point(393, 119)
-        Me.dtComplainWhen.Name = "dtComplainWhen"
-        Me.dtComplainWhen.Size = New System.Drawing.Size(173, 24)
-        Me.dtComplainWhen.TabIndex = 44
+        Me.lastname.DataPropertyName = "lname"
+        Me.lastname.FillWeight = 22.92252!
+        Me.lastname.HeaderText = "Lastname"
+        Me.lastname.Name = "lastname"
+        Me.lastname.ReadOnly = True
         '
-        'txtIfNotWhy
+        'sex
         '
-        Me.txtIfNotWhy.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtIfNotWhy.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIfNotWhy.Location = New System.Drawing.Point(158, 161)
-        Me.txtIfNotWhy.Name = "txtIfNotWhy"
-        Me.txtIfNotWhy.Size = New System.Drawing.Size(408, 24)
-        Me.txtIfNotWhy.TabIndex = 45
+        Me.sex.DataPropertyName = "sex"
+        Me.sex.FillWeight = 22.92252!
+        Me.sex.HeaderText = "Sex"
+        Me.sex.Name = "sex"
+        Me.sex.ReadOnly = True
+        Me.sex.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.sex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'cmbIsDeathMember
+        'civil_status
         '
-        Me.cmbIsDeathMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbIsDeathMember.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbIsDeathMember.FormattingEnabled = True
-        Me.cmbIsDeathMember.Items.AddRange(New Object() {"YES", "NO"})
-        Me.cmbIsDeathMember.Location = New System.Drawing.Point(450, 196)
-        Me.cmbIsDeathMember.Name = "cmbIsDeathMember"
-        Me.cmbIsDeathMember.Size = New System.Drawing.Size(116, 26)
-        Me.cmbIsDeathMember.TabIndex = 46
+        Me.civil_status.DataPropertyName = "civil_status"
+        Me.civil_status.FillWeight = 22.92252!
+        Me.civil_status.HeaderText = "Civil Status"
+        Me.civil_status.Name = "civil_status"
+        Me.civil_status.ReadOnly = True
+        Me.civil_status.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.civil_status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'bdate
+        '
+        Me.bdate.DataPropertyName = "bdate"
+        DataGridViewCellStyle5.Format = "d"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.bdate.DefaultCellStyle = DataGridViewCellStyle5
+        Me.bdate.FillWeight = 22.92252!
+        Me.bdate.HeaderText = "Birthdate"
+        Me.bdate.Name = "bdate"
+        Me.bdate.ReadOnly = True
+        Me.bdate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bdate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'is_living_with_you
+        '
+        Me.is_living_with_you.DataPropertyName = "is_living_with_you"
+        Me.is_living_with_you.FillWeight = 22.92252!
+        Me.is_living_with_you.HeaderText = "Is Living With You"
+        Me.is_living_with_you.Name = "is_living_with_you"
+        Me.is_living_with_you.ReadOnly = True
         '
         'ResidentProfile
         '
@@ -2215,14 +2224,6 @@ Partial Class ResidentProfile
     Friend WithEvents btnDebug As Button
     Friend WithEvents dGridSibling As DataGridView
     Friend WithEvents btnNew As Button
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents firstname As DataGridViewTextBoxColumn
-    Friend WithEvents middlename As DataGridViewTextBoxColumn
-    Friend WithEvents lastname As DataGridViewTextBoxColumn
-    Friend WithEvents sex As DataGridViewTextBoxColumn
-    Friend WithEvents civil_status As DataGridViewTextBoxColumn
-    Friend WithEvents bdate As DataGridViewTextBoxColumn
-    Friend WithEvents is_living_with_you As DataGridViewCheckBoxColumn
     Friend WithEvents dgridPets As DataGridView
     Friend WithEvents tabSurvey As TabPage
     Friend WithEvents btnSave As Button
@@ -2246,4 +2247,12 @@ Partial Class ResidentProfile
     Friend WithEvents dtComplainWhen As DateTimePicker
     Friend WithEvents txtIfNotWhy As TextBox
     Friend WithEvents cmbIsDeathMember As ComboBox
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents firstname As DataGridViewTextBoxColumn
+    Friend WithEvents middlename As DataGridViewTextBoxColumn
+    Friend WithEvents lastname As DataGridViewTextBoxColumn
+    Friend WithEvents sex As DataGridViewTextBoxColumn
+    Friend WithEvents civil_status As DataGridViewTextBoxColumn
+    Friend WithEvents bdate As DataGridViewTextBoxColumn
+    Friend WithEvents is_living_with_you As DataGridViewCheckBoxColumn
 End Class

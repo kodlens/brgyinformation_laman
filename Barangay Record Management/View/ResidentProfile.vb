@@ -87,14 +87,15 @@
         'dGridSibling.Controls.Add(dtSiblingDatePicker)
         'AddHandler dtSiblingDatePicker.ValueChanged, AddressOf dtSiblingPicker_ValueChanged
 
-
+        cmbIsSettled.SelectedIndex = 1
         txtHSerialNumber.Focus()
         rbHead.Checked = True
         frmDashboard.GeneralHeading.Text = "Resident Profile"
 
         If returnId > 0 Then
-            res.GetData(returnId)
-            SetData()
+            res.GetData(returnId, dGridSibling, dgridPets)
+            'ge parameter nlng ang grid kai sa obk prop dili mugana
+            SetData() 'set the data to the form
 
         End If
 
@@ -118,6 +119,61 @@
         Me.txtOccupation.Text = res.Occupation
         Me.txtAnnualIncome.Text = res.AnnualIncome
         Me.txtYearResidency.Text = res.YearResidence
+
+        'birth info
+        Me.dtBdate.Value = res.BirthDate
+        Me.txtPlaceBirth.Text = res.PlaceOfBirth
+
+        'primary contract information
+        Me.txtContactNumber.Text = res.ContactNo
+        Me.txtEmailAddress.Text = res.Email
+        Me.txtValidID.Text = res.TypeValidId
+        Me.txtIDNumber.Text = res.IdNo
+
+        'Secondary Contact Information
+        'Present Address
+        Me.cmbPresentCountry.Text = res.PresentCountry
+        Me.cmbPresentProvince.Text = res.PresentProvince
+        Me.cmbPresentCity.Text = res.PresentCity
+        Me.cmbPresentBarangay.Text = res.PresentBarangay
+        Me.txtPresentStreet.Text = res.PresentStreet
+
+        'Permanent Addres
+        Me.cmbPermanentCountry.Text = res.PermanentCountry
+        Me.cmbPermanentProvince.Text = res.PermanentProvince
+        Me.cmbPermanentCity.Text = res.PermanentCity
+        Me.cmbPermanentBarangay.Text = res.PermanentBarangay
+        Me.txtPermanentStreet.Text = res.PermanentStreet
+
+
+        'voter status
+        Me.cmbIsVoter.Text = IIf(res.IsVoter = 1, "YES", "NO")
+        Me.cmbVoterType.Text = res.VoterType
+        Me.cmbIsSK.Text = IIf(res.IsSK = 1, "YES", "NO")
+        Me.txtPlaceReg.Text = res.PlaceRegistration
+
+        'additional
+        Me.cmbWaterSource.Text = res.WaterSource
+        Me.cmbToilet.Text = res.Toilet
+        Me.cmbContraceptive.Text = res.Contraceptive
+
+        'survey
+        Me.cmbHaveComplain.Text = IIf(res.HaveComplain = 1, "YES", "NO")
+        Me.txtAgainstWhom.Text = res.AgainstWhom
+        Me.cmbIsSettled.Text = IIf(res.IsSettled = 1, "YES", "NO")
+
+        If String.IsNullOrEmpty(res.DateSettled) Then
+            Me.dtComplainWhen.Enabled = False
+            Me.dtComplainWhen.Value = Today
+        Else
+            Me.dtComplainWhen.Enabled = True
+            Box.InfoBox(DateTime.ParseExact(res.DateSettled, "yyyy-MM-dd", Nothing))
+            Me.dtComplainWhen.Value = DateTime.ParseExact(res.DateSettled, "yyyy-MM-dd", Nothing)
+        End If
+
+        Me.txtIfNotWhy.Text = res.IfNotWhy
+        Me.cmbIsDeathMember.Text = IIf(res.IsAideMember = 1, "YES", "NO")
+
     End Sub
     Private Sub ageCalculator(ByVal dtPicker As DateTimePicker, ByVal ageBox As TextBox)
 
@@ -353,23 +409,9 @@
         res.PermanentStreet = Me.txtPermanentStreet.Text
 
         'VOTERS INFO
-        Dim isvoter As Int16
-        If cmbIsVoter.Text = "YES" Then
-            isvoter = 1
-        Else
-            isvoter = 0
-        End If
-        res.IsVoter = isvoter
+        res.IsVoter = IIf(cmbIsVoter.Text = "YES", 1, 0)
         res.VoterType = Me.cmbVoterType.Text
-
-        Dim issk As Int16
-        If cmbIsSK.Text = "YES" Then
-            issk = 1
-        Else
-            issk = 0
-        End If
-        res.IsSK = issk
-
+        res.IsSK = IIf(cmbIsSK.Text = "YES", 1, 0)
         res.PlaceRegistration = Me.txtPlaceReg.Text
 
         'bind datagridSibling
@@ -384,32 +426,14 @@
         res.Pets = dgridPets
 
         'survey info
-        Dim haveComplain As Int16 = 0
-        If cmbHaveComplain.Text = "YES" Then
-            haveComplain = 1
-        Else
-            haveComplain = 0
-        End If
-        res.HaveComplain = haveComplain
+        res.HaveComplain = IIf(cmbHaveComplain.Text = "YES", 1, 0)
         res.AgainstWhom = txtAgainstWhom.Text
-        Dim issettle As Int16 = 0
-        If cmbIsSettled.Text = "YES" Then
-            issettle = 1
-        Else
-            issettle = 0
-        End If
-        res.IsSettled = issettle
+        res.IsSettled = IIf(cmbIsSettled.Text = "YES", 1, 0)
         res.DateSettled = dtComplainWhen.Value.ToString("yyyy-MM-dd")
         res.IfNotWhy = txtIfNotWhy.Text
-        Dim isdeathMember As Int16 = 0
-        If cmbIsDeathMember.Text = "YES" Then
-            isdeathMember = 1
-        Else
-            isdeathMember = 0
-        End If
-        res.IsAideMember = isdeathMember
-
+        res.IsAideMember = IIf(cmbIsDeathMember.Text = "YES", 1, 0)
         res.Update(returnId)
+
         InfoBox("Successfully updated!")
     End Sub
 
@@ -754,5 +778,13 @@
 
     End Sub
 
-
+    Private Sub cmbIsSettled_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbIsSettled.SelectedIndexChanged
+        If cmbIsSettled.Text = "NO" Then
+            dtComplainWhen.Enabled = False
+            res.DateSettled = ""
+        Else
+            dtComplainWhen.Enabled = True
+            res.DateSettled = dtComplainWhen.Value.ToString("yyyy-MM-dd")
+        End If
+    End Sub
 End Class

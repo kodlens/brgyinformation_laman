@@ -207,7 +207,6 @@ C:\Users\wayne\Desktop\GitHub\brgyinformation_laman\Barangay Record Management\b
 C:\Users\wayne\Desktop\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.exe
 C:\Users\wayne\Desktop\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.pdb
 C:\Users\wayne\Desktop\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Barangay Record Management.xml
-C:\Users\wayne\Desktop\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\wayne\Desktop\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
 C:\Users\wayne\Desktop\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
 C:\Users\wayne\Desktop\GitHub\brgyinformation_laman\Barangay Record Management\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll

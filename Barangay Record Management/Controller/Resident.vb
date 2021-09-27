@@ -63,7 +63,7 @@ Public Class Resident
     Public Property HaveComplain As Int16
     Public Property AgainstWhom As String
     Public Property IsSettled As Int16
-    Public Property DateSettled As Date
+    Public Property DateSettled As String
     Public Property IfNotWhy As String
     Public Property IsAideMember As Int16
 
@@ -149,7 +149,9 @@ Public Class Resident
                 .AddWithValue("@havecomplain", Me.HaveComplain)
                 .AddWithValue("@whom", Me.AgainstWhom)
                 .AddWithValue("@issettled", Me.IsSettled)
-                .AddWithValue("@when", Me.DateSettled)
+                If Me.IsSettled > 0 Then
+                    .AddWithValue("@when", Me.DateSettled)
+                End If
                 .AddWithValue("@why", Me.IfNotWhy)
                 .AddWithValue("@isaid", Me.IsAideMember)
 
@@ -170,9 +172,9 @@ Public Class Resident
                 For row As Integer = 0 To gridLength - 1
                     With cmd.Parameters
                         .AddWithValue("@resid", i)
+                        .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(1).Value))
+                        .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(2).Value))
                         .AddWithValue("@lname", CStr(Siblings.Rows(row).Cells(3).Value))
-                        .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(2).Value))
-                        .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(1).Value))
                         .AddWithValue("@sex", CStr(Siblings.Rows(row).Cells(4).Value))
                         .AddWithValue("@cstatus", CStr(Siblings.Rows(row).Cells(5).Value))
                         .AddWithValue("@bdate", CStr(Siblings.Rows(row).Cells(6).Value))
@@ -298,7 +300,12 @@ Public Class Resident
                 .AddWithValue("@havecomplain", Me.HaveComplain)
                 .AddWithValue("@whom", Me.AgainstWhom)
                 .AddWithValue("@issettled", Me.IsSettled)
-                .AddWithValue("@when", Me.DateSettled)
+                If Me.IsSettled > 0 Then
+                    .AddWithValue("@when", Me.DateSettled)
+                Else
+                    .AddWithValue("@when", "")
+                End If
+
                 .AddWithValue("@why", Me.IfNotWhy)
                 .AddWithValue("@isaid", Me.IsAideMember)
 
@@ -327,9 +334,9 @@ Public Class Resident
                         cmd = New MySqlCommand(query, con)
                         With cmd.Parameters
                             .AddWithValue("@resid", id)
+                            .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(1).Value))
+                            .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(2).Value))
                             .AddWithValue("@lname", CStr(Siblings.Rows(row).Cells(3).Value))
-                            .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(2).Value))
-                            .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(1).Value))
                             .AddWithValue("@sex", CStr(Siblings.Rows(row).Cells(4).Value))
                             .AddWithValue("@cstatus", CStr(Siblings.Rows(row).Cells(5).Value))
                             .AddWithValue("@bdate", CStr(Siblings.Rows(row).Cells(6).Value))
@@ -356,9 +363,9 @@ Public Class Resident
                         cmd = New MySqlCommand(query, con)
                         With cmd.Parameters
                             .AddWithValue("@resid", id)
+                            .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(1).Value))
+                            .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(2).Value))
                             .AddWithValue("@lname", CStr(Siblings.Rows(row).Cells(3).Value))
-                            .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(2).Value))
-                            .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(1).Value))
                             .AddWithValue("@sex", CStr(Siblings.Rows(row).Cells(4).Value))
                             .AddWithValue("@cstatus", CStr(Siblings.Rows(row).Cells(5).Value))
                             .AddWithValue("@bdate", CStr(Siblings.Rows(row).Cells(6).Value))
@@ -525,7 +532,9 @@ Public Class Resident
     End Sub
 
 
-    Public Sub GetData(ByVal id As Integer)
+    Public Sub GetData(ByVal id As Integer, paramSiblings As DataGridView, paramPets As DataGridView)
+        'kay d man ka ma bind sa parameters..
+        'ibutang tika sa parameters nlng
         Try
             conOpen()
             query = "SELECT * FROM residents WHERE resident_id = @id"
@@ -543,6 +552,10 @@ Public Class Resident
             Dim dtSIblings As New DataTable
             adprtr = New MySqlDataAdapter(cmd)
             adprtr.Fill(dtSIblings)
+            'Siblings = New DataGridView
+            'Box.InfoBox(dtSIblings.Rows.Count)
+            paramSiblings.AutoGenerateColumns = False
+            paramSiblings.DataSource = dtSIblings
             adprtr.Dispose()
             cmd.Dispose()
 
@@ -553,6 +566,8 @@ Public Class Resident
             adprtr = New MySqlDataAdapter(cmd)
             adprtr.Fill(dtPets)
             adprtr.Dispose()
+            paramPets.AutoGenerateColumns = False
+            paramPets.DataSource = dtPets
             cmd.Dispose()
 
             If dt.Rows.Count > 0 Then
@@ -604,7 +619,8 @@ Public Class Resident
                 Me.HaveComplain = CInt(dt.Rows(0)("have_complain"))
                 Me.AgainstWhom = Convert.ToString(dt.Rows(0)("against_whom"))
                 Me.IsSettled = CInt(dt.Rows(0)("is_settled"))
-                Me.DateSettled = CDate(dt.Rows(0)("date_settled"))
+                Me.DateSettled = dt.Rows(0)("date_settled")
+
                 Me.IfNotWhy = Convert.ToString(dt.Rows(0)("if_not_why"))
                 Me.IsAideMember = CInt(dt.Rows(0)("is_death_aid"))
 
