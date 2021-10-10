@@ -350,6 +350,7 @@
         res.IsSettled = issettle
         res.DateSettled = dtComplainWhen.Value.ToString("yyyy-MM-dd")
         res.IfNotWhy = txtIfNotWhy.Text
+
         Dim isdeathMember As Int16 = 0
         If cmbIsDeathMember.Text = "YES" Then
             isdeathMember = 1

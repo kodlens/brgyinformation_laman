@@ -149,12 +149,15 @@ Public Class Resident
                 .AddWithValue("@havecomplain", Me.HaveComplain)
                 .AddWithValue("@whom", Me.AgainstWhom)
                 .AddWithValue("@issettled", Me.IsSettled)
-                If Me.IsSettled > 0 Then
-                    .AddWithValue("@when", Me.DateSettled)
-                End If
+
+                'If Me.IsSettled > 0 Then
+                '    .AddWithValue("@when", Me.DateSettled)
+                'End If
+                Dim dateSettiled As String = ""
+                IIf(Me.IsSettled > 0, dateSettiled = Me.DateSettled, dateSettiled = "")
+                .AddWithValue("@when", dateSettiled)
                 .AddWithValue("@why", Me.IfNotWhy)
                 .AddWithValue("@isaid", Me.IsAideMember)
-
 
             End With
             i = Convert.ToInt32(cmd.ExecuteScalar)
@@ -219,6 +222,7 @@ Public Class Resident
 
             Return i
         Catch ex As Exception
+            Throw
             ErrBox(ex.Message)
 
             Return 0
