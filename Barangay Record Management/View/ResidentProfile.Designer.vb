@@ -23,8 +23,8 @@ Partial Class ResidentProfile
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ResidentProfile))
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tabProfile = New System.Windows.Forms.TabPage()
         Me.btnNext1 = New System.Windows.Forms.Button()
@@ -120,14 +120,6 @@ Partial Class ResidentProfile
         Me.Label18 = New System.Windows.Forms.Label()
         Me.tabFamilyMembers = New System.Windows.Forms.TabPage()
         Me.dGridSibling = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.firstname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.middlename = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.civil_status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.is_living_with_you = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.btnBack3 = New System.Windows.Forms.Button()
         Me.btnNext3 = New System.Windows.Forms.Button()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
@@ -186,6 +178,14 @@ Partial Class ResidentProfile
         Me.btnDebug = New System.Windows.Forms.Button()
         Me.backButton = New System.Windows.Forms.PictureBox()
         Me.btnNew = New System.Windows.Forms.Button()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.firstname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.middlename = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sex = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.civil_status = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.bdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.is_living_with_you = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.tabProfile.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -1265,101 +1265,25 @@ Partial Class ResidentProfile
         '
         'dGridSibling
         '
-        Me.dGridSibling.AllowUserToAddRows = False
         Me.dGridSibling.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dGridSibling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dGridSibling.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.firstname, Me.middlename, Me.lastname, Me.sex, Me.civil_status, Me.bdate, Me.is_living_with_you})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.Format = "d"
-        DataGridViewCellStyle8.NullValue = Nothing
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dGridSibling.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.Format = "d"
+        DataGridViewCellStyle2.NullValue = Nothing
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dGridSibling.DefaultCellStyle = DataGridViewCellStyle2
         Me.dGridSibling.Location = New System.Drawing.Point(14, 207)
         Me.dGridSibling.MultiSelect = False
         Me.dGridSibling.Name = "dGridSibling"
-        Me.dGridSibling.ReadOnly = True
         Me.dGridSibling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dGridSibling.Size = New System.Drawing.Size(1104, 325)
         Me.dGridSibling.TabIndex = 90
-        '
-        'id
-        '
-        Me.id.DataPropertyName = "resident_sibling_id"
-        Me.id.FillWeight = 15.0!
-        Me.id.HeaderText = "ID"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'firstname
-        '
-        Me.firstname.DataPropertyName = "fname"
-        Me.firstname.FillWeight = 22.92252!
-        Me.firstname.HeaderText = "Firstname"
-        Me.firstname.Name = "firstname"
-        Me.firstname.ReadOnly = True
-        '
-        'middlename
-        '
-        Me.middlename.DataPropertyName = "mname"
-        Me.middlename.FillWeight = 22.92252!
-        Me.middlename.HeaderText = "Middlename"
-        Me.middlename.Name = "middlename"
-        Me.middlename.ReadOnly = True
-        '
-        'lastname
-        '
-        Me.lastname.DataPropertyName = "lname"
-        Me.lastname.FillWeight = 22.92252!
-        Me.lastname.HeaderText = "Lastname"
-        Me.lastname.Name = "lastname"
-        Me.lastname.ReadOnly = True
-        '
-        'sex
-        '
-        Me.sex.DataPropertyName = "sex"
-        Me.sex.FillWeight = 22.92252!
-        Me.sex.HeaderText = "Sex"
-        Me.sex.Name = "sex"
-        Me.sex.ReadOnly = True
-        Me.sex.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.sex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'civil_status
-        '
-        Me.civil_status.DataPropertyName = "civil_status"
-        Me.civil_status.FillWeight = 22.92252!
-        Me.civil_status.HeaderText = "Civil Status"
-        Me.civil_status.Name = "civil_status"
-        Me.civil_status.ReadOnly = True
-        Me.civil_status.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.civil_status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'bdate
-        '
-        Me.bdate.DataPropertyName = "bdate"
-        DataGridViewCellStyle7.Format = "d"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.bdate.DefaultCellStyle = DataGridViewCellStyle7
-        Me.bdate.FillWeight = 22.92252!
-        Me.bdate.HeaderText = "Birthdate"
-        Me.bdate.Name = "bdate"
-        Me.bdate.ReadOnly = True
-        Me.bdate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bdate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'is_living_with_you
-        '
-        Me.is_living_with_you.DataPropertyName = "is_living_with_you"
-        Me.is_living_with_you.FillWeight = 22.92252!
-        Me.is_living_with_you.HeaderText = "Is Living With You"
-        Me.is_living_with_you.Name = "is_living_with_you"
-        Me.is_living_with_you.ReadOnly = True
         '
         'btnBack3
         '
@@ -1458,11 +1382,11 @@ Partial Class ResidentProfile
         Me.btnAddFamlyMember.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddFamlyMember.Image = CType(resources.GetObject("btnAddFamlyMember.Image"), System.Drawing.Image)
         Me.btnAddFamlyMember.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAddFamlyMember.Location = New System.Drawing.Point(581, 138)
+        Me.btnAddFamlyMember.Location = New System.Drawing.Point(647, 138)
         Me.btnAddFamlyMember.Name = "btnAddFamlyMember"
-        Me.btnAddFamlyMember.Size = New System.Drawing.Size(187, 40)
+        Me.btnAddFamlyMember.Size = New System.Drawing.Size(121, 40)
         Me.btnAddFamlyMember.TabIndex = 7
-        Me.btnAddFamlyMember.Text = "Add Family Member"
+        Me.btnAddFamlyMember.Text = "ADD"
         Me.btnAddFamlyMember.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddFamlyMember.UseVisualStyleBackColor = False
         '
@@ -1500,7 +1424,7 @@ Partial Class ResidentProfile
         '
         Me.txtFAge.Enabled = False
         Me.txtFAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFAge.Location = New System.Drawing.Point(708, 72)
+        Me.txtFAge.Location = New System.Drawing.Point(708, 70)
         Me.txtFAge.Name = "txtFAge"
         Me.txtFAge.Size = New System.Drawing.Size(60, 24)
         Me.txtFAge.TabIndex = 62
@@ -2045,6 +1969,72 @@ Partial Class ResidentProfile
         Me.btnNew.Text = "(F5) NEW"
         Me.btnNew.UseVisualStyleBackColor = True
         '
+        'id
+        '
+        Me.id.DataPropertyName = "resident_sibling_id"
+        Me.id.FillWeight = 15.0!
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
+        Me.id.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'firstname
+        '
+        Me.firstname.DataPropertyName = "fname"
+        Me.firstname.FillWeight = 22.92252!
+        Me.firstname.HeaderText = "Firstname"
+        Me.firstname.Name = "firstname"
+        '
+        'middlename
+        '
+        Me.middlename.DataPropertyName = "mname"
+        Me.middlename.FillWeight = 22.92252!
+        Me.middlename.HeaderText = "Middlename"
+        Me.middlename.Name = "middlename"
+        '
+        'lastname
+        '
+        Me.lastname.DataPropertyName = "lname"
+        Me.lastname.FillWeight = 22.92252!
+        Me.lastname.HeaderText = "Lastname"
+        Me.lastname.Name = "lastname"
+        '
+        'sex
+        '
+        Me.sex.DataPropertyName = "sex"
+        Me.sex.FillWeight = 22.92252!
+        Me.sex.HeaderText = "Sex"
+        Me.sex.Items.AddRange(New Object() {"MALE", "FEMALE"})
+        Me.sex.Name = "sex"
+        Me.sex.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'civil_status
+        '
+        Me.civil_status.DataPropertyName = "civil_status"
+        Me.civil_status.FillWeight = 22.92252!
+        Me.civil_status.HeaderText = "Civil Status"
+        Me.civil_status.Items.AddRange(New Object() {"SINGLE", "MARRIED", "WIDOWED", "SEPARATED"})
+        Me.civil_status.Name = "civil_status"
+        Me.civil_status.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'bdate
+        '
+        Me.bdate.DataPropertyName = "bdate"
+        DataGridViewCellStyle1.Format = "d"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.bdate.DefaultCellStyle = DataGridViewCellStyle1
+        Me.bdate.FillWeight = 22.92252!
+        Me.bdate.HeaderText = "Birthdate"
+        Me.bdate.Name = "bdate"
+        Me.bdate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bdate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'is_living_with_you
+        '
+        Me.is_living_with_you.DataPropertyName = "is_living_with_you"
+        Me.is_living_with_you.FillWeight = 22.92252!
+        Me.is_living_with_you.HeaderText = "Is Living With You"
+        Me.is_living_with_you.Name = "is_living_with_you"
+        '
         'ResidentProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2251,8 +2241,8 @@ Partial Class ResidentProfile
     Friend WithEvents firstname As DataGridViewTextBoxColumn
     Friend WithEvents middlename As DataGridViewTextBoxColumn
     Friend WithEvents lastname As DataGridViewTextBoxColumn
-    Friend WithEvents sex As DataGridViewTextBoxColumn
-    Friend WithEvents civil_status As DataGridViewTextBoxColumn
+    Friend WithEvents sex As DataGridViewComboBoxColumn
+    Friend WithEvents civil_status As DataGridViewComboBoxColumn
     Friend WithEvents bdate As DataGridViewTextBoxColumn
     Friend WithEvents is_living_with_you As DataGridViewCheckBoxColumn
 End Class

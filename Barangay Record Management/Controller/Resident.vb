@@ -172,15 +172,15 @@ Public Class Resident
                     "civil_status=@cstatus, bdate=@bdate, is_living_with_you=@isliving; SELECT LAST_INSERT_ID();"
                 cmd = New MySqlCommand(query, con)
                 Dim isliving = 0
-                For row As Integer = 0 To gridLength - 1
+                For row As Integer = 0 To gridLength - 2
                     With cmd.Parameters
                         .AddWithValue("@resid", i)
-                        .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(1).Value))
-                        .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(2).Value))
-                        .AddWithValue("@lname", CStr(Siblings.Rows(row).Cells(3).Value))
-                        .AddWithValue("@sex", CStr(Siblings.Rows(row).Cells(4).Value))
-                        .AddWithValue("@cstatus", CStr(Siblings.Rows(row).Cells(5).Value))
-                        .AddWithValue("@bdate", CStr(Siblings.Rows(row).Cells(6).Value))
+                        .AddWithValue("@fname", Convert.ToString(Siblings.Rows(row).Cells(1).Value))
+                        .AddWithValue("@mname", Convert.ToString(Siblings.Rows(row).Cells(2).Value))
+                        .AddWithValue("@lname", Convert.ToString(Siblings.Rows(row).Cells(3).Value))
+                        .AddWithValue("@sex", Convert.ToString(Siblings.Rows(row).Cells(4).Value))
+                        .AddWithValue("@cstatus", Convert.ToString(Siblings.Rows(row).Cells(5).Value))
+                        .AddWithValue("@bdate", Convert.ToString(Siblings.Rows(row).Cells(6).Value))
                         If Siblings.Rows(row).Cells(7).Value Then
                             isliving = 1
                         Else
@@ -207,8 +207,8 @@ Public Class Resident
                 For row As Integer = 0 To gridLength - 1
                     With cmd.Parameters
                         .AddWithValue("@resid", i)
-                        .AddWithValue("@respet", CStr(Pets.Rows(row).Cells(1).Value))
-                        .AddWithValue("@nopet", CStr(Pets.Rows(row).Cells(2).Value))
+                        .AddWithValue("@respet", Convert.ToString(Pets.Rows(row).Cells(1).Value))
+                        .AddWithValue("@nopet", Convert.ToString(Pets.Rows(row).Cells(2).Value))
                     End With
                     resident_pet_id = CInt(cmd.ExecuteScalar())
                     cmd.Parameters.Clear()
@@ -232,8 +232,8 @@ Public Class Resident
 
     Public Function Update(ByVal id As Integer) As Integer
         Dim i As Integer = 0
-        Try
-            conOpen()
+        'Try
+        conOpen()
             query = "UPDATE residents SET " &
                 "is_head = @ishead, " &
                 "household_no = @household_no, family_no = @family_no, lname = @lname, fname = @fname, mname = @mname, " &
@@ -322,43 +322,43 @@ Public Class Resident
             '---------------------------------------
             'update or insert data into database
             Dim gridLength = Siblings.Rows.Count 'initiate first before use, optimize performance, by santaromana (CITU-CS dean) :D
-            If gridLength > 1 Then 'if grid is not empty
+            If gridLength > 2 Then 'if grid is not empty
 
                 Dim res_sibling_id As Integer = 0
 
 
                 Dim isliving As Integer = 0
-                For row As Integer = 0 To gridLength - 1
+                For row As Integer = 0 To gridLength - 2
 
-                    If String.IsNullOrEmpty(CStr(Siblings.Rows(row).Cells(0).Value)) Then 'check if id has no value
-                        'INSERT WILL EXECUTE
-                        query = "INSERT INTO resident_siblings SET " &
+                If String.IsNullOrEmpty(Convert.ToString(Siblings.Rows(row).Cells(0).Value)) Then 'check if id has no value
+                    'INSERT WILL EXECUTE
+                    query = "INSERT INTO resident_siblings SET " &
                             "resident_id = @resid, lname=@lname, fname=@fname, mname=@mname, sex=@sex, " &
                             "civil_status=@cstatus, bdate=@bdate, is_living_with_you=@isliving; SELECT LAST_INSERT_ID();"
-                        cmd = New MySqlCommand(query, con)
-                        With cmd.Parameters
-                            .AddWithValue("@resid", id)
-                            .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(1).Value))
-                            .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(2).Value))
-                            .AddWithValue("@lname", CStr(Siblings.Rows(row).Cells(3).Value))
-                            .AddWithValue("@sex", CStr(Siblings.Rows(row).Cells(4).Value))
-                            .AddWithValue("@cstatus", CStr(Siblings.Rows(row).Cells(5).Value))
-                            .AddWithValue("@bdate", CStr(Siblings.Rows(row).Cells(6).Value))
-                            If Siblings.Rows(row).Cells(7).Value Then
-                                isliving = 1
-                            Else
-                                isliving = 0
-                            End If
-                            .AddWithValue("@isliving", isliving)
-                        End With
-                        res_sibling_id = CInt(cmd.ExecuteScalar())
-                        cmd.Parameters.Clear()
-                        Siblings.Rows(row).Cells(0).Value = res_sibling_id
-                        'after insert add in array list
-                        res_sibling_ids.Add(res_sibling_id)
-                    Else
-                        'UPDATE WILL EXECUTE
-                        res_sibling_id = CInt(Siblings.Rows(row).Cells(0).Value)
+                    cmd = New MySqlCommand(query, con)
+                    With cmd.Parameters
+                        .AddWithValue("@resid", id)
+                        .AddWithValue("@fname", Convert.ToString(Siblings.Rows(row).Cells(1).Value))
+                        .AddWithValue("@mname", Convert.ToString(Siblings.Rows(row).Cells(2).Value))
+                        .AddWithValue("@lname", Convert.ToString(Siblings.Rows(row).Cells(3).Value))
+                        .AddWithValue("@sex", Convert.ToString(Siblings.Rows(row).Cells(4).Value))
+                        .AddWithValue("@cstatus", Convert.ToString(Siblings.Rows(row).Cells(5).Value))
+                        .AddWithValue("@bdate", Convert.ToString(Siblings.Rows(row).Cells(6).Value))
+                        If Siblings.Rows(row).Cells(7).Value Then
+                            isliving = 1
+                        Else
+                            isliving = 0
+                        End If
+                        .AddWithValue("@isliving", isliving)
+                    End With
+                    res_sibling_id = Convert.ToInt32(cmd.ExecuteScalar())
+                    cmd.Parameters.Clear()
+                    Siblings.Rows(row).Cells(0).Value = res_sibling_id
+                    'after insert add in array list
+                    res_sibling_ids.Add(res_sibling_id)
+                Else
+                    'UPDATE WILL EXECUTE
+                    res_sibling_id = CInt(Siblings.Rows(row).Cells(0).Value)
                         'save id in array
                         res_sibling_ids.Add(res_sibling_id)
                         query = "UPDATE resident_siblings SET " &
@@ -367,8 +367,8 @@ Public Class Resident
                         cmd = New MySqlCommand(query, con)
                         With cmd.Parameters
                             .AddWithValue("@resid", id)
-                            .AddWithValue("@fname", CStr(Siblings.Rows(row).Cells(1).Value))
-                            .AddWithValue("@mname", CStr(Siblings.Rows(row).Cells(2).Value))
+                        .AddWithValue("@fname", Convert.ToString(Siblings.Rows(row).Cells(1).Value))
+                        .AddWithValue("@mname", Convert.ToString(Siblings.Rows(row).Cells(2).Value))
                             .AddWithValue("@lname", CStr(Siblings.Rows(row).Cells(3).Value))
                             .AddWithValue("@sex", CStr(Siblings.Rows(row).Cells(4).Value))
                             .AddWithValue("@cstatus", CStr(Siblings.Rows(row).Cells(5).Value))
@@ -433,9 +433,9 @@ Public Class Resident
                         cmd = New MySqlCommand(query, con)
                         With cmd.Parameters
                             .AddWithValue("@resid", id)
-                            .AddWithValue("@respet", CStr(Pets.Rows(row).Cells(1).Value))
-                            .AddWithValue("@nopet", CStr(Pets.Rows(row).Cells(2).Value))
-                        End With
+                        .AddWithValue("@respet", Convert.ToString(Pets.Rows(row).Cells(1).Value))
+                        .AddWithValue("@nopet", Convert.ToString(Pets.Rows(row).Cells(2).Value))
+                    End With
                         res_pet_id = CInt(cmd.ExecuteScalar())
                         cmd.Parameters.Clear()
                         Pets.Rows(row).Cells(0).Value = res_pet_id
@@ -450,9 +450,9 @@ Public Class Resident
                         cmd = New MySqlCommand(query, con)
                         With cmd.Parameters
                             .AddWithValue("@resid", id)
-                            .AddWithValue("@respet", CStr(Pets.Rows(row).Cells(1).Value))
-                            .AddWithValue("@nopet", CStr(Pets.Rows(row).Cells(2).Value))
-                            .AddWithValue("@id", res_pet_id)
+                        .AddWithValue("@respet", Convert.ToString(Pets.Rows(row).Cells(1).Value))
+                        .AddWithValue("@nopet", Convert.ToString(Pets.Rows(row).Cells(2).Value))
+                        .AddWithValue("@id", res_pet_id)
                         End With
                         cmd.ExecuteNonQuery()
                         cmd.Parameters.Clear()
@@ -490,10 +490,11 @@ Public Class Resident
             conClose()
 
             Return i
-        Catch ex As Exception
-            ErrBox(ex.Message)
-            Return 0
-        End Try
+        'Catch ex As Exception
+        'Throw
+        ' ErrBox(ex.Message)
+        ' Return 0
+        'End Try
     End Function
 
     Public Function Delete(ByVal id As Integer) As Integer
@@ -566,12 +567,14 @@ Public Class Resident
             query = "SELECT * FROM resident_pets WHERE resident_id = @id"
             cmd = New MySqlCommand(query, con)
             cmd.Parameters.AddWithValue("@id", id)
-            Dim dtPets As New DataTable
-            adprtr = New MySqlDataAdapter(cmd)
-            adprtr.Fill(dtPets)
-            adprtr.Dispose()
-            paramPets.AutoGenerateColumns = False
-            paramPets.DataSource = dtPets
+            Dim dr As MySqlDataReader
+            dr = cmd.ExecuteReader
+            While dr.Read
+                paramPets.Rows.Add()
+            End While
+            dr.Close()
+
+            'paramPets.DataSource = dtPets
             cmd.Dispose()
 
             If dt.Rows.Count > 0 Then

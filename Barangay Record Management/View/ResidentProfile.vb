@@ -80,12 +80,12 @@
     Private Sub frmResidentProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'add datetime on datagrid
-        'dtSiblingDatePicker = New DateTimePicker
-        'dtSiblingDatePicker.Format = DateTimePickerFormat.Short
-        'dtSiblingDatePicker.Visible = False
-        'dtSiblingDatePicker.Width = 120
-        'dGridSibling.Controls.Add(dtSiblingDatePicker)
-        'AddHandler dtSiblingDatePicker.ValueChanged, AddressOf dtSiblingPicker_ValueChanged
+        dtSiblingDatePicker = New DateTimePicker
+        dtSiblingDatePicker.Format = DateTimePickerFormat.Short
+        dtSiblingDatePicker.Visible = False
+        dtSiblingDatePicker.Width = 120
+        dGridSibling.Controls.Add(dtSiblingDatePicker)
+        AddHandler dtSiblingDatePicker.ValueChanged, AddressOf dtSiblingPicker_ValueChanged
 
         cmbIsSettled.SelectedIndex = 1
         txtHSerialNumber.Focus()
@@ -167,7 +167,7 @@
             Me.dtComplainWhen.Value = Today
         Else
             Me.dtComplainWhen.Enabled = True
-            Box.InfoBox(DateTime.ParseExact(res.DateSettled, "yyyy-MM-dd", Nothing))
+            'Box.InfoBox(DateTime.ParseExact(res.DateSettled, "yyyy-MM-dd", Nothing))
             Me.dtComplainWhen.Value = DateTime.ParseExact(res.DateSettled, "yyyy-MM-dd", Nothing)
         End If
 
@@ -253,8 +253,6 @@
             InsertResident()
 
         End If
-
-
 
     End Sub
 
@@ -787,5 +785,22 @@
             dtComplainWhen.Enabled = True
             res.DateSettled = dtComplainWhen.Value.ToString("yyyy-MM-dd")
         End If
+    End Sub
+
+    Private Sub dGridSibling_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dGridSibling.CellDoubleClick
+
+        'If Me.btnAddFamlyMember.Text = "ADD" Then
+        '    Me.btnAddFamlyMember.Text = "UPDATE"
+        'Else
+        '    Me.btnAddFamlyMember.Text = "ADD"
+
+        'End If
+
+        'txtSiblingFname.Text = dGridSibling.SelectedRows(0).Cells("firstname").Value.ToString()
+        'txtSiblingMname.Text = dGridSibling.SelectedRows(0).Cells("middlename").Value.ToString()
+        'txtSiblingLname.Text = dGridSibling.SelectedRows(0).Cells("lastname").Value.ToString()
+        'cmbSiblingSex.Text = dGridSibling.SelectedRows(0).Cells("sex").Value.ToString()
+
+
     End Sub
 End Class
